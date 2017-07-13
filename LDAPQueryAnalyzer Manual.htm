@@ -1,0 +1,3187 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="LDAPQueryAnalyzer%20Manual_files/filelist.xml">
+<link rel=Edit-Time-Data href="LDAPQueryAnalyzer%20Manual_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Michael Frommhold</o:Author>
+  <o:LastAuthor>Michael Frommhold</o:LastAuthor>
+  <o:Revision>3</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:LastPrinted>2017-07-12T23:48:00Z</o:LastPrinted>
+  <o:Created>2017-07-13T00:05:00Z</o:Created>
+  <o:LastSaved>2017-07-13T00:09:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>2853</o:Words>
+  <o:Characters>17974</o:Characters>
+  <o:Lines>149</o:Lines>
+  <o:Paragraphs>41</o:Paragraphs>
+  <o:CharactersWithSpaces>20786</o:CharactersWithSpaces>
+  <o:Version>16.00</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:RelyOnVML/>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<link rel=dataStoreItem href="LDAPQueryAnalyzer%20Manual_files/item0038.xml"
+target="LDAPQueryAnalyzer%20Manual_files/props039.xml">
+<link rel=themeData href="LDAPQueryAnalyzer%20Manual_files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="LDAPQueryAnalyzer%20Manual_files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:HyphenationZone>21</w:HyphenationZone>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="375">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hashtag"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Unresolved Mention"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:1;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:0 0 0 0 0 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-536859905 -1073732485 9 0 511 0;}
+@font-face
+	{font-family:"Calibri Light";
+	panose-1:2 15 3 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-536859905 -1073732485 9 0 511 0;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-536869121 64767 1 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 1 Char";
+	mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:16.0pt;
+	font-family:"Calibri Light",sans-serif;
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#2E74B5;
+	mso-themecolor:accent1;
+	mso-themeshade:191;
+	mso-font-kerning:0pt;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;
+	font-weight:normal;}
+h2
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 2 Char";
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;
+	mso-bidi-font-weight:normal;
+	text-decoration:underline;
+	text-underline:double;}
+h3
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-parent:"Heading 2";
+	mso-style-link:"Heading 3 Char";
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;
+	mso-bidi-font-weight:normal;
+	text-decoration:underline;
+	text-underline:single;}
+h4
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 4 Char";
+	mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	mso-outline-level:4;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;
+	font-weight:normal;
+	text-decoration:underline;
+	text-underline:single;}
+h5
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 5 Char";
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:36.0pt;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;
+	font-weight:normal;
+	text-decoration:underline;
+	text-underline:single;}
+h6
+	{mso-style-update:auto;
+	mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 6 Char";
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:72.0pt;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	mso-outline-level:6;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;
+	font-weight:normal;
+	text-decoration:underline;
+	text-underline:single;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{mso-style-update:auto;
+	mso-style-priority:39;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{mso-style-update:auto;
+	mso-style-priority:39;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:11.0pt;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{mso-style-update:auto;
+	mso-style-priority:39;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:22.0pt;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{mso-style-update:auto;
+	mso-style-priority:39;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:33.0pt;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{mso-style-update:auto;
+	mso-style-priority:39;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:44.0pt;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{mso-style-update:auto;
+	mso-style-priority:39;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:55.0pt;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{mso-style-update:auto;
+	mso-style-priority:39;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:66.0pt;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{mso-style-update:auto;
+	mso-style-priority:39;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:77.0pt;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{mso-style-update:auto;
+	mso-style-priority:39;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:88.0pt;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-priority:99;
+	mso-style-link:"Header Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 234.0pt right 468.0pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-priority:99;
+	mso-style-link:"Footer Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 234.0pt right 468.0pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#0563C1;
+	mso-themecolor:hyperlink;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:#954F72;
+	mso-themecolor:followedhyperlink;
+	text-decoration:underline;
+	text-underline:single;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:36.0pt;
+	mso-add-space:auto;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:36.0pt;
+	mso-add-space:auto;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{mso-style-priority:39;
+	mso-style-qformat:yes;
+	mso-style-parent:"Heading 1";
+	mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri Light",sans-serif;
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#2E74B5;
+	mso-themecolor:accent1;
+	mso-themeshade:191;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 1";
+	mso-ansi-font-size:16.0pt;
+	mso-bidi-font-size:16.0pt;
+	font-family:"Calibri Light",sans-serif;
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#2E74B5;
+	mso-themecolor:accent1;
+	mso-themeshade:191;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 2";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;
+	text-decoration:underline;
+	text-underline:double;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 3";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;
+	text-decoration:underline;
+	text-underline:single;}
+span.Heading4Char
+	{mso-style-name:"Heading 4 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 4";
+	text-decoration:underline;
+	text-underline:single;}
+span.Heading5Char
+	{mso-style-name:"Heading 5 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 5";
+	text-decoration:underline;
+	text-underline:single;}
+span.Heading6Char
+	{mso-style-name:"Heading 6 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 6";
+	text-decoration:underline;
+	text-underline:single;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:Footer;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+.MsoPapDefault
+	{mso-style-type:export-only;
+	margin-bottom:8.0pt;
+	line-height:107%;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("LDAPQueryAnalyzer%20Manual_files/header.htm") fs;
+	mso-footnote-continuation-separator:url("LDAPQueryAnalyzer%20Manual_files/header.htm") fcs;
+	mso-endnote-separator:url("LDAPQueryAnalyzer%20Manual_files/header.htm") es;
+	mso-endnote-continuation-separator:url("LDAPQueryAnalyzer%20Manual_files/header.htm") ecs;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:21.6pt 57.6pt 21.6pt 57.6pt;
+	mso-header-margin:0cm;
+	mso-footer-margin:14.4pt;
+	mso-footer:url("LDAPQueryAnalyzer%20Manual_files/header.htm") f1;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:642807017;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1980269136 -1948980384 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l0:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l1
+	{mso-list-id:907808571;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-409990320 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:108.0pt;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:144.0pt;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:180.0pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:216.0pt;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:252.0pt;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:288.0pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:324.0pt;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:360.0pt;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin-top:0cm;
+	mso-para-margin-right:0cm;
+	mso-para-margin-bottom:8.0pt;
+	mso-para-margin-left:0cm;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2049"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=DE link="#0563C1" vlink="#954F72" style='tab-interval:36.0pt'>
+
+<div class=WordSection1>
+
+<h1 align=center style='text-align:center'><a name="_Toc433362234"></a><a
+name="_Toc387479351"></a><a name="_Toc387425936"><span style='mso-bookmark:
+_Toc387479351'><span style='mso-bookmark:_Toc433362234'><span lang=EN-US>LDAPQueryAnalyzer
+– Manual</span></span></span></a></h1>
+
+<h3><a name="_Toc433362235"><span lang=EN-US>LDAPQueryAnalyzer</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="Picture_x0020_1" o:spid="_x0000_i1059" type="#_x0000_t75"
+ style='width:496.8pt;height:345pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image001.png" o:title=""/>
+</v:shape></span></p>
+
+<h3><a name="_Toc433362236"><span lang=EN-US>Fields</span></a></h3>
+
+<p class=MsoNormal><a name="_Toc433362237"><span class=Heading4Char><span
+lang=EN-US>Domains</span></span></a><span lang=EN-US><br>
+A list of all domain naming contexts (NC) in the current forest. The domain NC
+of the executing user is displayed after start. </span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:36.0pt'><span
+lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_2" o:spid="_x0000_i1058"
+ type="#_x0000_t75" style='width:262.8pt;height:31.8pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image002.png" o:title=""
+  croptop="7780f" cropbottom="51359f" cropleft="4839f" cropright="23783f"/>
+</v:shape></span><span lang=EN-US><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h4><a name="_Toc433362238"><span lang=EN-US>DCs</span></a></h4>
+
+<p class=MsoNormal><span lang=EN-US>A list of all domain controllers (DC) in
+the currently displayed domain.<span style='mso-spacerun:yes'>      </span></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:36.0pt'><span
+lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_3" o:spid="_x0000_i1057"
+ type="#_x0000_t75" style='width:264.6pt;height:25.2pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image003.png" o:title=""
+  croptop="10450f" cropbottom="50093f" cropleft="4840f" cropright="23670f"/>
+</v:shape></span><span lang=EN-US><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h4><a name="_Toc433362239"><span lang=EN-US>NCs</span></a></h4>
+
+<p class=MsoNormal><span lang=EN-US>A list of all NCs held by the selected DC.</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt'><span lang=EN-US
+style='mso-no-proof:yes'><v:shape id="Picture_x0020_4" o:spid="_x0000_i1056"
+ type="#_x0000_t75" style='width:264.6pt;height:46.2pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image004.png" o:title=""
+  croptop="12889f" cropbottom="43357f" cropleft="4920f" cropright="23591f"/>
+</v:shape></span></p>
+
+<span class=Heading4Char><span lang=EN-US style='font-size:11.0pt;line-height:
+107%;font-family:"Calibri",sans-serif;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:"Times New Roman";mso-bidi-theme-font:minor-bidi;
+mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:AR-SA'><br
+clear=all style='mso-special-character:line-break;page-break-before:always'>
+</span></span>
+
+<p class=MsoNormal><span class=Heading4Char><span lang=EN-US><o:p><span
+ style='text-decoration:none'>&nbsp;</span></o:p></span></span></p>
+
+<p class=MsoNormal><a name="_Toc433362240"><span class=Heading4Char><span
+lang=EN-US>Base</span></span></a><span lang=EN-US><br>
+The base path to search in – selecting a NC in field NCs updates field Base.<br>
+Additionally you may use the context menu &lt;Browse&gt; to load a browsing GUI
+to find object paths in your AD.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:36.0pt'><span
+lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_7" o:spid="_x0000_i1055"
+ type="#_x0000_t75" style='width:148.2pt;height:148.2pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image005.png" o:title=""/>
+</v:shape></span><span lang=EN-US><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal><a name="_Toc433362241"><span class=Heading4Char><span
+lang=EN-US>Filter</span></span></a><span lang=EN-US><br>
+Here you define the query filter in LDAP syntax. For the ease of use a
+FilterWizard is implemented -&gt; context menu Filter Wizard. The FilterWizard
+will be described later.<span style='mso-spacerun:yes'>   </span><br>
+<span style='mso-spacerun:yes'>                            </span></span></p>
+
+<p class=MsoNormal><a name="_Toc433362242"><span class=Heading4Char><span
+lang=EN-US>History</span></span></a><span lang=EN-US><br>
+A list of already successfully executed queries. List can be cleared by
+selecting context menu &lt;Clear History&gt;. You may also delete single
+entries by selecting context menu &lt;Delete Current&gt;</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:36.0pt'><span
+lang=EN-US><span style='mso-spacerun:yes'> </span><span style='mso-no-proof:
+yes'><v:shape id="Picture_x0020_9" o:spid="_x0000_i1054" type="#_x0000_t75"
+ style='width:350.4pt;height:31.8pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image006.png" o:title=""
+  croptop="27514f" cropbottom="31648f" cropleft="4778f" cropright="11657f"/>
+</v:shape></span><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal><a name="_Toc433362243"><span class=Heading4Char><span
+lang=EN-US>Attributes</span></span></a><span lang=EN-US><br>
+The (list of) attributes you want to be returned by the query. You may<span
+style='mso-spacerun:yes'>  </span>use the context menu &lt;Load Attributes List&gt;
+to get a list of all available attributes from the schema (including custom
+attributes).</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:36.0pt'><span
+lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_10" o:spid="_x0000_i1053"
+ type="#_x0000_t75" style='width:161.4pt;height:52.2pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image007.png" o:title=""
+  croptop="5809f" cropbottom="49128f" cropleft="42280f" cropright="614f"/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US>If the attribute list contains constructed
+attributes, LDAPQuerzAnalzyer switches to single object path base queries to
+retreive the constructed attributes from each object matching the given filter.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>You may use 0 or null as attribute to get
+only the paths of the matching objects returned (no attributes will be
+requested from the DC).</span></p>
+
+<p class=MsoNormal><a name="_Toc433362244"><span class=Heading4Char><span
+lang=EN-US>ASQ Attributes</span></span></a><span lang=EN-US><br>
+The attributes you want to get returned from the objects who are actually
+stored via their distinguishedName (DN) in the queried attribute via an
+Attribute Scoped Query query.<br>
+<br>
+<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><span class=Heading4Char><o:p></o:p></span></span></p>
+
+<span class=Heading4Char><span lang=EN-US style='font-size:11.0pt;line-height:
+107%;font-family:"Calibri",sans-serif;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:"Times New Roman";mso-bidi-theme-font:minor-bidi;
+mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:AR-SA'><br
+clear=all style='mso-special-character:line-break;page-break-before:always'>
+</span></span>
+
+<p class=MsoNormal><span class=Heading4Char><span lang=EN-US><o:p><span
+ style='text-decoration:none'>&nbsp;</span></o:p></span></span></p>
+
+<p class=MsoNormal><a name="_Toc433362245"><span class=Heading4Char><span
+lang=EN-US>Results</span></span></a><span lang=EN-US><br>
+The result output pane. Every query result during runtime is saved in a result
+cache. If the result cache count execeeds 20 the first result is deleted and
+the new result is added at the end of the cache.<br>
+You may walk or clear the result cache via the &lt;Remembered results&gt;
+buttons.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:36.0pt'><span
+lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_13" o:spid="_x0000_i1052"
+ type="#_x0000_t75" style='width:90pt;height:21pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image008.png" o:title=""
+  croptop="37138f" cropbottom="24114f" cropleft="52342f" cropright="586f"/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US>Every query result will display query info.
+<br>
+Example:</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='font-size:9.0pt;line-height:107%;font-family:Consolas;mso-bidi-font-family:
+Consolas'>DC: <span style='mso-tab-count:3'>                  </span>dc1root.mfp-labs.labsetup.org:389<br>
+Base: <span style='mso-tab-count:3'>                </span>DC=mfp-labs,DC=labsetup,DC=org<br>
+Filter: <span style='mso-tab-count:2'>              </span>(<span
+style='mso-spacerun:yes'>  </span>&amp;<span style='mso-spacerun:yes'> 
+</span>(objectClass=user) (sAMAccountName=theboss)<span
+style='mso-spacerun:yes'>  </span>)<br>
+Scope: <span style='mso-tab-count:2'>        </span><span style='mso-tab-count:
+1'>        </span>Subtree<br>
+ReferralChasing: <span style='mso-tab-count:1'>     </span>None<br>
+ResultCount: <span style='mso-tab-count:2'>         </span>1<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>You may search the query results by
+pressing Ctrl &amp; F when the result output pane has the focus -&gt; this will
+show the find dialogue:</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:36.0pt'><span
+lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_5" o:spid="_x0000_i1051"
+ type="#_x0000_t75" style='width:173.4pt;height:16.2pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image009.emz" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US>Clicking the find button &lt;?&gt; will try
+to find the first match, pressing F3 will try to find the next match in the
+query results.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The &lt;x&gt; button will close the find
+dialogue.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+font-family:Consolas;mso-bidi-font-family:Consolas'><o:p>&nbsp;</o:p></span></p>
+
+<h3><a name="_Toc433362246"><span lang=EN-US>Controls</span></a></h3>
+
+<h4><a name="_Toc433362247"><span lang=EN-US>Port</span></a></h4>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362248"><span
+class=Heading5Char><span lang=EN-US>LDAP</span></span></a><span lang=EN-US><br>
+The LDAP port (default 389) is used for DC connection. Default value can be
+defined in context menu Define LDAP Port:.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362249"><span
+class=Heading5Char><span lang=EN-US>GC</span></span></a><span lang=EN-US><br>
+The Global Catalog (GC) port (default 3268) is used for DC connection. Default
+value can be defined in context menu Define GC Port. This option is only
+available when the selected DC is also a GC.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362250"><span
+class=Heading5Char><span lang=EN-US>Custom</span></span></a><span lang=EN-US><br>
+You may define a custom port to connect to the DC – for example to connect to
+an AD snapshot instance mounted via dsamain.exe.<br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h4><a name="_Toc433362251"><span lang=EN-US>BaseType</span></a></h4>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362252"><span
+class=Heading5Char><span lang=EN-US>DN</span></span></a><span lang=EN-US><br>
+Standard base type -&gt; a distinguishedName (defined by Base field) is used as
+search base.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362253"><span
+class=Heading5Char><span lang=EN-US>PhantomRoot</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Performing a subtree search against the phantom
+root of the forest (null-DN) with search scope SubTree. Thus you will be able
+to find any object in the whole forest – even if you have multiple parallel
+trees in your forest.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362254"><span
+class=Heading5Char><span lang=EN-US>rootDSE</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Send an UDP ping (rootDSE call) against the
+selected DC with an empty search base and search scope Base.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362255"><span
+class=Heading5Char><span lang=EN-US>operational attributes</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>If selected you get back the operational attributes
+when sending an UDP ping (rootDSE call). You may customize the operational
+attributes to be returned by editing the the RootDSE.xml in the folder
+.\Cache\Settings. To add a new attribute to the operational attribuites list
+just insert a new line like &lt;string&gt;<i style='mso-bidi-font-style:normal'>newAttribute</i>&lt;/string&gt;
+to the &lt;OperationalAttributes&gt; node.<br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<span lang=EN-US style='font-size:11.0pt;line-height:107%;font-family:"Calibri",sans-serif;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
+minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";
+mso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA'><br clear=all style='mso-special-character:line-break;
+page-break-before:always'>
+</span>
+
+<p class=MsoNormal><u><span lang=EN-US><o:p><span style='text-decoration:none'>&nbsp;</span></o:p></span></u></p>
+
+<h4><a name="_Toc433362256"><span lang=EN-US>Scope</span></a></h4>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362257"><span
+class=Heading5Char><span lang=EN-US>Base</span></span></a><u><span lang=EN-US><br>
+</span></u><span lang=EN-US>Performing a base search against the object path
+defined in Base.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362258"><span
+class=Heading5Char><span lang=EN-US>OneLevel</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Performing an one level search against the object
+path defined in Base.<u><o:p></o:p></u></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362259"><span
+class=Heading5Char><span lang=EN-US>SubTree</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Performing an subtree search against the object
+path defined in Base.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h4><a name="_Toc433362260"><span lang=EN-US>Referrals</span></a></h4>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362261"><span
+class=Heading5Char><span lang=EN-US>None</span></span></a><u><span lang=EN-US><br>
+</span></u><span lang=EN-US>Never chase the referred-to server. Setting this
+option prevents the app from contacting other servers in a referral process.<u><o:p></o:p></u></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362262"><span
+class=Heading5Char><span lang=EN-US>External</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Chase external referrals.<u><o:p></o:p></u></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362263"><span
+class=Heading5Char><span lang=EN-US>Subordinate</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Chase only subordinate referrals which are a
+subordinate naming context in a directory tree.<br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h4><a name="_Toc433362264"><span lang=EN-US>Query type</span></a></h4>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362265"><span
+class=Heading5Char><span lang=EN-US>Paged</span></span></a><span lang=EN-US><br>
+The requested query will be send as paged query. Usefull if you expect more
+results to be returned as the MaxPageSize value defined in lDAPAdminLimits.
+Caveat – query index intersection in this case results in the usage of only one
+indexed attribute in the query even though there would be more indexed
+attributes used in the query - possible performance impact. <br>
+Therefore the switch Autoswitch to PagedQuery was implemented in the Menu Query
+- see description in option Non-Paged below.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362266"><span
+class=Heading5Char><span lang=EN-US>Non-Paged</span></span></a><span
+lang=EN-US><br>
+We first try to send a non paged query. If the result count exceeds the
+MaxPageSize value defined in lDAPAdminLimits we only return the results up to
+MaxPageSize.<br>
+Per default the switch &lt;Autoswitch to PagedQuery&gt; from the Menu &lt;Query&gt;
+ist activated. This will resend the query as a paged query and we get all
+results returned.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h4><a name="_Toc433362267"><span class=Heading5Char><span lang=EN-US>Attributes</span></span></a><span
+class=Heading5Char><span lang=EN-US><o:p></o:p></span></span></h4>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362268"><span
+class=Heading5Char><span lang=EN-US>AttributeScoped</span></span></a><span
+lang=EN-US><br>
+Attribue scoped queries (ASQ) can be send against any linked attribute pair
+member, like for example:</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:72.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l1 level1 lfo1'><![if !supportLists]><span
+lang=EN-US style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US>member / memberOf</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:72.0pt;mso-add-space:auto;
+text-indent:-18.0pt;mso-list:l1 level1 lfo1'><![if !supportLists]><span
+lang=EN-US style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><v:shape id="Picture_x0020_29" o:spid="_x0000_s1027"
+ type="#_x0000_t75" style='position:absolute;left:0;text-align:left;
+ margin-left:50.05pt;margin-top:.9pt;width:101.25pt;height:108.75pt;z-index:251658240;
+ visibility:visible;mso-wrap-style:square;mso-width-percent:0;
+ mso-height-percent:0;mso-wrap-distance-left:9pt;mso-wrap-distance-top:0;
+ mso-wrap-distance-right:9pt;mso-wrap-distance-bottom:0;
+ mso-position-horizontal:right;mso-position-horizontal-relative:margin;
+ mso-position-vertical:absolute;mso-position-vertical-relative:text;
+ mso-width-percent:0;mso-height-percent:0;mso-width-relative:page;
+ mso-height-relative:page'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image001.png" o:title=""
+  croptop="18231f" cropbottom="26653f" cropleft="51546f" cropright="634f"/>
+ <w:wrap type="square" anchorx="margin"/>
+</v:shape><span lang=EN-US>manager / directReports</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US>An ASQ must be
+send against the path of an object that holds this attribute as a base search.<span
+style='mso-no-proof:yes'> </span>In the Attributes field we need the attribute
+we want to do the ASQ against as only entry in the list. The attributes in the
+field ASQ Attributes define the attributes you want to get returned from the
+objects who are actually stored via their distinguishedName (DN) in the queried
+attribute.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>                               </span><span
+style='mso-spacerun:yes'>              </span><br>
+<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h4><a name="_Toc433362269"><span lang=EN-US>Return</span></a></h4>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362270"><span
+class=Heading5Char><span lang=EN-US>Results</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Select to display the query results in the results
+pane.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362271"><span
+class=Heading5Char><span lang=EN-US>Statistics</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Select to retreive query statistics for your query
+from the DC. To be able to retreive the information from a DC you need to have
+the DebugPrivilege assigned to the calling user on the DC.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US><span
+style='mso-spacerun:yes'>                                </span><span
+style='mso-no-proof:yes'><v:shape id="Picture_x0020_12" o:spid="_x0000_i1050"
+ type="#_x0000_t75" style='width:324.6pt;height:155.4pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image010.png" o:title=""/>
+</v:shape></span></span></p>
+
+<p class=MsoNormal><a name="_Toc433362272"><span class=Heading4Char><span
+lang=EN-US>Search</span></span></a><u><span lang=EN-US><br>
+</span></u><span lang=EN-US>Send the query to the selected DC.</span></p>
+
+<p class=MsoNormal><a name="_Toc433362273"><span class=Heading4Char><span
+lang=EN-US>Restore</span></span></a><u><span lang=EN-US><br>
+</span></u><span lang=EN-US>Restore a deleted, non-recycled object. Note – you
+must run the app elevated.<br>
+To do so you must first enable ShowDeletedControl in the Query menu:</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:36.0pt'><span
+lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_6" o:spid="_x0000_i1049"
+ type="#_x0000_t75" style='width:107.4pt;height:141pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image011.png" o:title=""
+  croptop="10166f" cropbottom="37618f" cropleft="11890f" cropright="45211f"/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US>Then click &lt;Browse&gt; menu item from
+Base field context menu and select the object to be restored in the tree view:</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:36.0pt'><span
+lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_8" o:spid="_x0000_i1048"
+ type="#_x0000_t75" style='width:148.2pt;height:148.2pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image012.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US>Now you will find the &lt;Restore&gt;
+button besides the Base field (and the Base field context menu item
+&lt;Restore&gt; as enabled):</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_21"
+ o:spid="_x0000_i1047" type="#_x0000_t75" style='width:496.8pt;height:113.4pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image013.png" o:title=""
+  croptop="17652f" cropbottom="26856f" cropleft="780f" cropright="598f"/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US>Clicking the button restores the object if
+possible.</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:36.0pt'><span
+lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_11" o:spid="_x0000_i1046"
+ type="#_x0000_t75" style='width:161.4pt;height:60pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image014.png" o:title=""
+  croptop="5595f" cropbottom="47815f" cropleft="42294f" cropright="586f"/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US>If you enabled ShowRecycledControl as well
+and select a recycled object, the option to restore will not be available.<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><a name="_Toc433362274"><span lang=EN-US>Menus</span></a></h3>
+
+<h4><a name="_Toc433362275"><span lang=EN-US>File</span></a></h4>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362276"><span
+class=Heading5Char><span lang=EN-US>Close</span></span></a><span lang=EN-US><br>
+Close app.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h4><a name="_Toc433362277"><span lang=EN-US>User</span></a></h4>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362278"><span
+class=Heading5Char><span lang=EN-US>Restart elevated</span></span></a><span
+lang=EN-US><br>
+Restart app elevetad (UAC). Only available if the executing user has the
+Administrators group disabled in his token.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362279"><span
+class=Heading5Char><span lang=EN-US>Run elevated (2nd instance)</span></span></a><span
+lang=EN-US><br>
+Run app elevetad (UAC) in a new instance. Only available if the executing user
+has the Administrators group in his token.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362280"><span
+class=Heading5Char><span lang=EN-US>Restart as</span></span></a><span
+lang=EN-US><br>
+Restart app as a different user.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362281"><span
+class=Heading5Char><span lang=EN-US>Restart as elevated</span></span></a><span
+lang=EN-US><br>
+Restart app elevated (UAC) as a different user.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362282"><span
+class=Heading5Char><span lang=EN-US>Run as (2nd instance)</span></span></a><span
+lang=EN-US><br>
+Restart app as a different user in a new instance.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362283"><span
+class=Heading5Char><span lang=EN-US>Run as elevated (2nd instance)</span></span></a><span
+lang=EN-US><br>
+Restart app elevated (UAC) as a different user in a new instance.<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h4><a name="_Toc433362284"><span lang=EN-US>Connection</span></a></h4>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362285"><span
+class=Heading5Char><span lang=EN-US>Refresh Forest</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Recall forest info collection for current forest.</span></p>
+
+<h5><a name="_Toc433362286"><span lang=EN-US>Set Ports</span></a></h5>
+
+<p class=MsoNormal style='margin-left:72.0pt'><a name="_Toc433362287"><span
+class=Heading6Char><span lang=EN-US>LDAP</span></span></a><u><span lang=EN-US><br>
+</span></u><span lang=EN-US>Define the LDAP port (default 389) used for DC
+connection.</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt'><a name="_Toc433362288"><span
+class=Heading6Char><span lang=EN-US>GC</span></span></a><u><span lang=EN-US><br>
+</span></u><span lang=EN-US>Define the GC port (default 3268) used for DC
+connection.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362289"><span
+class=Heading5Char><span lang=EN-US>Set Timeout (s)</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Set timeout for DC connections to establish and
+queries to return results.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362290"><span
+class=Heading5Char><span lang=EN-US>Connect Forest</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Connect to a different forest with the possibility
+to pass different credentials than the exeuting user. If Password field is
+empty the executing user’s credentials are used to connect.</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:36.0pt'><span
+lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_17" o:spid="_x0000_i1045"
+ type="#_x0000_t75" style='width:2in;height:94.8pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image015.png" o:title=""/>
+</v:shape></span><u><span lang=EN-US><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></u></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362291"><span
+class=Heading5Char><span lang=EN-US>Pass Credentials</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Reconnect current forest with given credentials.<u><o:p></o:p></u></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:36.0pt'><span
+lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_18" o:spid="_x0000_i1044"
+ type="#_x0000_t75" style='width:2in;height:94.8pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image016.png" o:title=""/>
+</v:shape></span><u><span lang=EN-US><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></u></p>
+
+<h4><a name="_Toc433362292"><span lang=EN-US>Query</span></a></h4>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362293"><span
+class=Heading5Char><span lang=EN-US>Browse (Base)</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Load a browsing GUI to find object paths in your AD
+and set path in Base field.</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:36.0pt'><span
+lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_19" o:spid="_x0000_i1043"
+ type="#_x0000_t75" style='width:148.2pt;height:148.2pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image005.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><u><span lang=EN-US><o:p><span
+ style='text-decoration:none'>&nbsp;</span></o:p></span></u></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362294"><span
+class=Heading5Char><span lang=EN-US>Execute Query</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Send the query to the selected DC.<u><br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></u></span></p>
+
+<h5><a name="_Toc433362295"><span lang=EN-US>Provider</span></a></h5>
+
+<p class=MsoNormal style='margin-left:72.0pt'><a name="_Toc433362296"><span
+class=Heading5Char><span lang=EN-US>LDAP</span></span></a><span lang=EN-US><br>
+The LDAP port (default 389) is used for DC connection. Default value can be
+defined in context menu Define LDAP Port:.</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt'><a name="_Toc433362297"><span
+class=Heading5Char><span lang=EN-US>GC</span></span></a><span lang=EN-US><br>
+The Global Catalog (GC) port (default 3268) is used for DC connection. Default
+value can be defined in context menu Define GC Port. This option is only
+available when the selected DC is also a GC.<br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h5><a name="_Toc433362298"><span lang=EN-US>Base type</span></a></h5>
+
+<p class=MsoNormal style='margin-left:72.0pt'><a name="_Toc433362299"><span
+class=Heading5Char><span lang=EN-US>DN</span></span></a><span lang=EN-US><br>
+Standard base type -&gt; a distinguishedName (defined by Base field) is used as
+search base.</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt'><a name="_Toc433362300"><span
+class=Heading5Char><span lang=EN-US>PhantomRoot</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Performing a subtree search against the phantom
+root of the forest (null-DN) with search scope SubTree. Thus you will be able
+to find any object in the whole forest – even if you have multiple parallel
+trees in your forest.</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt'><a name="_Toc433362301"><span
+class=Heading5Char><span lang=EN-US>rootDSE</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Send an UDP ping (rootDSE call) against the
+selected DC with an empty search base and search scope Base.<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h5><a name="_Toc433362302"><span lang=EN-US>Query type</span></a></h5>
+
+<p class=MsoNormal style='margin-left:72.0pt'><a name="_Toc433362303"><span
+class=Heading6Char><span lang=EN-US>Paged</span></span></a><span lang=EN-US><br>
+The requested query will be send as paged query. Usefull if you expect more
+results to be returned as the MaxPageSize value defined in lDAPAdminLimits.
+Caveat – query index intersection ini this case results in the usage of only
+one indexed attribute in the query even though there would be more indexed
+attributes used in the query - possible performance impact. <br>
+Therefore the switch Autoswitch to PagedQuery was implemented in the Menu Query
+- see description in option Non-Paged below.</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt'><a name="_Toc433362304"><span
+class=Heading6Char><span lang=EN-US>Non-Paged</span></span></a><span
+lang=EN-US><br>
+We first try send a non paged query. If the result count exceeds the
+MaxPageSize value defined in lDAPAdminLimits we only return the results up to
+MaxPageSize.<br>
+Per default the switch Autoswitch to PagedQuery from the Menu Query ist
+activated. This will resend the query as a paged query and get all results
+returned.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h5><a name="_Toc433362305"><span lang=EN-US>SearchScope</span></a></h5>
+
+<p class=MsoNormal style='margin-left:72.0pt'><a name="_Toc433362306"><span
+class=Heading6Char><span lang=EN-US>Base</span></span></a><u><span lang=EN-US><br>
+</span></u><span lang=EN-US>Performing a base search against the object path
+defined in Base.</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt'><a name="_Toc433362307"><span
+class=Heading6Char><span lang=EN-US>OneLevel</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Performing an one level search against the object
+path defined in Base.<u><o:p></o:p></u></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt'><a name="_Toc433362308"><span
+class=Heading6Char><span lang=EN-US>SubTree</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Performing an subtree search against the object
+path defined in Base.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h5><a name="_Toc433362309"><span lang=EN-US>Return</span></a></h5>
+
+<p class=MsoNormal style='margin-left:72.0pt'><a name="_Toc433362310"><span
+class=Heading6Char><span lang=EN-US>Results</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Select to display the query results in the results
+pane.</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt'><a name="_Toc433362311"><span
+class=Heading6Char><span lang=EN-US>Statistics</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Select to retreive query statistics for your query
+from the DC. To be able to retreive the information from a DC you need to have
+the DebugPrivilege assigned to the calling user on the DC.</span></p>
+
+<p class=MsoNormal style='margin-left:108.0pt;text-indent:36.0pt'><span
+lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_20" o:spid="_x0000_i1042"
+ type="#_x0000_t75" style='width:324.6pt;height:155.4pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image010.png" o:title=""/>
+</v:shape></span></p>
+
+<h6><a name="_Toc433362312"><span lang=EN-US>operational rootDSE attributes</span></a></h6>
+
+<p class=MsoNormal style='margin-left:72.0pt'><span lang=EN-US>If selected you
+get back the operational attributes when sending an UDP ping (rootDSE call).
+You may customize the operational attributes to be returned by editing the the
+RootDSE.xml in the folder .\Cache\Settings. To add a new attribute to the
+operational attribuites list just insert a new line like &lt;string&gt;<i
+style='mso-bidi-font-style:normal'>newAttribute</i>&lt;/string&gt; to the &lt;OperationalAttributes&gt;
+node.<br>
+<span style='mso-spacerun:yes'>                                </span><u><o:p></o:p></u></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362313"><span
+class=Heading5Char><span lang=EN-US>Autoswitch to PagedQuery</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>When selected - if the result count exceeds the
+MaxPageSize value defined in lDAPAdminLimits we do not only return the results
+up to MaxPageSize - we will resend the query as a paged query and get all
+results returned.<u><o:p></o:p></u></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362314"><span
+class=Heading5Char><span lang=EN-US>Value Range Retreival</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>If you ask for a multivalued attribute to be
+returned and the value count exceeds MaxValRange value defined in
+lDAPAdminlimits we return the values up to MaxValRange. If selected we do a
+value range retreival and get back all values.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362315"><span
+class=Heading5Char><span lang=EN-US>Attribute Scoped Query</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Attribue scoped queries (ASQ) can be send against
+any linked attribute pair member, like for example:</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:72.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l1 level1 lfo1'><![if !supportLists]><span
+lang=EN-US style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US>member / memberOf</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:72.0pt;mso-add-space:auto;
+text-indent:-18.0pt;mso-list:l1 level1 lfo1'><![if !supportLists]><span
+lang=EN-US style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><v:shape id="Picture_x0020_30" o:spid="_x0000_s1026"
+ type="#_x0000_t75" style='position:absolute;left:0;text-align:left;
+ margin-left:388.65pt;margin-top:.7pt;width:101.25pt;height:108.75pt;z-index:251659264;
+ visibility:visible;mso-wrap-style:square;mso-width-percent:0;
+ mso-height-percent:0;mso-wrap-distance-left:9pt;mso-wrap-distance-top:0;
+ mso-wrap-distance-right:9pt;mso-wrap-distance-bottom:0;
+ mso-position-horizontal:absolute;mso-position-horizontal-relative:text;
+ mso-position-vertical:absolute;mso-position-vertical-relative:text;
+ mso-width-percent:0;mso-height-percent:0;mso-width-relative:page;
+ mso-height-relative:page'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image001.png" o:title=""
+  croptop="18231f" cropbottom="26653f" cropleft="51546f" cropright="634f"/>
+ <w:wrap type="square"/>
+</v:shape><span lang=EN-US>manager / directReports</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US>An ASQ must be
+send against the path of an object that holds this attribute as a base search.<span
+style='mso-no-proof:yes'> </span>In the Attributes field we need the attribute
+we want to do the ASQ against as only entry in the list. The attributes in the
+field below define the attributes you want to get returned from the objects who
+are actually stored via their distinguishedName (DN) in the queried attribute.<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362316"><span
+class=Heading5Char><span lang=EN-US>Show deleted</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>If selected we also return deleted objects in the
+query results. Additionally you will find deleted objects in the browser GUI
+for base field as well.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362317"><span
+class=Heading5Char><span lang=EN-US>Show recycled</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>If selected we also return recycled objects in the
+query results. Additionally you will find recycled objects in the browser GUI
+for base field as well.<u><o:p></o:p></u></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362318"><span
+class=Heading5Char><span lang=EN-US>Sort results ascending</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Returned result set is sorted ascending (in code,
+not on DC) by distinguishedName</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362319"><span
+class=Heading5Char><span lang=EN-US>Sort results descending</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Returned result set is sorted descending (in code,
+not on DC) by distinguishedName<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h4><a name="_Toc433362320"><span lang=EN-US>Filter</span></a></h4>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362321"><span
+class=Heading5Char><span lang=EN-US>Filter Wizard</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Call the FilterWizards wich helps you to create
+LDAP filters.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362322"><span
+class=Heading5Char><span lang=EN-US>Clear Filter History</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Clear the remembered filters in the filter history.<u><br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></u></span></p>
+
+<h4><a name="_Toc433362323"><span lang=EN-US>Attributes</span></a></h4>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362324"><span
+class=Heading5Char><span lang=EN-US>Load Attribute List from Schema</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Show a list of all available attributes from the
+schema (including custom attributes).</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362325"><span
+class=Heading5Char><span lang=EN-US>Hide Attribute List</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Hide the<u> </u>list of all available attributes
+from the schema.<u><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></u></span></p>
+
+<h4><a name="_Toc433362326"><span lang=EN-US>Decode</span></a></h4>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362327"><span
+class=Heading5Char><span lang=EN-US>GUIDs</span></span></a><u><span lang=EN-US><br>
+</span></u><span lang=EN-US>Decode GUID attributes from byte arrays to
+String-GUIDs</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362328"><span
+class=Heading5Char><span lang=EN-US>SIDs</span></span></a><u><span lang=EN-US><br>
+</span></u><span lang=EN-US>Decode<u> </u>SID<u> </u>attributes from byte
+arrays to String-SIDs<u><o:p></o:p></u></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362329"><span
+class=Heading5Char><span lang=EN-US>userParameters</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Decode RAS- and TerminalServices-Settings from
+userParameters attribute.<u><o:p></o:p></u></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362330"><span
+class=Heading5Char><span lang=EN-US>Resolve Sids</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Reolve SIDs to names.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362331"><span
+class=Heading5Char><span lang=EN-US>SecurityDescriptors</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Display decoded SecurityDescriptor (SD) instead of
+displaying SDDL-String of SD. If Resolve Sids is seletced, the trustees in the
+ACLs are resolved to names.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362332"><span
+class=Heading5Char><span lang=EN-US>OctetStrings</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Not implemented yet.<u><o:p></o:p></u></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362333"><span
+class=Heading5Char><span lang=EN-US>ReplicaLinks</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Not implemented yet.<u><o:p></o:p></u></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362334"><span
+class=Heading5Char><span lang=EN-US>memberOf includes primaryGroupID</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Every SecurityPrincipal which is not a group in AD
+has a group RID (Relative identifier – last sequenze of the SID) set in
+primaryGroupID. <br>
+This group is added to the memberOf list when logging on with a
+SecurityPrincipal. <br>
+When selected the primaryGroupID is translated to the name of the group and
+added to the memberOf list displayed.<u><o:p></o:p></u></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362335"><span
+class=Heading5Char><span lang=EN-US>To local time</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Not implemented yet.<br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><u><o:p></o:p></u></span></p>
+
+<h4><a name="_Toc433362336"><span lang=EN-US>Results</span></a></h4>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362337"><span
+class=Heading5Char><span lang=EN-US>Copy selected</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Copy selected result pane content into clipboard.<u><o:p></o:p></u></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362338"><span
+class=Heading5Char><span lang=EN-US>Copy all</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Copy result pane content into clipboard.<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><u><o:p></o:p></u></span></p>
+
+<h5><a name="_Toc433362339"><span lang=EN-US>Remembered results</span></a></h5>
+
+<p class=MsoNormal style='margin-left:72.0pt'><a name="_Toc433362340"><span
+class=Heading6Char><span lang=EN-US>Show first</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Jump to the first result in the remembered results
+cache.</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt'><a name="_Toc433362341"><span
+class=Heading6Char><span lang=EN-US>Show previous</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Move to the previous result in the remembered
+results cache.<u><o:p></o:p></u></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt'><a name="_Toc433362342"><span
+class=Heading6Char><span lang=EN-US>Show next</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Move to the next result in the remembered results
+cache.<u><o:p></o:p></u></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt'><a name="_Toc433362343"><span
+class=Heading6Char><span lang=EN-US>Show current</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Move to the last result in the remembered results
+cache.<u><o:p></o:p></u></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt'><a name="_Toc433362344"><span
+class=Heading6Char><span lang=EN-US>Clear list</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>Clear results cache list.<br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><u><o:p></o:p></u></span></p>
+
+<h5><a name="_Toc433362345"><span class=Heading5Char><span lang=EN-US>Clear </span></span><span
+lang=EN-US>Output<br>
+</span></a><span style='mso-bookmark:_Toc433362345'><span lang=EN-US
+style='text-decoration:none;text-underline:none'>Clear current result pane.</span></span></h5>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362346"><span
+class=Heading5Char><span lang=EN-US>Change Font</span></span></a><span
+lang=EN-US><br>
+Change display font in result pane.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h4><a name="_Toc433362347"><span lang=EN-US>Tools</span></a></h4>
+
+<p class=MsoNormal style='margin-left:36.0pt'><a name="_Toc433362348"><span
+class=Heading5Char><span lang=EN-US>DynamicTypeBuilder</span></span></a><u><span
+lang=EN-US><br>
+</span></u><span lang=EN-US>The tool has no hardcoded translations for
+attribute syntax. We collect information from the Schema and cache this in a
+XML. Every time the modifiedTimeStamp of the Schema in a forest is updated we
+refresh the Schema cache.<br>
+Since many attributes are enums, OID strings or blobs we implemented a way to
+dynamically decode those attributes. See detailed description of
+DynamicTypeBuilder.</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<span lang=EN-US style='font-size:11.0pt;line-height:107%;font-family:"Calibri",sans-serif;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
+minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";
+mso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA'><br clear=all style='mso-special-character:line-break;
+page-break-before:always'>
+</span>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><u><span lang=EN-US><o:p><span
+ style='text-decoration:none'>&nbsp;</span></o:p></span></u></b></p>
+
+<h2><a name="_Toc433362349"><u><span lang=EN-US>FilterWizard</span></u></a><u><span
+lang=EN-US><o:p></o:p></span></u></h2>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_23"
+ o:spid="_x0000_i1041" type="#_x0000_t75" style='width:319.2pt;height:211.8pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image017.png" o:title=""/>
+</v:shape></span><b style='mso-bidi-font-weight:normal'><u><span lang=EN-US><o:p></o:p></span></u></b></p>
+
+<h3><span lang=EN-US>Fields</span></h3>
+
+<h4><span lang=EN-US>Filter</span></h4>
+
+<p class=MsoNormal><span lang=EN-US>Auto-filled textbox showing the currently
+configured filter. Trailing goup closing bracktes from auto generated groups
+are closed automatically when applying filter to main window.<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h4><span lang=EN-US>ObjectClasses</span></h4>
+
+<p class=MsoNormal><span lang=EN-US>A list of all available classSchema objects
+in the current forest’s schema. Read from schedma cache xml.<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h4><span lang=EN-US>Attributes</span></h4>
+
+<p class=MsoNormal><span lang=EN-US>A list of attributes assigned to the
+selected classSchema object and it’s sub classes.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>If the selected attribute is defined as
+part of a linked attribute pair the -&gt;&gt; <span
+style='mso-spacerun:yes'> </span>control (Match In Chain) will be enabled. <br>
+Synatx of &lt;Value&gt; has to be a distinguishedName.<br>
+This adds the :1.2.840.113556.1.4.1941: operator to the filter for this
+attribute.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_25"
+ o:spid="_x0000_i1040" type="#_x0000_t75" style='width:169.2pt;height:108pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image018.png" o:title=""
+  croptop="30607f" cropbottom="1581f" cropleft="29851f" cropright="1018f"/>
+</v:shape><span style='mso-spacerun:yes'> </span><br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_27"
+ o:spid="_x0000_i1039" type="#_x0000_t75" style='width:307.2pt;height:50.4pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image018.png" o:title=""
+  croptop="9492f" cropbottom="40431f" cropleft="1410f" cropright="892f"/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><br>
+If the selected attribute is defined as attribute syntax integer or enumeration
+the controls</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
+lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri'><span
+style='mso-list:Ignore'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US>BitWise AND &amp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
+lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri'><span
+style='mso-list:Ignore'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US>BitWise OR |</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
+lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri'><span
+style='mso-list:Ignore'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US>Not BitWise AND !&amp;</span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
+lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri'><span
+style='mso-list:Ignore'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US>Not BitWise OR !|</span></p>
+
+<p class=MsoNormal><span lang=EN-US>will be enabled.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>By clicking one of these buttons a list of
+the exisiting enum values will be displayed (if enum is defined in the
+DynamicTypeBuilder). Multi-select in the list is alowed.<br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_28"
+ o:spid="_x0000_i1038" type="#_x0000_t75" style='width:167.4pt;height:108.6pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image019.png" o:title=""
+  croptop="30352f" cropbottom="1457f" cropleft="29767f" cropright="1269f"/>
+</v:shape></span><span lang=EN-US><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_31"
+ o:spid="_x0000_i1037" type="#_x0000_t75" style='width:166.8pt;height:107.4pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image020.png" o:title=""
+  croptop="30478f" cropbottom="1824f" cropleft="30016f" cropright="1102f"/>
+</v:shape></span><span lang=EN-US><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_32"
+ o:spid="_x0000_i1036" type="#_x0000_t75" style='width:310.2pt;height:49.2pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image021.png" o:title=""
+  croptop="9617f" cropbottom="40801f" cropleft="995f" cropright="930f"/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US>Otherwise you may just type the numeric
+value in the Value field.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>This adds the operator :1.2.840.113556.1.4.803
+for bitwise AND and :1.2.840.113556.1.4.804: for bitwise OR.<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h4><span lang=EN-US>Value</span></h4>
+
+<p class=MsoNormal><span lang=EN-US>The value defining the filter for the
+currently selected attribute.</span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><u><span lang=EN-US><o:p><span
+ style='text-decoration:none'>&nbsp;</span></o:p></span></u></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><u><span lang=EN-US><o:p><span
+ style='text-decoration:none'>&nbsp;</span></o:p></span></u></b></p>
+
+<b style='mso-bidi-font-weight:normal'><u><span lang=EN-US style='font-size:
+11.0pt;line-height:107%;font-family:"Calibri",sans-serif;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";
+mso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA'><br clear=all style='mso-special-character:line-break;
+page-break-before:always'>
+</span></u></b>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><u><span lang=EN-US><o:p><span
+ style='text-decoration:none'>&nbsp;</span></o:p></span></u></b></p>
+
+<h3><span lang=EN-US>Controls</span></h3>
+
+<h4><span lang=EN-US>Open AND group<span style='mso-spacerun:yes'> 
+</span>(&amp; </span></h4>
+
+<p class=MsoNormal><span lang=EN-US>Opens a new AND group to combine filters
+where all filter clauses grouped here must match for a hit.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>If you do not open any group before
+selecting filter clauses we automatically open an AND group if more than one
+filter clause is selected.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h4><span lang=EN-US>Open OR group<span style='mso-spacerun:yes'>  </span>(| </span></h4>
+
+<p class=MsoNormal><span lang=EN-US>Opens a new Or group to combine filter
+clauses where only one or more of the filter clauses grouped here must match
+for a hit.</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h4><span lang=EN-US>Close current group<span style='mso-spacerun:yes'> 
+</span>) </span></h4>
+
+<p class=MsoNormal><span lang=EN-US>If you opened a group manually you can
+close it here.<br>
+All automatically opened groups are closed automatically when applying the
+filter to the main window.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h4><span lang=EN-US>Close all groups<span style='mso-spacerun:yes'>  </span>))
+</span></h4>
+
+<p class=MsoNormal><span lang=EN-US>If you opened groups manually you can close
+them here automatically.<br>
+All automatically opened groups are closed automatically when applying the
+filter to the main window.</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h4><span lang=EN-US>UnDo</span></h4>
+
+<p class=MsoNormal><span lang=EN-US>Remove the last selected filter clause.<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h4><span lang=EN-US>Clear</span></h4>
+
+<p class=MsoNormal><span lang=EN-US>Remove all selected filter clauses and
+groups.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h4><span lang=EN-US>Apply</span></h4>
+
+<p class=MsoNormal><span lang=EN-US>Apply the constructed filter to the main
+window.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h4><span lang=EN-US>ObjectClasses</span></h4>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=Heading5Char><span
+lang=EN-US>Equals =</span></span><span lang=EN-US><br>
+Adds a filter clause (objectClass=<i style='mso-bidi-font-style:normal'>selected
+schemaClass</i>).<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=Heading5Char><span
+lang=EN-US>Not Equals !=</span></span><span lang=EN-US><br>
+Adds a filter clause<span style='mso-spacerun:yes'>  </span>(!<span
+style='mso-spacerun:yes'>  </span>(objectClass=<i style='mso-bidi-font-style:
+normal'>selected schemaClass</i>) ).</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h4><span lang=EN-US>Attributes</span></h4>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=Heading5Char><span
+lang=EN-US>Equals =</span></span><span lang=EN-US><br>
+Adds a filter clause (<i style='mso-bidi-font-style:normal'>selected attribute</i>=<i
+style='mso-bidi-font-style:normal'>Value</i>).<br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=Heading5Char><span
+lang=EN-US>Not Equals !=</span></span><span lang=EN-US><br>
+Adds a filter clause ( ! (<i style='mso-bidi-font-style:normal'>selected
+attribute</i>=<i style='mso-bidi-font-style:normal'>Value</i>) ).<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=Heading5Char><span
+lang=EN-US>Less or Equals &lt;=</span></span><span lang=EN-US><br>
+Adds a filter clause (<i style='mso-bidi-font-style:normal'>selected attribute</i>&lt;=<i
+style='mso-bidi-font-style:normal'>Value</i>) .<br>
+Note – we do not offer ‘Not Less or Equals’ -&gt; this is no recommended filter
+clause – use ‘Greater or Equals’ instead.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=Heading5Char><span
+lang=EN-US>Greater or Equals &gt;=</span></span><span lang=EN-US><br>
+Adds a filter clause (<i style='mso-bidi-font-style:normal'>selected attribute</i>&gt;=<i
+style='mso-bidi-font-style:normal'>Value</i>).<br>
+Note – we do not offer ‘Not Greater or Equals’ -&gt; this is no recommended
+filter clause – use ‘Less or Equals’ instead.<br>
+<br>
+<br>
+<span class=Heading5Char>Bitwise AND &amp;</span><br>
+Adds a filter clause (<i style='mso-bidi-font-style:normal'>selected attribute</i>:1.2.840.113556.1.4.803:=<i
+style='mso-bidi-font-style:normal'>Value</i>).<br>
+When this matching rule is used as a clause in a query filter, the clause is
+satisfied only if all the bits set to '1' in the value included in the clause
+correspond to bits set to '1' in the value stored in the directory.<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=Heading5Char><span
+lang=EN-US>Bitwise OR |</span></span><span lang=EN-US><br>
+Adds a filter clause (<i style='mso-bidi-font-style:normal'>selected attribute</i>:1.2.840.113556.1.4.804:=<i
+style='mso-bidi-font-style:normal'>Value</i>).<br>
+When this matching rule is used as a clause in a query filter, the clause is
+satisfied only if at least one of the bits set to '1' in the value included in
+the clause corresponds to a bit set to '1' in the value stored in the
+directory.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=Heading5Char><span
+lang=EN-US>Not Bitwise AND !&amp;</span></span><span lang=EN-US><br>
+Adds a filter clause ( ! (<i style='mso-bidi-font-style:normal'>selected
+attribute</i>:1.2.840.113556.1.4.803:=<i style='mso-bidi-font-style:normal'>Value</i>)
+).<br>
+When this matching rule is used as a clause in a query filter, the clause is
+satisfied only if none the bits set to '1' in the value included in the clause
+correspond to bits set to '1' in the value stored in the directory. <br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=Heading5Char><span
+lang=EN-US>Not Bitwise Or !|</span></span><span lang=EN-US><br>
+Adds a filter clause ( !<span style='mso-spacerun:yes'>  </span>(<i
+style='mso-bidi-font-style:normal'>selected attribute</i>:1.2.840.113556.1.4.804:=<i
+style='mso-bidi-font-style:normal'>Value</i>) ).<br>
+When this matching rule is used as a clause in a query filter, the clause is
+satisfied only if at none of the bits set to '1' in the value included in the
+clause corresponds to a bit set to '1' in the value stored in the directory.<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=Heading5Char><span
+lang=EN-US>Match in Chain -&gt;&gt;</span></span><span lang=EN-US><br>
+Adds a filter clause<span style='mso-spacerun:yes'>  </span>(<i
+style='mso-bidi-font-style:normal'>selected attribute</i>:1.2.840.113556.1.4.1941:
+=<i style='mso-bidi-font-style:normal'>distinguishedName in</i> <i
+style='mso-bidi-font-style:normal'>Value field</i>).<br>
+Allows you to retrieve for example:</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:72.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l0 level2 lfo2'><![if !supportLists]><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US>all direct and nested group
+memberships of a user</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l0 level2 lfo2'><![if !supportLists]><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US>all direct and nested members
+of a group</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l0 level2 lfo2'><![if !supportLists]><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US>following the directReports or
+manager chain</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:72.0pt;mso-add-space:auto;
+text-indent:-18.0pt;mso-list:l0 level2 lfo2'><![if !supportLists]><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US>…</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US>This is a very
+expensive call since we must walk the link table of the Active Directory
+database to find all objects in the link chain.<br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=Heading5Char><span
+lang=EN-US>isGuid</span></span><span lang=EN-US><br>
+If the selected attribute is of attribute syntax GUID you can type a string
+Guid (like bf967a8f-0de6-11d0-a285-00aa003049e2. The GUID will be translated to
+the hex expression of the GUID to build the proper syntax.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US>If as GUID
+attribute is not marked with GUID syntax, you may check isGuid checkbox to get
+the expected result.</span></p>
+
+<p class=MsoNormal style='text-indent:36.0pt'><span lang=EN-US
+style='mso-no-proof:yes'><v:shape id="Picture_x0020_33" o:spid="_x0000_i1035"
+ type="#_x0000_t75" style='width:166.8pt;height:106.8pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image022.png" o:title=""
+  croptop="30605f" cropbottom="1824f" cropleft="30017f" cropright="1020f"/>
+</v:shape></span></p>
+
+<p class=MsoNormal style='text-indent:36.0pt'><span lang=EN-US
+style='mso-no-proof:yes'><v:shape id="Picture_x0020_34" o:spid="_x0000_i1034"
+ type="#_x0000_t75" style='width:309pt;height:52.2pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image022.png" o:title=""
+  croptop="9117f" cropbottom="40305f" cropleft="995f" cropright="771f"/>
+</v:shape></span><span lang=EN-US><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<span lang=EN-US style='font-size:11.0pt;line-height:107%;font-family:"Calibri",sans-serif;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
+minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";
+mso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA'><br clear=all style='mso-special-character:line-break;
+page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><a name="_Toc433362350"><u><span lang=EN-US>DynamicTypeBuilder</span></u></a><u><span
+lang=EN-US><o:p></o:p></span></u></h2>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_14"
+ o:spid="_x0000_i1033" type="#_x0000_t75" style='width:370.2pt;height:247.8pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image023.png" o:title=""/>
+</v:shape><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_35"
+ o:spid="_x0000_i1032" type="#_x0000_t75" style='width:153.6pt;height:107.4pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image024.png" o:title=""
+  croptop="24794f" cropbottom="28034f" cropleft="13034f" cropright="41128f"/>
+</v:shape><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_24"
+ o:spid="_x0000_i1031" type="#_x0000_t75" style='width:206.4pt;height:107.4pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image025.png" o:title=""
+  croptop="24790f" cropbottom="27975f" cropleft="24296f" cropright="25876f"/>
+</v:shape><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_22"
+ o:spid="_x0000_i1030" type="#_x0000_t75" style='width:370.2pt;height:247.8pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image026.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_36"
+ o:spid="_x0000_i1029" type="#_x0000_t75" style='width:151.2pt;height:105pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image027.png" o:title=""
+  croptop="24789f" cropbottom="28205f" cropleft="13181f" cropright="41121f"/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_37"
+ o:spid="_x0000_i1028" type="#_x0000_t75" style='width:205.2pt;height:107.4pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image028.png" o:title=""
+  croptop="24818f" cropbottom="28011f" cropleft="24376f" cropright="25942f"/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_16"
+ o:spid="_x0000_i1027" type="#_x0000_t75" style='width:370.2pt;height:247.8pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image029.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_38"
+ o:spid="_x0000_i1026" type="#_x0000_t75" style='width:154.8pt;height:106.2pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image030.png" o:title=""
+  croptop="24868f" cropbottom="28023f" cropleft="13029f" cropright="41042f"/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="Picture_x0020_39"
+ o:spid="_x0000_i1025" type="#_x0000_t75" style='width:206.4pt;height:123.6pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="LDAPQueryAnalyzer%20Manual_files/image031.png" o:title=""
+  croptop="24668f" cropbottom="26137f" cropleft="24323f" cropright="25883f"/>
+</v:shape></span><span lang=EN-US><br clear=all style='mso-special-character:
+line-break;page-break-before:always'>
+</span></p>
+
+<h2><a name="_Toc433362351"><u><span lang=EN-US>Disclaimer</span></u></a><u><span
+lang=EN-US><o:p></o:p></span></u></h2>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;background:white;mso-highlight:white'>//
+=========================================================================</span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:black;background:white;mso-highlight:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;background:white;mso-highlight:white'>// THIS CODE-SAMPLE IS
+PROVIDED &quot;AS IS&quot; WITHOUT WARRANTY OF ANY KIND, EITHER </span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:black;background:white;mso-highlight:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;background:white;mso-highlight:white'>// EXPRESSED OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES </span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;background:white;mso-highlight:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;background:white;mso-highlight:white'>// OF MERCHANTABILITY AND/OR
+FITNESS FOR A PARTICULAR PURPOSE.</span><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:black;background:white;
+mso-highlight:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;background:white;mso-highlight:white'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;background:white;mso-highlight:white'>// This sample is not
+supported under any Microsoft standard support program </span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;background:white;mso-highlight:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;background:white;mso-highlight:white'>// or service. The code
+sample is provided AS IS without warranty of any kind. </span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;background:white;mso-highlight:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;background:white;mso-highlight:white'>// Microsoft further
+disclaims all implied warranties including, without </span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;background:white;mso-highlight:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;background:white;mso-highlight:white'>// limitation, any implied
+warranties of merchantability or of fitness for a </span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;background:white;mso-highlight:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;background:white;mso-highlight:white'>// particular purpose. The
+entire risk arising out of the use or performance</span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;background:white;mso-highlight:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;background:white;mso-highlight:white'>// of the sample and
+documentation remains with you. In no event shall </span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;background:white;mso-highlight:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;background:white;mso-highlight:white'>// Microsoft, its authors, or
+anyone else involved in the creation, </span><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:black;
+background:white;mso-highlight:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;background:white;mso-highlight:white'>// production, or delivery of
+the script be liable for any damages whatsoever </span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;background:white;mso-highlight:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;background:white;mso-highlight:white'>// (including, without
+limitation, damages for loss of business profits, </span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;background:white;mso-highlight:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;background:white;mso-highlight:white'>// business interruption,
+loss of business information, or other pecuniary </span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;background:white;mso-highlight:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;background:white;mso-highlight:white'>// loss) arising out of<span
+style='mso-spacerun:yes'>  </span>the use of or inability to use the sample or </span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:black;background:white;mso-highlight:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;background:white;mso-highlight:white'>// documentation, even if
+Microsoft has been advised of the possibility of </span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;background:white;mso-highlight:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;background:white;mso-highlight:white'>// such damages.</span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:black;background:white;mso-highlight:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;background:white;mso-highlight:white'>//=========================================================================
+</span><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:black;background:white;mso-highlight:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>
