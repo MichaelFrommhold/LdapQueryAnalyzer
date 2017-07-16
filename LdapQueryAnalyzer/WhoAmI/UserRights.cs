@@ -74,7 +74,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             LSA_UNICODE_STRING systemname = (target == null) ? default(LSA_UNICODE_STRING) : NativeHelper.InitLSAString(target);
 
             uint rc = Advapi32.LsaOpenPolicy(systemname, ref lsainfo, LSA_POLICY_ACCESS.POLICY_ALL_ACCESS, out temphandle);
-            
+
             this.Success = (rc == 0);
 
             if (this.Success)
@@ -90,7 +90,12 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             }
 
             else
-            { Messages.Add("\tLsaOpenPolicy: " + NativeHelper.GetLastError()); }
+            {
+                string errmsg = null;
+
+                if (NativeHelper.GetLastError(out errmsg) != 0)
+                { Messages.Add("\tLsaOpenPolicy: " + errmsg); }
+            }
         }
 
         protected void GetPrivilegeAndPrincipals(string privName)
@@ -103,9 +108,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
             uint rc = Advapi32.LsaEnumerateAccountsWithUserRight(PolicyHandle, lsapriv, out enumbuffer, out cnt);
 
-            this.Success = (rc == 0);
-
-            if (this.Success)
+            if (rc == 0)
             {
                 PrivilegeAndPrincipals privinfo = new PrivilegeAndPrincipals(privName);
 
@@ -130,7 +133,12 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             }
 
             else
-            { Messages.Add("\tLsaEnumerateAccountsWithUserRight: " + NativeHelper.GetLastError()); }
+            {
+                string errmsg = null;
+
+                if (NativeHelper.GetLastError(out errmsg) != 0)
+                { Messages.Add("\tLsaEnumerateAccountsWithUserRight: " + errmsg); }
+            }
         }
 
         public void Dispose()
