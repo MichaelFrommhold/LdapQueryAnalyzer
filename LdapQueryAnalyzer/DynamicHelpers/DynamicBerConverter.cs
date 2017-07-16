@@ -18,12 +18,10 @@
 // such damages.
 //========================================================================= 
 
-
 using System;
 using System.Collections.Generic;
-using System.Linq;
-
 using System.DirectoryServices.Protocols;
+using System.Linq;
 
 namespace CodingFromTheField.LdapQueryAnalyzer
 {
@@ -166,7 +164,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             if (fields.Count != 0)
             {
                 foreach (DynamicBerConverterField field in fields)
-                { ret.Add(String.Format("\t\t{0}: {1}", field.Name, field.Value.ToString())); }
+                { ret.AddFormatted("\t\t{0}: {1}", field.Name, field.Value.ToString()); }
             }
 
             return ret;
@@ -211,28 +209,6 @@ namespace CodingFromTheField.LdapQueryAnalyzer
                     break;
             }
         }
-
-        #endregion
-    }
-    
-    public class DynamicBerConverterField
-    {
-        #region fields
-
-        public string Name;
-
-        public object Value;
-
-        public Type FieldType;
-        
-        public string Printable { get { return String.Format("{0}: {1}{2}", Name, Value.ToString(), Environment.NewLine); } }
-
-        #endregion
-
-        #region methhods
-
-        public override string ToString()
-        { return String.Format("{0}: {1}", Name, Value.ToString()); }
 
         #endregion
     }

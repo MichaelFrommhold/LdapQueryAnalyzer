@@ -746,35 +746,5 @@ namespace CodingFromTheField.LdapQueryAnalyzer
         
         #endregion             
     }
-    
-    public class FilterBlock
-    {
-        public string Filter;
-        public FILTER_GROUPS Id = FILTER_GROUPS.NONE;
-
-        public int CounterHandle 
-        { 
-            get 
-            {
-                switch (Id)
-                {
-                    case FILTER_GROUPS.OPEN:
-                        return -1;
-
-                    case FILTER_GROUPS.CLOSE:
-                        return 1; 
-
-                    default:
-                        return 0; 
-                }
-            } 
-        }
-
-        internal FilterBlock(string filter, FILTER_GROUPS id)
-        {
-            Filter = filter;
-            Id = id;
-        }
-    }
 }
 

@@ -32,12 +32,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("EntryPoint");
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Filter");
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Attributes");
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("Scope");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI));
-            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem("EntryPoint");
-            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem("Filter");
-            System.Windows.Forms.ListViewItem listViewItem28 = new System.Windows.Forms.ListViewItem("Attributes");
-            System.Windows.Forms.ListViewItem listViewItem29 = new System.Windows.Forms.ListViewItem("Scope");
             this.gbCon = new System.Windows.Forms.GroupBox();
             this.cmdDC = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -171,6 +171,7 @@
             this.Debug_Clear_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbResult = new System.Windows.Forms.GroupBox();
             this.gbFind = new System.Windows.Forms.GroupBox();
+            this.cmdCloseFind = new System.Windows.Forms.Button();
             this.cmdFind = new System.Windows.Forms.Button();
             this.txtFind = new System.Windows.Forms.TextBox();
             this.gbResStore = new System.Windows.Forms.GroupBox();
@@ -216,6 +217,8 @@
             this.FileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.File_Close_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UserMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.User_Whoami_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator34 = new System.Windows.Forms.ToolStripSeparator();
             this.User_Elevate_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.User_Elevate_2nd_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
@@ -316,7 +319,8 @@
             this.lvCurRun = new System.Windows.Forms.ListView();
             this.colName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colValues = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cmdCloseFind = new System.Windows.Forms.Button();
+            this.ilDirSync = new System.Windows.Forms.ImageList(this.components);
+            this.tvSync = new System.Windows.Forms.TreeView();
             this.gbCon.SuspendLayout();
             this.CombosContextMenu.SuspendLayout();
             this.DCComboContextMenu.SuspendLayout();
@@ -420,6 +424,7 @@
             this.label2.Size = new System.Drawing.Size(34, 17);
             this.label2.TabIndex = 13;
             this.label2.Text = "DCs";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -494,26 +499,26 @@
             // DCCombo_Info_ContextItem
             // 
             this.DCCombo_Info_ContextItem.Name = "DCCombo_Info_ContextItem";
-            this.DCCombo_Info_ContextItem.Size = new System.Drawing.Size(179, 26);
+            this.DCCombo_Info_ContextItem.Size = new System.Drawing.Size(181, 26);
             this.DCCombo_Info_ContextItem.Text = "Show DC Info";
             this.DCCombo_Info_ContextItem.Click += new System.EventHandler(this.DCCombo_Info_ContextItem_Click);
             // 
             // toolStripSeparator32
             // 
             this.toolStripSeparator32.Name = "toolStripSeparator32";
-            this.toolStripSeparator32.Size = new System.Drawing.Size(176, 6);
+            this.toolStripSeparator32.Size = new System.Drawing.Size(178, 6);
             // 
             // DCCombo_Copy_ContextItem
             // 
             this.DCCombo_Copy_ContextItem.Name = "DCCombo_Copy_ContextItem";
-            this.DCCombo_Copy_ContextItem.Size = new System.Drawing.Size(179, 26);
+            this.DCCombo_Copy_ContextItem.Size = new System.Drawing.Size(181, 26);
             this.DCCombo_Copy_ContextItem.Text = "Copy Selected";
             this.DCCombo_Copy_ContextItem.Click += new System.EventHandler(this.Combos_Copy_ContextItem_Click);
             // 
             // DCCombo_CopyAll_ContextItem
             // 
             this.DCCombo_CopyAll_ContextItem.Name = "DCCombo_CopyAll_ContextItem";
-            this.DCCombo_CopyAll_ContextItem.Size = new System.Drawing.Size(179, 26);
+            this.DCCombo_CopyAll_ContextItem.Size = new System.Drawing.Size(181, 26);
             this.DCCombo_CopyAll_ContextItem.Text = "Copy All";
             this.DCCombo_CopyAll_ContextItem.Click += new System.EventHandler(this.Combos_CopyAll_ContextItem_Click);
             // 
@@ -837,9 +842,9 @@
             this.lvSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvSort.GridLines = true;
             this.lvSort.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            listViewItem26.StateImageIndex = 0;
+            listViewItem6.StateImageIndex = 0;
             this.lvSort.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem26});
+            listViewItem6});
             this.lvSort.Location = new System.Drawing.Point(4, 158);
             this.lvSort.Margin = new System.Windows.Forms.Padding(4);
             this.lvSort.Name = "lvSort";
@@ -1367,7 +1372,7 @@
             this.gbReturn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbReturn.Name = "gbReturn";
             this.gbReturn.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbReturn.Size = new System.Drawing.Size(104, 73);
+            this.gbReturn.Size = new System.Drawing.Size(100, 73);
             this.gbReturn.TabIndex = 6;
             this.gbReturn.TabStop = false;
             this.gbReturn.Text = "Return";
@@ -1731,6 +1736,7 @@
             this.gbResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbResult.Controls.Add(this.tvSync);
             this.gbResult.Controls.Add(this.gbFind);
             this.gbResult.Controls.Add(this.gbResStore);
             this.gbResult.Controls.Add(this.txtOutputOld);
@@ -1757,6 +1763,16 @@
             this.gbFind.Text = "Find";
             this.gbFind.Visible = false;
             this.gbFind.VisibleChanged += new System.EventHandler(this.gbFind_VisibleChanged);
+            // 
+            // cmdCloseFind
+            // 
+            this.cmdCloseFind.Location = new System.Drawing.Point(301, 6);
+            this.cmdCloseFind.Name = "cmdCloseFind";
+            this.cmdCloseFind.Size = new System.Drawing.Size(29, 22);
+            this.cmdCloseFind.TabIndex = 2;
+            this.cmdCloseFind.Text = "X";
+            this.cmdCloseFind.UseVisualStyleBackColor = true;
+            this.cmdCloseFind.Click += new System.EventHandler(this.cmdCloseFind_Click);
             // 
             // cmdFind
             // 
@@ -2199,6 +2215,8 @@
             // UserMenu
             // 
             this.UserMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.User_Whoami_MenuItem,
+            this.toolStripSeparator34,
             this.User_Elevate_MenuItem,
             this.User_Elevate_2nd_MenuItem,
             this.toolStripSeparator25,
@@ -2209,6 +2227,18 @@
             this.UserMenu.Name = "UserMenu";
             this.UserMenu.Size = new System.Drawing.Size(50, 24);
             this.UserMenu.Text = "User";
+            // 
+            // User_Whoami_MenuItem
+            // 
+            this.User_Whoami_MenuItem.Name = "User_Whoami_MenuItem";
+            this.User_Whoami_MenuItem.Size = new System.Drawing.Size(285, 26);
+            this.User_Whoami_MenuItem.Text = "WhoAmI";
+            this.User_Whoami_MenuItem.Click += new System.EventHandler(this.User_Whoami_MenuItem_Click);
+            // 
+            // toolStripSeparator34
+            // 
+            this.toolStripSeparator34.Name = "toolStripSeparator34";
+            this.toolStripSeparator34.Size = new System.Drawing.Size(282, 6);
             // 
             // User_Elevate_MenuItem
             // 
@@ -3028,10 +3058,10 @@
             this.lvCurRun.GridLines = true;
             this.lvCurRun.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvCurRun.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem22,
-            listViewItem27,
-            listViewItem28,
-            listViewItem29});
+            listViewItem1,
+            listViewItem7,
+            listViewItem8,
+            listViewItem9});
             this.lvCurRun.Location = new System.Drawing.Point(5, 220);
             this.lvCurRun.Margin = new System.Windows.Forms.Padding(4);
             this.lvCurRun.Name = "lvCurRun";
@@ -3050,15 +3080,26 @@
             this.colValues.Text = "Values";
             this.colValues.Width = 727;
             // 
-            // cmdCloseFind
+            // ilDirSync
             // 
-            this.cmdCloseFind.Location = new System.Drawing.Point(301, 6);
-            this.cmdCloseFind.Name = "cmdCloseFind";
-            this.cmdCloseFind.Size = new System.Drawing.Size(29, 22);
-            this.cmdCloseFind.TabIndex = 2;
-            this.cmdCloseFind.Text = "X";
-            this.cmdCloseFind.UseVisualStyleBackColor = true;
-            this.cmdCloseFind.Click += new System.EventHandler(this.cmdCloseFind_Click);
+            this.ilDirSync.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilDirSync.ImageStream")));
+            this.ilDirSync.TransparentColor = System.Drawing.Color.Transparent;
+            this.ilDirSync.Images.SetKeyName(0, "Forest.ico");
+            this.ilDirSync.Images.SetKeyName(1, "NamingContext.ico");
+            this.ilDirSync.Images.SetKeyName(2, "Filter.ico");
+            this.ilDirSync.Images.SetKeyName(3, "Attributes.ico");
+            this.ilDirSync.Images.SetKeyName(4, "runs.ico");
+            // 
+            // tvSync
+            // 
+            this.tvSync.ImageIndex = 0;
+            this.tvSync.ImageList = this.ilDirSync;
+            this.tvSync.Location = new System.Drawing.Point(3, 92);
+            this.tvSync.Name = "tvSync";
+            this.tvSync.SelectedImageIndex = 0;
+            this.tvSync.Size = new System.Drawing.Size(1223, 173);
+            this.tvSync.TabIndex = 18;
+            this.tvSync.Visible = false;
             // 
             // GUI
             // 
@@ -3408,5 +3449,9 @@
         private System.Windows.Forms.Button cmdFind;
         private System.Windows.Forms.TextBox txtFind;
         private System.Windows.Forms.Button cmdCloseFind;
+        private System.Windows.Forms.ToolStripMenuItem User_Whoami_MenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator34;
+        private System.Windows.Forms.ImageList ilDirSync;
+        private System.Windows.Forms.TreeView tvSync;
     }
 }

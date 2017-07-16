@@ -49,5 +49,4 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             UseSort = false;
         }
     }
-
 }

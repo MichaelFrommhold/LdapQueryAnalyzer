@@ -113,10 +113,12 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -126,24 +128,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ADHelpers\ADBase.cs" />
-    <Compile Include="ADHelpers\ADObjectInfo.cs" />
-    <Compile Include="ADHelpers\DCLocator.cs" />
-    <Compile Include="ADHelpers\DirSyncControl.cs" />
-    <Compile Include="ADHelpers\DomainInfo.cs" />
-    <Compile Include="ADHelpers\NamingContextsInfo.cs" />
-    <Compile Include="ADHelpers\QueryPolicy.cs" />
+    <Compile Include="ControlExtensions\SubItemTag.cs" />
+    <Compile Include="DynamicHelpers\DynamicBerConverterField.cs" />
+    <Compile Include="Enumerations\EventValueTypes.cs" />
+    <Compile Include="Enumerations\EXTENDED_NAME_FORMAT.cs" />
+    <Compile Include="Enumerations\HISTORY_COLUMNS.cs" />
+    <Compile Include="Enumerations\TRIM_CONTROL.cs" />
+    <Compile Include="Eventing\GlobalEventArgs.cs" />
+    <Compile Include="Extensions\CustomDictionary.cs" />
+    <Compile Include="LDAP\FilterBlock.cs" />
+    <Compile Include="ControlExtensions\TagInfo.cs" />
+    <Compile Include="Eventing\EventValue.cs" />
+    <Compile Include="Native\Secur32.cs" />
+    <Compile Include="WhoAmI\GlobalUserStore.cs" />
+    <Compile Include="WhoAmI\GroupInfo.cs" />
+    <Compile Include="WhoAmI\LocalSam.cs" />
+    <Compile Include="Native\Kernel32.cs" />
+    <Compile Include="Native\NativeHelper.cs" />
+    <Compile Include="Schema\AttributeSyntax.cs" />
+    <Compile Include="Schema\ClassSchema.cs" />
+    <Compile Include="Enumerations\AD_ACCESS_MASK.cs" />
+    <Compile Include="Enumerations\ASSOCIATE_FROM.cs" />
+    <Compile Include="LDAP\ADBase.cs" />
+    <Compile Include="LDAP\ADObjectInfo.cs" />
+    <Compile Include="DomainController\DCLocator.cs" />
+    <Compile Include="Domain\DomainInfo.cs" />
+    <Compile Include="DomainController\NamingContextsInfo.cs" />
+    <Compile Include="Domain\QueryPolicy.cs" />
+    <Compile Include="DomainController\DCInfo.cs" />
+    <Compile Include="ControlExtensions\RichTextBoxExtension.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Enumerations\CUSTOM_SCOPE.cs" />
+    <Compile Include="Decoding\DecoderSequence.cs" />
+    <Compile Include="Decoding\BlobDecoder.cs" />
+    <Compile Include="Decoding\ForestTrustInfoDecoder.cs" />
+    <Compile Include="Forest\ForestBase.cs" />
+    <Compile Include="Enumerations\DS_HEURISTICS.cs" />
+    <Compile Include="Enumerations\FIELD_TYPES.cs" />
+    <Compile Include="Enumerations\FILTER_GROUPS.cs" />
     <Compile Include="Forms\AuthGUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\AuthGUI.Designer.cs">
       <DependentUpon>AuthGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DCGUI.cs">
+    <Compile Include="Forms\InfoGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DCGUI.Designer.cs">
-      <DependentUpon>DCGUI.cs</DependentUpon>
+    <Compile Include="Forms\InfoGUI.Designer.cs">
+      <DependentUpon>InfoGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DirSyncGUI.cs">
       <SubType>Form</SubType>
@@ -157,17 +191,25 @@
     <Compile Include="Forms\RestoreDialog.Designer.cs">
       <DependentUpon>RestoreDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="GlobalHelpers\GlobalClasses.cs" />
     <Compile Include="GlobalHelpers\GlobalHelper.cs" />
-    <Compile Include="ADHelpers\NativeCode.cs" />
+    <Compile Include="Native\Structs\DS_REPL_NEIGHBOR.cs" />
     <Compile Include="Helpers\FilterHistoryControl.cs" />
-    <Compile Include="Helpers\FilterInfo.cs" />
-    <Compile Include="Helpers\HexInfo.cs" />
+    <Compile Include="LDAP\FilterInfo.cs" />
+    <Compile Include="LDAP\HexInfo.cs" />
+    <Compile Include="BaseClasses\MainBase.cs" />
+    <Compile Include="Enumerations\MATCH_POSITION.cs" />
+    <Compile Include="Native\Structs\LOCALGROUP_INFO_0.cs" />
+    <Compile Include="Native\Structs\LOCALGROUP_MEMBERS_INFO_1.cs" />
+    <Compile Include="Native\Structs\LSA_ENUMERATION_INFORMATION.cs" />
+    <Compile Include="Native\Structs\LSA_OBJECT_ATTRIBUTES.cs" />
+    <Compile Include="Native\Structs\LUID_AND_ATTRIBUTES.cs" />
+    <Compile Include="Native\Structs\LUID.cs" />
+    <Compile Include="Native\Structs\LSA_UNICODE_STRING.cs" />
     <Compile Include="Helpers\MessageCache.cs" />
-    <Compile Include="Helpers\Ports.cs" />
-    <Compile Include="Helpers\QueryControl.cs" />
-    <Compile Include="Helpers\RangeInfo.cs" />
-    <Compile Include="Helpers\RootDSEAttributes.cs" />
+    <Compile Include="LDAP\Ports.cs" />
+    <Compile Include="LDAP\QueryControl.cs" />
+    <Compile Include="LDAP\RangeInfo.cs" />
+    <Compile Include="LDAP\RootDSEAttributes.cs" />
     <Compile Include="Helpers\SettingsHandler.cs" />
     <Compile Include="Forms\Browser.cs">
       <SubType>Form</SubType>
@@ -187,7 +229,7 @@
     <Compile Include="Forms\AttributeTypeAssociator.Designer.cs">
       <DependentUpon>AttributeTypeAssociator.cs</DependentUpon>
     </Compile>
-    <Compile Include="ADHelpers\ADHelper.cs" />
+    <Compile Include="LDAP\LDAPHelper.cs" />
     <Compile Include="Forms\GUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,24 +244,37 @@
     <Compile Include="DynamicHelpers\DynamicBerConverter.cs" />
     <Compile Include="DynamicHelpers\DynamicEnum.cs" />
     <Compile Include="Helpers\Credentials.cs" />
-    <Compile Include="ADHelpers\Decoding.cs" />
-    <Compile Include="ADHelpers\DomainControllerInfo.cs" />
+    <Compile Include="Decoding\Decoder.cs" />
+    <Compile Include="DomainController\DomainControllerInfo.cs" />
     <Compile Include="DynamicHelpers\DynamicTypeLoader.cs" />
-    <Compile Include="Helpers\Enumerations.cs" />
     <Compile Include="Extensions\ExtensionMethods.cs" />
-    <Compile Include="ADHelpers\ForestInfo.cs" />
-    <Compile Include="GlobalHelpers\GlobalControlHandler.cs" />
-    <Compile Include="GlobalHelpers\GlobalEventHandler.cs" />
+    <Compile Include="Forest\ForestInfo.cs" />
+    <Compile Include="ControlExtensions\GlobalControlHandler.cs" />
+    <Compile Include="Eventing\GlobalEventHandler.cs" />
     <Compile Include="Helpers\ClipBoardWatcher.cs" />
-    <Compile Include="ADHelpers\NativeHelper.cs" />
-    <Compile Include="ADHelpers\QueryStatistics.cs" />
-    <Compile Include="ADHelpers\SchemaInfo.cs" />
-    <Compile Include="ADHelpers\SearchRequestExtender.cs" />
+    <Compile Include="Native\Advapi32.cs" />
+    <Compile Include="Native\DsaSignature.cs" />
+    <Compile Include="Decoding\StatsData.cs" />
+    <Compile Include="Schema\SchemaCache.cs" />
+    <Compile Include="Schema\SchemaLoader.cs" />
+    <Compile Include="Schema\AttributeSchema.cs" />
+    <Compile Include="LDAP\SearchRequestExtender.cs" />
     <Compile Include="ControlExtensions\TextBoxExtension.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Helpers\SortInfo.cs" />
-    <Compile Include="Helpers\SupportedControls.cs" />
+    <Compile Include="LDAP\SortInfo.cs" />
+    <Compile Include="LDAP\SupportedControls.cs" />
+    <Compile Include="Enumerations\LOGON_PROVIDER.cs" />
+    <Compile Include="Enumerations\LSA_POLICY_ACCESS.cs" />
+    <Compile Include="Native\NetApi32.cs" />
+    <Compile Include="Enumerations\PRIVILEGE_ATTRIBUTE_INFORMATION.cs" />
+    <Compile Include="Enumerations\SECURITY_IMPERSONATION_LEVEL.cs" />
+    <Compile Include="Enumerations\SECURITY_LOGON_TYPE.cs" />
+    <Compile Include="Enumerations\SID_ATTRIBUTE_INFORMATION.cs" />
+    <Compile Include="Enumerations\SID_NAME_USE.cs" />
+    <Compile Include="Enumerations\TOKEN_INFORMATION_CLASS.cs" />
+    <Compile Include="Native\WtsApi.cs" />
+    <Compile Include="Enumerations\NC_IDs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\QueryBuilder.cs">
@@ -234,6 +289,26 @@
     <Compile Include="Forms\StatsGUI.Designer.cs">
       <DependentUpon>StatsGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Native\Structs\SID_AND_ATTRIBUTES.cs" />
+    <Compile Include="Native\Structs\TOKEN_GROUPS_AND_PRIILEGES.cs" />
+    <Compile Include="Decoding\ReplUpToDateVector.cs" />
+    <Compile Include="Schema\SchemaBase.cs" />
+    <Compile Include="DirSync\SyncBase.cs" />
+    <Compile Include="DirSync\SyncCollection.cs" />
+    <Compile Include="DirSync\SyncForest.cs" />
+    <Compile Include="DirSync\SyncCookieRun.cs" />
+    <Compile Include="DirSync\SyncRoot.cs" />
+    <Compile Include="DirSync\SyncRun.cs" />
+    <Compile Include="Enumerations\TrustFlagsName.cs" />
+    <Compile Include="Enumerations\TrustFlagsSuffix.cs" />
+    <Compile Include="Enumerations\TrustRecordType.cs" />
+    <Compile Include="Enumerations\QUERY_RESULT_EVENT_TYPE.cs" />
+    <Compile Include="WhoAmI\PrivilegeAndPrincipals.cs" />
+    <Compile Include="WhoAmI\PrivilegeInfo.cs" />
+    <Compile Include="WhoAmI\SidInfo.cs" />
+    <Compile Include="WhoAmI\TokenInformation.cs" />
+    <Compile Include="WhoAmI\UserRights.cs" />
+    <Compile Include="WhoAmI\WhoAmI.cs" />
     <EmbeddedResource Include="Forms\AuthGUI.resx">
       <DependentUpon>AuthGUI.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -250,8 +325,8 @@
       <DependentUpon>AttributeTypeAssociator.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DCGUI.resx">
-      <DependentUpon>DCGUI.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\InfoGUI.resx">
+      <DependentUpon>InfoGUI.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DirSyncGUI.resx">

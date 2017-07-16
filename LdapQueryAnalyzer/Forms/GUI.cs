@@ -21,38 +21,22 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.IO;
 using System.Diagnostics;
 using System.DirectoryServices.ActiveDirectory;
 using System.DirectoryServices.Protocols;
+using System.Drawing;
+using System.IO;
+using System.Linq;
 using System.Security.Principal;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CodingFromTheField.LdapQueryAnalyzer
 {
     public partial class GUI : Form
     {
-        #region enums
-        protected enum HISTORY_COLUMNS
-        {
-            Check,
-            Filter,
-            Attributes,
-            HistoryASQ,
-            HistorySorting,
-            HistoryBase,
-            HistoryDC,
-            HistoryScope,
-            HistoryPort,
-            HistoryAll
-        }
-
-        #endregion
 
         #region fields
 
@@ -82,8 +66,8 @@ namespace CodingFromTheField.LdapQueryAnalyzer
         protected LDAPBrowser LdapTree = null;
         protected string LastBase = null;
 
-        protected DCGUI DCGui = null;
-        protected bool DCGuiLoaded = false;
+        protected InfoGui ShowInfo = null;
+        protected bool ShowInfoLoaded = false;
 
         protected SearchScope QueryScope;
         protected CUSTOM_SCOPE CurrentScope;
@@ -137,6 +121,8 @@ namespace CodingFromTheField.LdapQueryAnalyzer
         public List<string> CurrentMessages = new List<string> { };
         public bool NextBulk = false;
 
+        protected WhoAmI MySelf;
+
         #endregion
 
         #region constructors
@@ -176,7 +162,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
         #region loading
 
-        //[STAThread]
+        [STAThread]
         protected void LoadInternal()
         {
             if (ElevateMe)
@@ -192,24 +178,23 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
         protected void CheckAdmin()
         {
-            using (WindowsIdentity myself = WindowsIdentity.GetCurrent())
-            {
-                CallingUser = myself.Name;                
+            GlobalUserStore.Load();
 
-                if (myself.Groups.Contains(new SecurityIdentifier("S-1-5-32-544")))
-                {
-                    IsElevated = true;
+            this.CallingUser = GlobalUserStore.Name;
 
-                    this.User_Elevate_MenuItem.Enabled = false;
-                }
+            this.IsElevated = GlobalUserStore.IsElevated;
 
-                this.SetText(IsElevated ? String.Format("LDAPQueryAnalyzer ({0} [elevated])", CallingUser) : String.Format("LDAPQueryAnalyzer ({0})", CallingUser));
-            }            
+            this.User_Elevate_MenuItem.Enabled = !this.IsElevated;
+
+            this.SetText(IsElevated ? String.Format("LDAPQueryAnalyzer ({0} [elevated])", CallingUser) : 
+                                      String.Format("LDAPQueryAnalyzer ({0})", CallingUser));         
         }
 
         protected void PreLoad()
         {
             LoadCtrlExtensions();
+
+            MySelf = new WhoAmI();
 
             CheckAdmin();
 
@@ -664,6 +649,17 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
         #endregion
 
+        #region whomai
+
+        protected void CallWhoAmi()
+        {
+            MySelf.Load(this.cmbDCs.Text);
+
+            LogMessage(MySelf.Info, this.txtOutput);
+        }
+
+        #endregion
+
         #region query
 
         protected void ExecQuery(string[] attributes = null)
@@ -771,7 +767,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
             LogDebugString(String.Format("We cancelled -> Query: {0}  show received results: {1}", CancelToken.ToString(), (!CancelResults).ToString()));
 
-            CurrentMessages.Add(String.Format("We cancelled -> Query: {0}  show received results: {1}", CancelToken.ToString(), (!CancelResults).ToString()));
+            CurrentMessages.AddFormatted("We cancelled -> Query: {0}  show received results: {1}", CancelToken.ToString(), (!CancelResults).ToString());
 
             GlobalEventHandler.RaiseSearchCancelled();
 
@@ -980,7 +976,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             List<string> res = new List<string> { };
 
             if (infostore.HasError)
-            { res.Add(String.Format("{1}{0}{1}", infostore.ErrorMSG, Environment.NewLine)); }
+            { res.AddFormatted("{1}{0}{1}", infostore.ErrorMSG, Environment.NewLine); }
 
             if (this.cbResults.Checked)
             {
@@ -1019,7 +1015,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
                     else
                     {
-                        res.Add(String.Format("\t({0}){1}\t\t<no such attribute(s)>{1}", String.Join(", ", infostore.Attributes), Environment.NewLine));
+                        res.AddFormatted("\t({0}){1}\t\t<no such attribute(s)>{1}", String.Join(", ", infostore.Attributes), Environment.NewLine);
                     }
 
                 }
@@ -1992,10 +1988,10 @@ namespace CodingFromTheField.LdapQueryAnalyzer
                 if (QueryInfo.FirstRun)
                 {
                     if (!infoStore.ShowAttributes)
-                    { ret.Add(String.Format("{1} DN: <{0}>", DNHelper(entry), count)); }
+                    { ret.AddFormatted("{1} DN: <{0}>", DNHelper(entry), count); }
 
                     else
-                    { ret.Add(String.Format("{1} {0}DN: <{1}>", Environment.NewLine, DNHelper(entry), count)); }
+                    { ret.AddFormatted("{1} {0}DN: <{1}>", Environment.NewLine, DNHelper(entry), count); }
                      
                 }
 
@@ -2004,7 +2000,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
                     if (entry.Attributes.Values.Count == 0)
                     {
                         if (infoStore.Attributes != null)
-                        { ret.Add(String.Format("\t({0}){1}\t\t<no such attribute(s)>", String.Join(", ", infoStore.Attributes), Environment.NewLine)); }
+                        { ret.AddFormatted("\t({0}){1}\t\t<no such attribute(s)>", String.Join(", ", infoStore.Attributes), Environment.NewLine); }
 
                         else
                         { ret.Add("\t(no attributes returned)"); }
@@ -2049,7 +2045,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
                 {
                     GlobalEventHandler.RaiseErrorOccured(String.Format("{0}{3}  {1} exceeds maxValRange (retreived {2})", entry.DistinguishedName, range.Name, range.CurrentRangeName, Environment.NewLine));
                       
-                    ret.Add(String.Format("\t{0} exceeds maxValRange (retreived {1})", range.Name, range.CurrentRangeName)); 
+                    ret.AddFormatted("\t{0} exceeds maxValRange (retreived {1})", range.Name, range.CurrentRangeName); 
                 }
             }
 
@@ -2064,13 +2060,13 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             {              
                 if (!(entry.Attributes.Contains(attribname)) && !MainBase.UserSettings.IgnoreEmpty)
                 {
-                    ret.Add(String.Format("\t{0}:", attribname));
+                    ret.AddFormatted("\t{0}:", attribname);
                     ret.Add("\t\t<not present>"); 
                 }
 
                 else if (entry.Attributes.Contains(attribname))
                 {
-                    ret.Add(String.Format("\t{0}:", attribname));
+                    ret.AddFormatted("\t{0}:", attribname);
 
                     ret.AddRange(WalkAttribute(entry, attribname, metaData)); 
                 }
@@ -2089,18 +2085,18 @@ namespace CodingFromTheField.LdapQueryAnalyzer
                 {
                     if (!(entry.Attributes.Contains(range.Name)) && !MainBase.UserSettings.IgnoreEmpty)
                     {
-                        ret.Add(String.Format("\t{0}:", range.Name));
+                        ret.AddFormatted("\t{0}:", range.Name);
 
                         ret.Add("\t\t<not present>"); 
                     }
 
                     else if (entry.Attributes.Contains(range.Name))
                     {
-                        ret.Add(String.Format("\t{0}:", range.Name));
+                        ret.AddFormatted("\t{0}:", range.Name);
 
                         GlobalEventHandler.RaiseErrorOccured(String.Format("{0}{2}  Starting ValueRangeRetreival for {1}", entry.DistinguishedName, range.FirstRangeName, Environment.NewLine));
 
-                        ret.Add(String.Format("\t   <({0})>", range.CurrentRangeName));
+                        ret.AddFormatted("\t   <({0})>", range.CurrentRangeName);
 
                         ret.AddRange(WalkAttribute(entry, range.FirstRangeName));
 
@@ -2163,11 +2159,11 @@ namespace CodingFromTheField.LdapQueryAnalyzer
                                     List<string> tempret = WalkAttribute(result[0], name);
 
                                     if (name.ToLowerInvariant() == attributes[0].ToLowerInvariant())
-                                    { ret.Add(String.Format("\t   <({0})>", range.CurrentRangeName)); }
+                                    { ret.AddFormatted("\t   <({0})>", range.CurrentRangeName); }
 
                                     else
                                     {   
-                                        ret.Add(String.Format("\t   <(range={0}-{1})>", range.Low, range.Low + tempret.Count));
+                                        ret.AddFormatted("\t   <(range={0}-{1})>", range.Low, range.Low + tempret.Count);
 
                                         string rinfo = string.Format("{0};range={1}-{2}", range.Name, range.Low, range.Low + tempret.Count);
 
@@ -2236,7 +2232,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
                 { LogDebugString(String.Format("{0} SyntaxCheck in: {1} ms", attribName, ms)); }
 
                 if (isbad)
-                { ret.Add(string.Format("\t\t<UnKnown syntax> {0}", deAttrib.Name)); }
+                { ret.AddFormatted("\t\t<UnKnown syntax> {0}", deAttrib.Name); }
 
                 start = DateTime.Now;
 
@@ -3811,6 +3807,9 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
         protected void User_Runas_Elevate_MenuItem_Click(object sender, EventArgs e)
         { CallUser(true, false); }
+        
+        private void User_Whoami_MenuItem_Click(object sender, EventArgs e)
+        { CallWhoAmi(); }
 
         #endregion
         
@@ -4429,17 +4428,28 @@ namespace CodingFromTheField.LdapQueryAnalyzer
         {
             DomainControllerHelper dc = (DomainControllerHelper)this.cmbDCs.SelectedItem;
 
-            if (DCGuiLoaded)
-            { DCGui.Close(); }
+            LogMessage(dc.Print(), this.txtOutput);
 
-            DCGui = new DCGUI();
+            //if (ShowInfoLoaded)
+            //{ ShowInfo.Close(); }
 
-            DCGui.LoadInfo(dc.Name, dc.Print(), this.Location);
+            //ShowInfo = new InfoGui();
 
-            DCGuiLoaded = true;
+            //ShowInfo.LoadInfo("DC Info: " + dc.Name, dc.Print(), this.Location);
+
+            //ShowInfoLoaded = true;
         }
 
         #endregion
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
 
         #endregion   
     }

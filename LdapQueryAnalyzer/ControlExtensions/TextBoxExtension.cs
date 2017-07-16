@@ -66,45 +66,5 @@ namespace CodingFromTheField.LdapQueryAnalyzer
         }
     }
 
-    public partial class RichTextBoxExtension : RichTextBox
-    {
-        private const Keys Searchkey = (Keys.Control | Keys.F);
-        private const Keys ContinueSearchKey = Keys.F3;
 
-        private const int WM_KEYDOWN = 0x100;
-        private const int WM_SYSKEYDOWN = 0x104;
-
-        public bool SuppressTab = false;
-
-        protected override bool ProcessCmdKey(ref Message keyMessage, Keys keyCode)
-        {
-            bool ret = false;
-
-            bool suppress = false;
-
-            if (keyCode == Searchkey)
-            { GlobalEventHandler.RaiseStartSearch(); }
-
-            else if (keyCode == ContinueSearchKey)
-            { GlobalEventHandler.RaiseContinueSearch(); }
-
-            if ((keyMessage.Msg == WM_KEYDOWN) || (keyMessage.Msg == WM_SYSKEYDOWN))
-            {
-                if (SuppressTab)
-                {
-                    if (keyCode == Keys.Tab)
-                    {
-                        suppress = true; ret = true;
-
-                        keyMessage.WParam = (IntPtr)13;
-                    }
-                }
-            }
-
-            if (!suppress)
-            { ret = base.ProcessCmdKey(ref keyMessage, keyCode); }
-
-            return ret;
-        }
-    }
 }

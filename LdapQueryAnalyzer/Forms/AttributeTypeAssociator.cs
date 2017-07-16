@@ -1636,14 +1636,4 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
         #endregion     
     }
-
-    public class TagInfo
-    {
-        public object Tag;
-
-        public string Name;
-
-        public override string ToString()
-        { return Name; }
-    }
 }

@@ -27,92 +27,13 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security;
 using System.Security.Cryptography;
+using System.Security.Principal;
 using System.Text;
 using System.Windows.Forms;
-using System.Xml;
-using System.Xml.Schema;
 using System.Xml.Serialization;
 
 namespace CodingFromTheField.LdapQueryAnalyzer
 {
-    [Flags]
-    public enum TRIM_CONTROL
-    {
-        Beginning = 1,
-        End
-    }
-
-    [XmlRoot("dictionary"), Serializable]
-    public class CustomDictionary<TKey, TVal> : Dictionary<TKey, TVal>, IXmlSerializable
-    {
-
-        public CustomDictionary(IComparer<TKey> comparer) : base()
-        { }
-
-        public CustomDictionary() : base()
-        { }
-
-        public CustomDictionary(Dictionary<TKey, TVal> dictionary) : base(dictionary)
-        { }
-
-        public XmlSchema GetSchema()
-        { return null; }
-
-        public void ReadXml(XmlReader xmlIn)
-        {
-            XmlSerializer xmlkey = new XmlSerializer(typeof(TKey));
-            XmlSerializer xmlvalue = new XmlSerializer(typeof(TVal));
-
-            bool empty = xmlIn.IsEmptyElement;
-
-            xmlIn.Read();
-
-            if ((xmlIn == null) || (xmlIn.IsEmptyElement))
-            { return; }
-
-            while (xmlIn.NodeType != XmlNodeType.EndElement)
-            {
-                xmlIn.ReadStartElement("item");
-
-                xmlIn.ReadStartElement("key");
-                TKey key = (TKey)xmlkey.Deserialize(xmlIn);
-                xmlIn.ReadEndElement();
-
-                xmlIn.ReadStartElement("value");
-                TVal value = (TVal)xmlvalue.Deserialize(xmlIn);
-                xmlIn.ReadEndElement();
-
-                this.Add(key, value);
-
-                xmlIn.ReadEndElement();
-                xmlIn.MoveToContent();
-            }
-            xmlIn.ReadEndElement();
-        }
-
-        public void WriteXml(XmlWriter xmlOut)
-        {
-            XmlSerializer xmlkey = new XmlSerializer(typeof(TKey));
-            XmlSerializer xmlvalue = new XmlSerializer(typeof(TVal));
-
-            foreach (TKey key in this.Keys)
-            {
-                xmlOut.WriteStartElement("item");
-
-                xmlOut.WriteStartElement("key");
-                xmlkey.Serialize(xmlOut, key);
-                xmlOut.WriteEndElement();
-
-                xmlOut.WriteStartElement("value");
-                TVal value = this[key];
-                xmlvalue.Serialize(xmlOut, value);
-                xmlOut.WriteEndElement();
-
-                xmlOut.WriteEndElement();
-            }
-        }
-    }
-
     public static class ExtensionMethods
     {
         #region constants
@@ -1387,6 +1308,15 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
         #region list
 
+        public static void AddFormatted(this List<string> value, string item, params object[] args)
+        {
+            try
+            { item = string.Format(item, args); }
+            catch { }
+
+            value.Add(item);
+        }
+
         public static void DisposeSafe<TItem>(this List<TItem> value)
         {
             foreach (TItem item in value)
@@ -1970,6 +1900,90 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
             catch (Exception ex)
             { ex.ToDummy(); }
+
+            return ret;
+        }
+
+        #endregion
+
+        #region  WindowsIdentity
+
+        public static bool IsElevated(this WindowsIdentity value)
+        {
+            bool ret = false;
+
+            if (value != null)
+            {
+                try
+                {
+                    //WindowsPrincipal princ = new WindowsPrincipal(value);
+
+                    ret = value.Groups.Contains(new SecurityIdentifier("S-1-5-32-544"));
+
+                    //ret = princ.IsInRole(WindowsBuiltInRole.Administrator);
+                }
+
+                catch (Exception) { }
+            }
+
+            return ret;
+        }
+
+        #endregion
+
+        #region SecurityIdentifier
+
+        public static bool IsWellKnownSid(this string val, int breakHere)
+        {
+            bool ret = false;
+
+            SecurityIdentifier sid = new SecurityIdentifier(val);
+
+            ret = sid.IsWellKnownSid(breakHere);
+
+            return ret;
+        }
+
+        public static bool IsWellKnownSid(this SecurityIdentifier val, int breakHere)
+        {
+            bool ret = false;
+
+            foreach (WellKnownSidType stype in Enum.GetValues(typeof(WellKnownSidType)))
+            {
+                if ((int)stype >= breakHere)
+                { break; }
+
+                if (val.IsWellKnown(stype))
+                {
+                    ret = true;
+
+                    break;
+                }
+            }
+
+            return ret;
+        }
+
+        #endregion
+
+        #region EventValue
+
+        public static EventValueTypes ValueTypeFromType<T>(this EventValue val)
+        {
+            EventValueTypes ret = EventValueTypes.Object;
+
+            Dictionary<Type, EventValueTypes> temp = new Dictionary<Type, EventValueTypes> { };
+
+            temp.Add(typeof(List<string>), EventValueTypes.StringList);
+            temp.Add(typeof(List<object>), EventValueTypes.ObjectList);
+            temp.Add(typeof(string), EventValueTypes.String);
+            temp.Add(typeof(bool), EventValueTypes.Bool);
+            temp.Add(typeof(int), EventValueTypes.Int);
+            temp.Add(typeof(long), EventValueTypes.Long);
+            temp.Add(typeof(object), EventValueTypes.Object);
+
+            if (temp.ContainsKey(typeof(T)))
+            { ret = temp[typeof(T)]; }
 
             return ret;
         }
