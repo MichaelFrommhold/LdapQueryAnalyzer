@@ -129,6 +129,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
                 this.Privileges.AddSafe(privinfo);
             }
 
+            else
             { Messages.Add("\tLsaEnumerateAccountsWithUserRight: " + NativeHelper.GetLastError()); }
         }
 
