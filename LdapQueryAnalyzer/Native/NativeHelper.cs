@@ -27,22 +27,20 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 {
     public class NativeHelper
     {
-        public static string GetLastError()
+        public static int GetLastError(out string errMsg)
         {
-            string ret = null;
+            int ret = Marshal.GetLastWin32Error();
 
-            int erc = Marshal.GetLastWin32Error();
+            Win32Exception wex = new Win32Exception(ret);
 
-            Win32Exception wex = new Win32Exception(erc);
-
-            ret = string.Format("{0} (RC: {1})", wex.Message, erc);
+            errMsg = string.Format("{0} (RC: {1})", wex.Message, ret);
 
             if (wex.InnerException != null)
-            { ret = string.Format("{0} [{1}]", ret, wex.InnerException.Message); }
+            { errMsg = string.Format("{0} [{1}]", errMsg, wex.InnerException.Message); }
 
             return ret;
         }
-        
+
         public static LSA_UNICODE_STRING InitLSAString(string val)
         {
             LSA_UNICODE_STRING lsastring = new LSA_UNICODE_STRING();
@@ -77,21 +75,51 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
         public static List<string> GetPrivilegeList()
         {
-            List<string> ret = new List<string> { "SeAssignPrimaryTokenPrivilege", "SeAuditPrivilege", "SeBackupPrivilege", 
-                                                  "SeBatchLogonRight", "SeChangeNotifyPrivilege", "SeCreateGlobalPrivilege", 
-                                                  "SeCreatePagefilePrivilege", "SeCreatePermanentPrivilege", "SeCreateSymbolicLinkPrivilege", 
-                                                  "SeCreateTokenPrivilege", "SeDebugPrivilege", "SeDenyBatchLogonRight", 
-                                                  "SeDenyInteractiveLogonRight", "SeDenyNetworkLogonRight", "SeDenyRemoteInteractiveLogonRight", 
-                                                  "SeDenyServiceLogonRight", "SeEnableDelegationPrivilege", "SeImpersonatePrivilege", 
-                                                  "SeIncreaseBasePriorityPrivilege", "SeIncreaseQuotaPrivilege", "SeIncreaseWorkingSetPrivilege", 
-                                                  "SeInteractiveLogonRight", "SeLoadDriverPrivilege", "SeLockMemoryPrivilege", 
-                                                  "SeManageVolumePrivilege", "SeNetworkLogonRight", "SeProfileSingleProcessPrivilege", 
-                                                  "SeRelabelPrivilege", "SeRemoteInteractiveLogonRight", "SeRemoteShutdownPrivilege", 
-                                                  "SeRestorePrivilege", "SeSecurityPrivilege", "SeServiceLogonRight", 
-                                                  "SeShutdownPrivilege", "SeSyncAgentPrivilege", "SeSystemEnvironmentPrivilege", 
-                                                  "SeSystemProfilePrivilege", "SeSystemtimePrivilege", "SeTakeOwnershipPrivilege", 
-                                                  "SeTcbPrivilege", "SeTimeZonePrivilege", "SeTrustedCredManAccessPrivilege", 
-                                                  "SeUndockPrivilege", "SeDelegateSessionUserImpersonatePrivilege" };
+            List<string> ret = new List<string> { "SeAssignPrimaryTokenPrivilege",
+                                                  "SeAuditPrivilege",
+                                                  "SeBackupPrivilege",
+                                                  "SeBatchLogonRight",
+                                                  "SeChangeNotifyPrivilege",
+                                                  "SeCreateGlobalPrivilege",
+                                                  "SeCreatePagefilePrivilege",
+                                                  "SeCreatePermanentPrivilege",
+                                                  "SeCreateSymbolicLinkPrivilege",
+                                                  "SeCreateTokenPrivilege",
+                                                  "SeDebugPrivilege",
+                                                  "SeDelegateSessionUserImpersonatePrivilege",
+                                                  "SeDenyBatchLogonRight",
+                                                  "SeDenyInteractiveLogonRight",
+                                                  "SeDenyNetworkLogonRight",
+                                                  "SeDenyRemoteInteractiveLogonRight",
+                                                  "SeDenyServiceLogonRight",
+                                                  "SeEnableDelegationPrivilege",
+                                                  "SeImpersonatePrivilege",
+                                                  "SeIncreaseBasePriorityPrivilege",
+                                                  "SeIncreaseQuotaPrivilege",
+                                                  "SeIncreaseWorkingSetPrivilege",
+                                                  "SeInteractiveLogonRight",
+                                                  "SeLoadDriverPrivilege",
+                                                  "SeLockMemoryPrivilege",
+                                                  "SeManageVolumePrivilege",
+                                                  "SeNetworkLogonRight",
+                                                  "SeProfileSingleProcessPrivilege",
+                                                  "SeRelabelPrivilege",
+                                                  "SeRemoteInteractiveLogonRight",
+                                                  "SeRemoteShutdownPrivilege",
+                                                  "SeRestorePrivilege",
+                                                  "SeSecurityPrivilege",
+                                                  "SeServiceLogonRight",
+                                                  "SeShutdownPrivilege",
+                                                  "SeSyncAgentPrivilege",
+                                                  "SeSystemEnvironmentPrivilege",
+                                                  "SeSystemProfilePrivilege",
+                                                  "SeSystemtimePrivilege",
+                                                  "SeTakeOwnershipPrivilege",
+                                                  "SeTcbPrivilege",
+                                                  "SeTimeZonePrivilege",
+                                                  "SeTrustedCredManAccessPrivilege",
+                                                  "SeUndockPrivilege",
+                                                  "SeUnsolicitedInputPrivilege" };
 
             return ret;
         }

@@ -20,8 +20,11 @@
 
 using System;
 using System.Collections.Generic;
-
 using System.DirectoryServices.Protocols;
+using System.Linq;
+using System.Net;
+using System.Net.NetworkInformation;
+using System.Text;
 
 namespace CodingFromTheField.LdapQueryAnalyzer
 {
@@ -49,20 +52,20 @@ namespace CodingFromTheField.LdapQueryAnalyzer
         {
             get
             {
-                return new String[] { "defaultNamingContext", 
-                                      "schemaNamingContext", 
-                                      "configurationNamingContext", 
-                                      "rootDomainNamingContext", 
-                                      "namingContexts", 
-                                      "dnsHostName", 
-                                      "dsServiceName", 
-                                      "isGlobalCatalogReady", 
-                                      "ldapServiceName", 
-                                      "serverName", 
+                return new String[] { "defaultNamingContext",
+                                      "schemaNamingContext",
+                                      "configurationNamingContext",
+                                      "rootDomainNamingContext",
+                                      "namingContexts",
+                                      "dnsHostName",
+                                      "dsServiceName",
+                                      "isGlobalCatalogReady",
+                                      "ldapServiceName",
+                                      "serverName",
                                       "supportedControl"};
             }
         }
-        
+
         public bool FromUDPPing { get; set; }
 
         public string Name
@@ -109,6 +112,8 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
         public QueryPolicy LdapLimits { get; set; }
 
+        public List<string> IPAddresses { get; protected set; }
+
         public bool Loaded { get; set; }
         public bool Pinged { get; set; }
         public bool PingSuccess { get; set; }
@@ -136,8 +141,8 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
             // Load(UDPAttributes);
         }
-        
-        public DomainControllerHelper(string dcName): base()
+
+        public DomainControllerHelper(string dcName) : base()
         { Name = dcName; Load(UDPAttributes); }
 
         #endregion
@@ -166,7 +171,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
         {
             Success = false;
             UDPPinged = true;
-            
+
             try
             {
                 LdapDirectoryIdentifier ldapid = new LdapDirectoryIdentifier(Name, 389, true, true);
@@ -215,12 +220,55 @@ namespace CodingFromTheField.LdapQueryAnalyzer
                     { domdns = domdns.Split(new char[] { '@' })[1]; }
                 }
 
+                PingResolve(name);
+
                 Success = true;
                 UDPPingSuccess = true;
             }
 
             catch (Exception ex)
             { ErrorString = ex.Message; }
+        }
+
+        public void PingResolve(string hostName)
+        {
+            IPAddresses = new List<string> { };
+
+            PingSuccess = false;
+
+            try
+            {
+                IPAddress[] addresses = Dns.GetHostAddresses(hostName);
+
+                IPAddresses = addresses.Select(i => "\t" + i.ToString()).ToList();
+
+                PingSuccess = true;
+
+                Pinged = true;
+            }
+
+            catch { }
+
+            if (!PingSuccess)
+            {
+                Ping resolve = new Ping();
+
+                try
+                {
+                    PingReply ack = resolve.Send(hostName, 120, Encoding.ASCII.GetBytes(new string('-', 8)));
+
+                    PingSuccess = (ack.Status == IPStatus.Success);
+
+                    if (PingSuccess)
+                    {
+                        Pinged = true;
+
+                        IPAddresses.AddFormatted("\t{0}", ack.Address.ToString());
+                    }
+                }
+
+                catch { }
+            }
         }
 
         public void GetQueryPolicy()
@@ -268,6 +316,14 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             ret.AddFormatted("DC Info: {0}\r\n", Name);
 
             ret.AddFormatted("Name:{0}\t{1}{0}", Environment.NewLine, Name);
+
+            if (Pinged)
+            {
+                ret.Add((IPAddresses.Count > 1) ? "IPAddresses:" : "IPAddress:");
+                ret.AddRange(IPAddresses);
+                ret.Add("");
+            }
+
             ret.AddFormatted("IsGC:{0}\t{1}{0}", Environment.NewLine, IsGC.ToString());
             ret.AddFormatted("DomainName:{0}\t{1}{0}", Environment.NewLine, DomainName);
             ret.Add("LdapAdminLimits:");
@@ -275,7 +331,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             ret.Add("");
             ret.AddFormatted("SiteServerObject:{0}\t{1}{0}", Environment.NewLine, SiteServerObject);
             ret.AddFormatted("NTDSObject:{0}\t{1}{0}", Environment.NewLine, NTDSObject);
-            ret.AddFormatted("QueryPolicyObject:{0}\t{1}{0}", Environment.NewLine, QueryPolicyObject);            
+            ret.AddFormatted("QueryPolicyObject:{0}\t{1}{0}", Environment.NewLine, QueryPolicyObject);
             ret.Add("SupportedControls:");
             if (SupportedControls != null)
             { ret.AddRange(SupportedControlsDecoded); }
