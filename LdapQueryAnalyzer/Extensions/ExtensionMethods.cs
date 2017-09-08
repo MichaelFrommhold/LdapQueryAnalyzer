@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 using System.DirectoryServices.Protocols;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -1078,6 +1079,12 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
         public static void SetState(this ToolStripMenuItem menu, bool enabled)
         { GlobalControlHandler.MenuSetState(menu, enabled); }
+
+        public static void SetState(this Control ctrl, bool enabled)
+        { GlobalControlHandler.ControlSetState(ctrl, enabled); }
+
+        public static void SetForeColor(this Control ctrl, Color paint)
+        { GlobalControlHandler.ControlSetForeColor(ctrl, paint); }
 
         public static void SetCheckedState(this ToolStripMenuItem menu, bool check)
         { GlobalControlHandler.MenuSetCheckedState(menu, check); }

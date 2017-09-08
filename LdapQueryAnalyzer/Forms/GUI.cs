@@ -480,10 +480,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
         protected void EndRefreshForest(object sender, GlobalEventArgs args)
         {
-            if (this.ForestStore.HasError)
-            { HandleLoadError(); }
-
-            else
+            f(!this.ForestStore.HasError)
             {
                 this.gbCon.SetText(String.Format("ConnectionInfo ({0})", ForestBase.ForestName));
 
@@ -495,19 +492,28 @@ namespace CodingFromTheField.LdapQueryAnalyzer
                 UpdateDCList();
 
                 this.cmbNCs.SetText(ForestBase.DCList[this.cmbDCs.GetText()].DefaultNamingContext);
+
+                LogDebugString(String.Format("ThreadRunTime (sum): {0} ms", ThreadRunTime));
+
+                LogDebugString(String.Format("TotalLoadTime: {0} ms", (long)DateTime.Now.Subtract(StartUpdateForest).TotalMilliseconds));
+
+                EndProgress();
+
+                UpdatingForest = false;
+
+                UpdateNCList();
+
+                UpdateDNAttributes();
             }
 
-            LogDebugString(String.Format("ThreadRunTime (sum): {0} ms", ThreadRunTime));
+            else
+            {
+                HandleLoadError();
 
-            LogDebugString(String.Format("TotalLoadTime: {0} ms", (long)DateTime.Now.Subtract(StartUpdateForest).TotalMilliseconds));
+                EndProgress();
 
-            EndProgress();
-
-            UpdatingForest = false;
-
-            UpdateNCList();
-
-            UpdateDNAttributes();
+                UpdatingForest = false;
+            }
 
             GlobalEventHandler.UDPPingProceeded -= UDPPingEvent;
             GlobalEventHandler.DiscoveredCurrentDomain -= CurrentDomainEvent;
@@ -521,19 +527,19 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
         protected void HandleLoadError(bool success = false)
         {
-            this.gbCon.Enabled = success;
-            this.gbProps.Enabled = success;
-            this.gbQuery.Enabled = success;
+            this.gbCon.SetState(success);
+            this.gbProps.SetState(success);
+            this.gbQuery.SetState(success);
 
-            this.txtOutput.ForeColor = success ? Color.Black :  Color.DarkRed;
+            this.txtOutput.SetForeColor(success ? Color.Black : Color.DarkRed);
 
             if (!success)
             { LogMessage(String.Format("ERROR: {0}", this.ForestStore.ErrorMSG), this.txtOutput); }
 
-            this.QueryMenu.Enabled = success;
-            this.FilterMenu.Enabled = success;
-            this.AttributesMenu.Enabled = success;
-            this.ResultsMenu.Enabled = success;
+            this.QueryMenu.SetState(success);
+            this.FilterMenu.SetState(success);
+            this.AttributesMenu.SetState(success);
+            this.ResultsMenu.SetState(success);
         }
 
         protected void UpdateDCList()

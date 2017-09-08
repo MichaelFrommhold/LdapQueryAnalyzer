@@ -176,9 +176,10 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
                 ForestBase.CurrentDC = ForestBase.DefaultDC.Name;
 
-                LoadConfig();
+                ret = LoadConfig();
 
-                ret = LoadForestName();
+                if (ret)
+                { ret = LoadForestName(); }
 
                 if (ret)
                 {
@@ -287,8 +288,10 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             return ret;
         }
 
-        private void LoadConfig()
+        private bool LoadConfig()
         {
+            bool ret = false;
+
             SearchRequest request = new SearchRequest(ForestBase.ConfigurationNamingContext, 
                                                       "(|(objectClass=nTDSDSA)(objectClass=queryPolicy))", 
                                                       SearchScope.Subtree, 
@@ -298,48 +301,59 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
             using (LdapConnection ldapcon = new LdapConnection(ldapid))
             {
-                if ((ForestBase.GivenCreds != null) && (ForestBase.GivenCreds.HasCreds))
-                { ldapcon.Credential = ForestBase.GivenCreds.NetCreds; }
-
-                ldapcon.Bind();
-
-                SearchResponse response = (SearchResponse)ldapcon.SendRequest(request);
-
-                List<SearchResultEntry> ntds = new List<SearchResultEntry> { };
-
-                List<QueryPolicy> policies = new List<QueryPolicy> { };
-
-                foreach (SearchResultEntry entry in response.Entries)
+                try
                 {
-                    List<string> classes = new List<string> { };
+                    if ((ForestBase.GivenCreds != null) && (ForestBase.GivenCreds.HasCreds))
+                    { ldapcon.Credential = ForestBase.GivenCreds.NetCreds; }
 
-                    entry.GetStringAttributeSafe("objectClass", out classes);
+                    ldapcon.Bind();
 
-                    if (classes.Contains("nTDSDSA"))
-                    { ntds.Add(entry); }
+                    SearchResponse response = (SearchResponse)ldapcon.SendRequest(request);
 
-                    else if (classes.Contains("queryPolicy"))
-                    { policies.Add(new QueryPolicy(entry)); }                   
+                    List<SearchResultEntry> ntds = new List<SearchResultEntry> { };
+
+                    List<QueryPolicy> policies = new List<QueryPolicy> { };
+
+                    foreach (SearchResultEntry entry in response.Entries)
+                    {
+                        List<string> classes = new List<string> { };
+
+                        entry.GetStringAttributeSafe("objectClass", out classes);
+
+                        if (classes.Contains("nTDSDSA"))
+                        { ntds.Add(entry); }
+
+                        else if (classes.Contains("queryPolicy"))
+                        { policies.Add(new QueryPolicy(entry)); }
+                    }
+
+                    policies.OrderByField("WhenCreated", false);
+
+                    foreach (QueryPolicy pol in policies)
+                    { ForestBase.QueryPolicies.AddSafe(pol.DN, pol); }
+
+                    foreach (SearchResultEntry entry in ntds)
+                    {
+                        string qpol = String.Empty;
+
+                        entry.GetStringAttributeSafe("queryPolicyObject", out qpol);
+
+                        if (qpol != String.Empty)
+                        { ForestBase.NTDSSettings.AddSafe(entry.DistinguishedName, qpol); }
+
+                        else
+                        { ForestBase.NTDSSettings.AddSafe(entry.DistinguishedName, policies[0].DN); }
+                    }
+
+                    ret = true;
                 }
 
-                policies.OrderByField("WhenCreated", false);
+                catch (Exception ex)
+                { SetError(ex.Message); }
 
-                foreach (QueryPolicy pol in policies)
-                { ForestBase.QueryPolicies.AddSafe(pol.DN, pol); }
-
-                foreach (SearchResultEntry entry in ntds)
-                {
-                    string qpol = String.Empty;
-
-                    entry.GetStringAttributeSafe("queryPolicyObject", out qpol);
-
-                    if (qpol != String.Empty)
-                    { ForestBase.NTDSSettings.AddSafe(entry.DistinguishedName, qpol); }
-
-                    else
-                    { ForestBase.NTDSSettings.AddSafe(entry.DistinguishedName, policies[0].DN); }
-                }
             }
+
+            return ret;
         }
         
         private void TrustThread()

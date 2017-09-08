@@ -133,6 +133,26 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             }
         }
 
+        public static void ControlSetForeColor(Control ctrl, Color paint)
+        {
+            if (ctrl.InvokeRequired)
+            {
+                MethodInvoker delcall = () => { ControlSetForeColor(ctrl, paint); };
+
+                try
+                { ctrl.Invoke(delcall); }
+
+                catch (Exception ex)
+                { ex.ToDummy(); }
+            }
+
+            else
+            {
+                ctrl.ForeColor = paint;
+                ctrl.Refresh();
+            }
+        }
+
         public static string ControlGetText(Control ctrl)
         {
             string ret = null;
