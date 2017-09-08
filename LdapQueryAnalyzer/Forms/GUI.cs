@@ -480,7 +480,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
         protected void EndRefreshForest(object sender, GlobalEventArgs args)
         {
-            f(!this.ForestStore.HasError)
+            if(!this.ForestStore.HasError)
             {
                 this.gbCon.SetText(String.Format("ConnectionInfo ({0})", ForestBase.ForestName));
 
