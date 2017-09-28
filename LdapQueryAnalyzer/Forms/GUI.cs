@@ -3410,7 +3410,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
               
         protected void cmbHistory_Click(object sender, EventArgs e)
         {
-            this.lvFilterHistory.Location = new Point(79, 54);
+            this.lvFilterHistory.Location = new Point(59, 44);
             this.lvFilterHistory.Size = new Size(this.txtFilter.Width, 196);
 
             //FilterHistory_Base_ContextItem_Click(null, null);
