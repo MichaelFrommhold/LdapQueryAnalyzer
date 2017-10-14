@@ -43,6 +43,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
         private bool innerDecodeOctetStrings = false;
         private bool innerDecodeReplicaLinks = false;
         private bool innerDecodePrimaryGroupID = false;
+        private bool innerDecodeDefaultSD = false;
         private bool innerUseLocalTime = true;
         private bool innerShowPartialResults = false;
         private int innerMaxResultListCount = 20;
@@ -125,6 +126,12 @@ namespace CodingFromTheField.LdapQueryAnalyzer
         {
             get { return innerDecodePrimaryGroupID; }
             set {innerDecodePrimaryGroupID = value; }
+        }
+
+        public bool DecodeDefaultSD
+        {
+            get { return innerDecodeDefaultSD; }
+            set { innerDecodeDefaultSD = value; }
         }
 
         public bool UseLocalTime

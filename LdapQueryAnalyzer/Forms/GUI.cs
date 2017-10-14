@@ -480,7 +480,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
         protected void EndRefreshForest(object sender, GlobalEventArgs args)
         {
-            if(!this.ForestStore.HasError)
+            if (!this.ForestStore.HasError)
             {
                 this.gbCon.SetText(String.Format("ConnectionInfo ({0})", ForestBase.ForestName));
 
@@ -492,7 +492,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
                 UpdateDCList();
 
                 this.cmbNCs.SetText(ForestBase.DCList[this.cmbDCs.GetText()].DefaultNamingContext);
-
+                                
                 LogDebugString(String.Format("ThreadRunTime (sum): {0} ms", ThreadRunTime));
 
                 LogDebugString(String.Format("TotalLoadTime: {0} ms", (long)DateTime.Now.Subtract(StartUpdateForest).TotalMilliseconds));
@@ -527,11 +527,12 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
         protected void HandleLoadError(bool success = false)
         {
+            
             this.gbCon.SetState(success);
             this.gbProps.SetState(success);
             this.gbQuery.SetState(success);
 
-            this.txtOutput.SetForeColor(success ? Color.Black : Color.DarkRed);
+            this.txtOutput.SetForeColor(success ? Color.Black :  Color.DarkRed);
 
             if (!success)
             { LogMessage(String.Format("ERROR: {0}", this.ForestStore.ErrorMSG), this.txtOutput); }
@@ -3410,9 +3411,9 @@ namespace CodingFromTheField.LdapQueryAnalyzer
               
         protected void cmbHistory_Click(object sender, EventArgs e)
         {
-            this.lvFilterHistory.Location = new Point(59, 44);
-            this.lvFilterHistory.Size = new Size(this.txtFilter.Width, 196);
-
+            this.lvFilterHistory.Location = this.txtFilter.Location;
+            this.lvFilterHistory.Size = new Size(this.txtFilter.Width, this.gbQuery.Height - this.lvFilterHistory.Location.Y);
+           
             //FilterHistory_Base_ContextItem_Click(null, null);
             //FilterHistory_Scope_ContextItem_Click(null, null);
 
@@ -4229,6 +4230,9 @@ namespace CodingFromTheField.LdapQueryAnalyzer
         protected void Decode_PGID_MenuItem_CheckChanged(object sender, EventArgs e)
         { SetUserSettings("DecodePrimaryGroupID", this.Decode_PGID_MenuItem.Checked); }
 
+        private void Decode_DefaultSD_MenuItem_CheckedChanged(object sender, EventArgs e)
+        { SetUserSettings("DecodeDefaultSD", this.Decode_DefaultSD_MenuItem.Checked); }
+
         protected void Decode_OctetString_MenuItem_CheckChanged(object sender, EventArgs e)
         { SetUserSettings("DecodeOctetStrings", this.Decode_OctetString_MenuItem.Checked); }
 
@@ -4446,17 +4450,9 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             //ShowInfoLoaded = true;
         }
 
+
         #endregion
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-
-
-        #endregion   
+        #endregion
     }
 }

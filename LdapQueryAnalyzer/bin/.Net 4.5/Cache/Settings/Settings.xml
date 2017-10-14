@@ -4,7 +4,7 @@
   <DoValueRangeRetrieval>true</DoValueRangeRetrieval>
   <SortAscending>false</SortAscending>
   <SortDescending>false</SortDescending>
-  <DecodeGUID>false</DecodeGUID>
+  <DecodeGUID>true</DecodeGUID>
   <DecodeSID>true</DecodeSID>
   <DecodeUserParameters>false</DecodeUserParameters>
   <ResolveSids>true</ResolveSids>

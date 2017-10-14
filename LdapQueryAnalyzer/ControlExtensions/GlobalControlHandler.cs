@@ -153,6 +153,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             }
         }
 
+
         public static string ControlGetText(Control ctrl)
         {
             string ret = null;
@@ -438,7 +439,8 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             else
             { ctrl.SetPropertyValue("Sorted", sort); }
         }
-        
+
+
         public static void MenuSetState(ToolStripMenuItem item, bool enabled)
         {
             ToolStrip par = item.Owner; ;

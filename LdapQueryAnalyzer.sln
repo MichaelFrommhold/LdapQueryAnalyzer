@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LdapQueryAnalyzer", "LdapQueryAnalyzer\LdapQueryAnalyzer.csproj", "{58C11E00-2F23-4F41-BBE6-17D307FD156D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LdapQueryAnalyzer4.5", "LdapQueryAnalyzer\LdapQueryAnalyzer4.5.csproj", "{DC470745-525A-4B37-A3A5-1EE0074F0A55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,8 +38,29 @@ Global
 		{58C11E00-2F23-4F41-BBE6-17D307FD156D}.Release|x64.Build.0 = Release|x64
 		{58C11E00-2F23-4F41-BBE6-17D307FD156D}.Release|x86.ActiveCfg = Release|x86
 		{58C11E00-2F23-4F41-BBE6-17D307FD156D}.Release|x86.Build.0 = Release|x86
+		{DC470745-525A-4B37-A3A5-1EE0074F0A55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC470745-525A-4B37-A3A5-1EE0074F0A55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC470745-525A-4B37-A3A5-1EE0074F0A55}.Debug|x64.ActiveCfg = Debug|x64
+		{DC470745-525A-4B37-A3A5-1EE0074F0A55}.Debug|x64.Build.0 = Debug|x64
+		{DC470745-525A-4B37-A3A5-1EE0074F0A55}.Debug|x86.ActiveCfg = Debug|x86
+		{DC470745-525A-4B37-A3A5-1EE0074F0A55}.Debug|x86.Build.0 = Debug|x86
+		{DC470745-525A-4B37-A3A5-1EE0074F0A55}.DebugRemote|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC470745-525A-4B37-A3A5-1EE0074F0A55}.DebugRemote|Any CPU.Build.0 = Debug|Any CPU
+		{DC470745-525A-4B37-A3A5-1EE0074F0A55}.DebugRemote|x64.ActiveCfg = Debug|x64
+		{DC470745-525A-4B37-A3A5-1EE0074F0A55}.DebugRemote|x64.Build.0 = Debug|x64
+		{DC470745-525A-4B37-A3A5-1EE0074F0A55}.DebugRemote|x86.ActiveCfg = Debug|x86
+		{DC470745-525A-4B37-A3A5-1EE0074F0A55}.DebugRemote|x86.Build.0 = Debug|x86
+		{DC470745-525A-4B37-A3A5-1EE0074F0A55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC470745-525A-4B37-A3A5-1EE0074F0A55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC470745-525A-4B37-A3A5-1EE0074F0A55}.Release|x64.ActiveCfg = Release|x64
+		{DC470745-525A-4B37-A3A5-1EE0074F0A55}.Release|x64.Build.0 = Release|x64
+		{DC470745-525A-4B37-A3A5-1EE0074F0A55}.Release|x86.ActiveCfg = Release|x86
+		{DC470745-525A-4B37-A3A5-1EE0074F0A55}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4762F070-CE27-4EEA-9985-13C230A85E12}
 	EndGlobalSection
 EndGlobal

@@ -52,20 +52,20 @@ namespace CodingFromTheField.LdapQueryAnalyzer
         {
             get
             {
-                return new String[] { "defaultNamingContext",
-                                      "schemaNamingContext",
-                                      "configurationNamingContext",
-                                      "rootDomainNamingContext",
-                                      "namingContexts",
-                                      "dnsHostName",
-                                      "dsServiceName",
-                                      "isGlobalCatalogReady",
-                                      "ldapServiceName",
-                                      "serverName",
+                return new String[] { "defaultNamingContext", 
+                                      "schemaNamingContext", 
+                                      "configurationNamingContext", 
+                                      "rootDomainNamingContext", 
+                                      "namingContexts", 
+                                      "dnsHostName", 
+                                      "dsServiceName", 
+                                      "isGlobalCatalogReady", 
+                                      "ldapServiceName", 
+                                      "serverName", 
                                       "supportedControl"};
             }
         }
-
+        
         public bool FromUDPPing { get; set; }
 
         public string Name
@@ -141,8 +141,8 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
             // Load(UDPAttributes);
         }
-
-        public DomainControllerHelper(string dcName) : base()
+        
+        public DomainControllerHelper(string dcName): base()
         { Name = dcName; Load(UDPAttributes); }
 
         #endregion
@@ -171,7 +171,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
         {
             Success = false;
             UDPPinged = true;
-
+            
             try
             {
                 LdapDirectoryIdentifier ldapid = new LdapDirectoryIdentifier(Name, 389, true, true);
@@ -331,7 +331,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             ret.Add("");
             ret.AddFormatted("SiteServerObject:{0}\t{1}{0}", Environment.NewLine, SiteServerObject);
             ret.AddFormatted("NTDSObject:{0}\t{1}{0}", Environment.NewLine, NTDSObject);
-            ret.AddFormatted("QueryPolicyObject:{0}\t{1}{0}", Environment.NewLine, QueryPolicyObject);
+            ret.AddFormatted("QueryPolicyObject:{0}\t{1}{0}", Environment.NewLine, QueryPolicyObject);            
             ret.Add("SupportedControls:");
             if (SupportedControls != null)
             { ret.AddRange(SupportedControlsDecoded); }

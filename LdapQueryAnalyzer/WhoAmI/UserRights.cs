@@ -74,7 +74,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             LSA_UNICODE_STRING systemname = (target == null) ? default(LSA_UNICODE_STRING) : NativeHelper.InitLSAString(target);
 
             uint rc = Advapi32.LsaOpenPolicy(systemname, ref lsainfo, LSA_POLICY_ACCESS.POLICY_ALL_ACCESS, out temphandle);
-
+            
             this.Success = (rc == 0);
 
             if (this.Success)
@@ -99,7 +99,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
         }
 
         protected void GetPrivilegeAndPrincipals(string privName)
-        {
+        {            
             IntPtr enumbuffer = IntPtr.Zero;
 
             ulong cnt = 0;

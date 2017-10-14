@@ -26,7 +26,7 @@ using System.DirectoryServices.ActiveDirectory;
 using System.DirectoryServices.Protocols;
 using System.Security.Principal;
 using System.Threading;
-
+using System.Windows.Forms;
 
 namespace CodingFromTheField.LdapQueryAnalyzer
 {
@@ -298,7 +298,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
                                                       new string[] { "objectClass", "whenCreated", "queryPolicyObject", "lDAPAdminLimits" });
 
             LdapDirectoryIdentifier ldapid = new LdapDirectoryIdentifier(ForestBase.DefaultDC.Name, 389, true, false);
-
+                        
             using (LdapConnection ldapcon = new LdapConnection(ldapid))
             {
                 try
@@ -350,7 +350,6 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
                 catch (Exception ex)
                 { SetError(ex.Message); }
-
             }
 
             return ret;

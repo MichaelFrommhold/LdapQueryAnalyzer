@@ -147,6 +147,15 @@ namespace CodingFromTheField.LdapQueryAnalyzer
                 { ex.ToDummy(); }
             }
 
+            else if (attrib.Name.ToLowerInvariant() == "defaultsecuritydescriptor")
+            {
+                DirectoryAttribute deprid = entry.Attributes["defaultsecuritydescriptor"];
+
+                ret = DecodeDefaultSD(deprid, MainBase.UserSettings.DecodeDefaultSD);
+
+                exclusive = true;
+            }
+
             #endregion
 
             #region logonhours
@@ -730,38 +739,61 @@ namespace CodingFromTheField.LdapQueryAnalyzer
                     { ret.AddFormatted("\t\t(must not decode) SDDL: <{0}>", oCSD.GetSddlForm(AccessControlSections.All)); }
 
                     else
-                    {
-                        if (oCSD.Owner != null)
-                        { ret.AddFormatted("\t\tOwner: <{0}>", DecodeSID(oCSD.Owner, MainBase.UserSettings.ResolveSids)); }
-
-                        if (oCSD.Group != null)
-                        { ret.AddFormatted("\t\tPrimary group: <{0}>", DecodeSID(oCSD.Group, MainBase.UserSettings.ResolveSids)); }
-
-                        ret.AddFormatted("\t\tControl flags: <{0}>", oCSD.ControlFlags.ToString());
-
-                        ret.AddFormatted("\t\tAccess Rules:");
-
-                        if (oCSD.DiscretionaryAcl != null)
-                        { ret.AddRange(WalkACL(oCSD.DiscretionaryAcl, MainBase.UserSettings.ResolveSids)); }
-
-                        try
-                        {
-                            ret.AddFormatted("\t\t{0}Audit Rules:", Environment.NewLine);
-
-                            if (oCSD.SystemAcl != null)
-                            { ret.AddRange(WalkACL(oCSD.SystemAcl, MainBase.UserSettings.ResolveSids)); }
-                        }
-
-                        catch (Exception ex)
-                        {
-                            ex.ToDummy();
-                        }
-                    }
+                    { ret.AddRange(DecodeSD(oCSD)); }
                 }
 
                 catch 
                 {  ret.AddFormatted("\t\t<not decoded>: {0}", attrib[0].GetType().ToString()); }
             }
+
+            return ret;
+        }
+
+        public List<string> DecodeDefaultSD(DirectoryAttribute attrib, bool mustDecode)
+        {
+            List<string> ret = new List<string> { };
+
+            foreach (string value in attrib.GetValues(typeof(string)))
+            {
+                ret.AddFormatted(value);
+
+                if (mustDecode)
+                {
+                    CommonSecurityDescriptor oCSD = new CommonSecurityDescriptor(true, true, value);
+
+                    ret.AddRange(DecodeSD(oCSD));
+                }
+            }
+
+            return ret;
+        }
+
+        public List<string> DecodeSD(CommonSecurityDescriptor oCSD)
+        {
+            List<string> ret = new List<string> { };
+
+            if (oCSD.Owner != null)
+            { ret.AddFormatted("\t\tOwner: <{0}>", DecodeSID(oCSD.Owner, MainBase.UserSettings.ResolveSids)); }
+
+            if (oCSD.Group != null)
+            { ret.AddFormatted("\t\tPrimary group: <{0}>", DecodeSID(oCSD.Group, MainBase.UserSettings.ResolveSids)); }
+
+            ret.AddFormatted("\t\tControl flags: <{0}>", oCSD.ControlFlags.ToString());
+
+            ret.AddFormatted("\t\tAccess Rules:");
+
+            if (oCSD.DiscretionaryAcl != null)
+            { ret.AddRange(WalkACL(oCSD.DiscretionaryAcl, MainBase.UserSettings.ResolveSids)); }
+
+            try
+            {
+                ret.AddFormatted("{0}\t\tAudit Rules:", Environment.NewLine);
+
+                if (oCSD.SystemAcl != null)
+                { ret.AddRange(WalkACL(oCSD.SystemAcl, MainBase.UserSettings.ResolveSids)); }
+            }
+
+            catch { }
 
             return ret;
         }

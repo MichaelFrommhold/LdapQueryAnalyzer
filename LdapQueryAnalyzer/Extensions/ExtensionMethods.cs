@@ -45,6 +45,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
         #region dynamic method invocation
 
+
         public static object InvokeMethod(this object obj, string methodName, ref object[] args)
         {
             object ret = null;
@@ -1077,14 +1078,14 @@ namespace CodingFromTheField.LdapQueryAnalyzer
         public static void SetVisibility(this Control ctrl, bool visible)
         { GlobalControlHandler.ControlSetVisibility(ctrl, visible); }
 
-        public static void SetState(this ToolStripMenuItem menu, bool enabled)
-        { GlobalControlHandler.MenuSetState(menu, enabled); }
-
         public static void SetState(this Control ctrl, bool enabled)
         { GlobalControlHandler.ControlSetState(ctrl, enabled); }
 
         public static void SetForeColor(this Control ctrl, Color paint)
         { GlobalControlHandler.ControlSetForeColor(ctrl, paint); }
+
+        public static void SetState(this ToolStripMenuItem menu, bool enabled)
+        { GlobalControlHandler.MenuSetState(menu, enabled); }
 
         public static void SetCheckedState(this ToolStripMenuItem menu, bool check)
         { GlobalControlHandler.MenuSetCheckedState(menu, check); }
