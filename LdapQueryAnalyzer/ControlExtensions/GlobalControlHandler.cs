@@ -757,34 +757,50 @@ namespace CodingFromTheField.LdapQueryAnalyzer
         public static bool InsertListViewItem(ListView ctrl, ListViewItem lvItem, int pos, bool unique)
         {
             bool save = true;
-                                    
-            if (unique)
+
+            if (ctrl.InvokeRequired)
             {
-                string hash = lvItem.Tag.GetMD5Hash();
+                MethodInvoker delcall = () => { save = InsertListViewItem(ctrl, lvItem, pos, unique); };
 
-                foreach (ListViewItem item in ctrl.GetItems())
+                try
                 {
-                    string thash = item.Tag.GetMD5Hash();
-
-                    if (hash == thash)
-                    { save = false; break; }
+                    ctrl.Invoke(delcall);
                 }
+
+                catch { }
             }
 
-            if (save)
+            else
             {
-                
-                if (pos >= 0)
-                {
-                    if (ctrl.Items.Count == 0)
-                    { ctrl.Items.Add(lvItem); }
 
-                    else
-                    { ctrl.Items.Insert(pos, lvItem); }
+                if (unique)
+                {
+                    string hash = lvItem.Tag.GetMD5Hash();
+
+                    foreach (ListViewItem item in ctrl.GetItems())
+                    {
+                        string thash = item.Tag.GetMD5Hash();
+
+                        if (hash == thash)
+                        { save = false; break; }
+                    }
                 }
 
-                else
-                { ctrl.Items.Add(lvItem); }
+                if (save)
+                {
+
+                    if (pos >= 0)
+                    {
+                        if (ctrl.Items.Count == 0)
+                        { ctrl.Items.Add(lvItem); }
+
+                        else
+                        { ctrl.Items.Insert(pos, lvItem); }
+                    }
+
+                    else
+                    { ctrl.Items.Add(lvItem); }
+                }
             }
 
             return save;

@@ -66,6 +66,31 @@
             this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
             this.Base_Restore_ContextItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbQuery = new System.Windows.Forms.GroupBox();
+            this.cmdCloseHistory = new System.Windows.Forms.Button();
+            this.lvFilterHistory = new System.Windows.Forms.ListView();
+            this.colCheck = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colFilter = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colAttribs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colASQ = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colSort = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colBase = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colDC = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colScope = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colPort = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.FilterHistoryContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.FilterHistory_Base_ContextItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FilterHistory_Scope_ContextItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FilterHistory_ASQ_ContextItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FilterHistory_Sort_ContextItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FilterHistory_DC_ContextItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FilterHistory_Port_ContextItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FilterHistory_All_ContextItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.FilterHistory_Bulk_ContextItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator33 = new System.Windows.Forms.ToolStripSeparator();
+            this.FilterHistory_DeleteCurrent_ContextItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FilterHistory_DeleteSelected_ContextItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FilterHistory_Clear_ContextItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbCancel = new System.Windows.Forms.GroupBox();
             this.cmdCancelAll = new System.Windows.Forms.Button();
             this.cmdCancelQuery = new System.Windows.Forms.Button();
@@ -97,30 +122,6 @@
             this.txtAttributes = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbSort = new System.Windows.Forms.CheckBox();
-            this.lvFilterHistory = new System.Windows.Forms.ListView();
-            this.colCheck = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colFilter = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colAttribs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colASQ = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colSort = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colBase = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colDC = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colScope = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colPort = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.FilterHistoryContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.FilterHistory_Base_ContextItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.FilterHistory_Scope_ContextItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.FilterHistory_ASQ_ContextItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.FilterHistory_Sort_ContextItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.FilterHistory_DC_ContextItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.FilterHistory_Port_ContextItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.FilterHistory_All_ContextItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.FilterHistory_Bulk_ContextItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator33 = new System.Windows.Forms.ToolStripSeparator();
-            this.FilterHistory_DeleteCurrent_ContextItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.FilterHistory_DeleteSelected_ContextItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.FilterHistory_Clear_ContextItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbBasetype = new System.Windows.Forms.GroupBox();
             this.cbRootDseExt = new System.Windows.Forms.CheckBox();
             this.rbDN = new System.Windows.Forms.RadioButton();
@@ -327,12 +328,12 @@
             this.DCComboContextMenu.SuspendLayout();
             this.BaseContextMenu.SuspendLayout();
             this.gbQuery.SuspendLayout();
+            this.FilterHistoryContextMenu.SuspendLayout();
             this.gbCancel.SuspendLayout();
             this.gbAttributes.SuspendLayout();
             this.AttributesContextMenu.SuspendLayout();
             this.AttributesSortContextMenu.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.FilterHistoryContextMenu.SuspendLayout();
             this.gbBasetype.SuspendLayout();
             this.gbReferral.SuspendLayout();
             this.gbScope.SuspendLayout();
@@ -617,6 +618,7 @@
             // 
             this.gbQuery.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbQuery.Controls.Add(this.cmdCloseHistory);
             this.gbQuery.Controls.Add(this.lvFilterHistory);
             this.gbQuery.Controls.Add(this.gbCancel);
             this.gbQuery.Controls.Add(this.cmbHistory);
@@ -642,6 +644,206 @@
             this.gbQuery.TabIndex = 1;
             this.gbQuery.TabStop = false;
             this.gbQuery.Text = "Query";
+            // 
+            // cmdCloseHistory
+            // 
+            this.cmdCloseHistory.Location = new System.Drawing.Point(706, 27);
+            this.cmdCloseHistory.Margin = new System.Windows.Forms.Padding(2);
+            this.cmdCloseHistory.Name = "cmdCloseHistory";
+            this.cmdCloseHistory.Size = new System.Drawing.Size(22, 18);
+            this.cmdCloseHistory.TabIndex = 41;
+            this.cmdCloseHistory.Text = "X";
+            this.cmdCloseHistory.UseVisualStyleBackColor = true;
+            this.cmdCloseHistory.Visible = false;
+            this.cmdCloseHistory.Click += new System.EventHandler(this.cmdCloseHistory_Click);
+            // 
+            // lvFilterHistory
+            // 
+            this.lvFilterHistory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lvFilterHistory.CheckBoxes = true;
+            this.lvFilterHistory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colCheck,
+            this.colFilter,
+            this.colAttribs,
+            this.colASQ,
+            this.colSort,
+            this.colBase,
+            this.colDC,
+            this.colScope,
+            this.colPort});
+            this.lvFilterHistory.ContextMenuStrip = this.FilterHistoryContextMenu;
+            this.lvFilterHistory.FullRowSelect = true;
+            this.lvFilterHistory.GridLines = true;
+            this.lvFilterHistory.Location = new System.Drawing.Point(60, 44);
+            this.lvFilterHistory.Name = "lvFilterHistory";
+            this.lvFilterHistory.Size = new System.Drawing.Size(283, 71);
+            this.lvFilterHistory.TabIndex = 16;
+            this.lvFilterHistory.UseCompatibleStateImageBehavior = false;
+            this.lvFilterHistory.View = System.Windows.Forms.View.Details;
+            this.lvFilterHistory.Visible = false;
+            this.lvFilterHistory.DoubleClick += new System.EventHandler(this.lvFilterHistory_DoubleClick);
+            this.lvFilterHistory.Leave += new System.EventHandler(this.lvFilterHistory_Leave);
+            this.lvFilterHistory.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lvFilterHistory_MouseClick);
+            // 
+            // colCheck
+            // 
+            this.colCheck.Text = "Bulk";
+            this.colCheck.Width = 33;
+            // 
+            // colFilter
+            // 
+            this.colFilter.Text = "Filter";
+            this.colFilter.Width = 25;
+            // 
+            // colAttribs
+            // 
+            this.colAttribs.Text = "Attributes";
+            this.colAttribs.Width = 239;
+            // 
+            // colASQ
+            // 
+            this.colASQ.Text = "ASQ";
+            this.colASQ.Width = 1;
+            // 
+            // colSort
+            // 
+            this.colSort.Text = "Sort";
+            this.colSort.Width = 1;
+            // 
+            // colBase
+            // 
+            this.colBase.Text = "Base";
+            this.colBase.Width = 1;
+            // 
+            // colDC
+            // 
+            this.colDC.Text = "DC";
+            this.colDC.Width = 1;
+            // 
+            // colScope
+            // 
+            this.colScope.Text = "Scope";
+            this.colScope.Width = 1;
+            // 
+            // colPort
+            // 
+            this.colPort.Text = "Port";
+            this.colPort.Width = 1;
+            // 
+            // FilterHistoryContextMenu
+            // 
+            this.FilterHistoryContextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.FilterHistoryContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.FilterHistory_Base_ContextItem,
+            this.FilterHistory_Scope_ContextItem,
+            this.FilterHistory_ASQ_ContextItem,
+            this.FilterHistory_Sort_ContextItem,
+            this.FilterHistory_DC_ContextItem,
+            this.FilterHistory_Port_ContextItem,
+            this.FilterHistory_All_ContextItem,
+            this.toolStripSeparator3,
+            this.FilterHistory_Bulk_ContextItem,
+            this.toolStripSeparator33,
+            this.FilterHistory_DeleteCurrent_ContextItem,
+            this.FilterHistory_DeleteSelected_ContextItem,
+            this.FilterHistory_Clear_ContextItem});
+            this.FilterHistoryContextMenu.Name = "ContextMenuFilterHistory";
+            this.FilterHistoryContextMenu.Size = new System.Drawing.Size(168, 258);
+            // 
+            // FilterHistory_Base_ContextItem
+            // 
+            this.FilterHistory_Base_ContextItem.CheckOnClick = true;
+            this.FilterHistory_Base_ContextItem.Name = "FilterHistory_Base_ContextItem";
+            this.FilterHistory_Base_ContextItem.Size = new System.Drawing.Size(167, 22);
+            this.FilterHistory_Base_ContextItem.Text = "Use SearchBase";
+            this.FilterHistory_Base_ContextItem.CheckedChanged += new System.EventHandler(this.FilterHistory_Base_ContextItem_CheckedChanged);
+            // 
+            // FilterHistory_Scope_ContextItem
+            // 
+            this.FilterHistory_Scope_ContextItem.CheckOnClick = true;
+            this.FilterHistory_Scope_ContextItem.Name = "FilterHistory_Scope_ContextItem";
+            this.FilterHistory_Scope_ContextItem.Size = new System.Drawing.Size(167, 22);
+            this.FilterHistory_Scope_ContextItem.Text = "User SearchScope";
+            this.FilterHistory_Scope_ContextItem.CheckedChanged += new System.EventHandler(this.FilterHistory_Scope_ContextItem_CheckedChanged);
+            // 
+            // FilterHistory_ASQ_ContextItem
+            // 
+            this.FilterHistory_ASQ_ContextItem.CheckOnClick = true;
+            this.FilterHistory_ASQ_ContextItem.Name = "FilterHistory_ASQ_ContextItem";
+            this.FilterHistory_ASQ_ContextItem.Size = new System.Drawing.Size(167, 22);
+            this.FilterHistory_ASQ_ContextItem.Text = "Use ASQ";
+            this.FilterHistory_ASQ_ContextItem.CheckedChanged += new System.EventHandler(this.FilterHistory_ASQ_ContextItem_CheckedChanged);
+            // 
+            // FilterHistory_Sort_ContextItem
+            // 
+            this.FilterHistory_Sort_ContextItem.CheckOnClick = true;
+            this.FilterHistory_Sort_ContextItem.Name = "FilterHistory_Sort_ContextItem";
+            this.FilterHistory_Sort_ContextItem.Size = new System.Drawing.Size(167, 22);
+            this.FilterHistory_Sort_ContextItem.Text = "Use Sorting";
+            this.FilterHistory_Sort_ContextItem.CheckedChanged += new System.EventHandler(this.FilterHistory_Sort_ContextItem_CheckedChanged);
+            // 
+            // FilterHistory_DC_ContextItem
+            // 
+            this.FilterHistory_DC_ContextItem.CheckOnClick = true;
+            this.FilterHistory_DC_ContextItem.Name = "FilterHistory_DC_ContextItem";
+            this.FilterHistory_DC_ContextItem.Size = new System.Drawing.Size(167, 22);
+            this.FilterHistory_DC_ContextItem.Text = "Use DC";
+            this.FilterHistory_DC_ContextItem.CheckedChanged += new System.EventHandler(this.FilterHistory_DC_ContextItem_CheckedChanged);
+            // 
+            // FilterHistory_Port_ContextItem
+            // 
+            this.FilterHistory_Port_ContextItem.CheckOnClick = true;
+            this.FilterHistory_Port_ContextItem.Name = "FilterHistory_Port_ContextItem";
+            this.FilterHistory_Port_ContextItem.Size = new System.Drawing.Size(167, 22);
+            this.FilterHistory_Port_ContextItem.Text = "Use Port";
+            this.FilterHistory_Port_ContextItem.CheckedChanged += new System.EventHandler(this.FilterHistory_Port_ContextItem_CheckedChanged);
+            // 
+            // FilterHistory_All_ContextItem
+            // 
+            this.FilterHistory_All_ContextItem.CheckOnClick = true;
+            this.FilterHistory_All_ContextItem.Name = "FilterHistory_All_ContextItem";
+            this.FilterHistory_All_ContextItem.Size = new System.Drawing.Size(167, 22);
+            this.FilterHistory_All_ContextItem.Text = "Use All";
+            this.FilterHistory_All_ContextItem.CheckedChanged += new System.EventHandler(this.FilterHistory_All_ContextItem_CheckedChanged);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(164, 6);
+            // 
+            // FilterHistory_Bulk_ContextItem
+            // 
+            this.FilterHistory_Bulk_ContextItem.Name = "FilterHistory_Bulk_ContextItem";
+            this.FilterHistory_Bulk_ContextItem.Size = new System.Drawing.Size(167, 22);
+            this.FilterHistory_Bulk_ContextItem.Text = "Bulk Query";
+            this.FilterHistory_Bulk_ContextItem.Click += new System.EventHandler(this.FilterHistory_Bulk_ContextItem_Click);
+            // 
+            // toolStripSeparator33
+            // 
+            this.toolStripSeparator33.Name = "toolStripSeparator33";
+            this.toolStripSeparator33.Size = new System.Drawing.Size(164, 6);
+            // 
+            // FilterHistory_DeleteCurrent_ContextItem
+            // 
+            this.FilterHistory_DeleteCurrent_ContextItem.Name = "FilterHistory_DeleteCurrent_ContextItem";
+            this.FilterHistory_DeleteCurrent_ContextItem.Size = new System.Drawing.Size(167, 22);
+            this.FilterHistory_DeleteCurrent_ContextItem.Text = "Delete Current";
+            this.FilterHistory_DeleteCurrent_ContextItem.Click += new System.EventHandler(this.FilterHistory_DeleteCurrent_ContextItem_Click);
+            // 
+            // FilterHistory_DeleteSelected_ContextItem
+            // 
+            this.FilterHistory_DeleteSelected_ContextItem.Name = "FilterHistory_DeleteSelected_ContextItem";
+            this.FilterHistory_DeleteSelected_ContextItem.Size = new System.Drawing.Size(167, 22);
+            this.FilterHistory_DeleteSelected_ContextItem.Text = "Delete Selected";
+            this.FilterHistory_DeleteSelected_ContextItem.Click += new System.EventHandler(this.FilterHistory_DeleteSelected_ContextItem_Click);
+            // 
+            // FilterHistory_Clear_ContextItem
+            // 
+            this.FilterHistory_Clear_ContextItem.Name = "FilterHistory_Clear_ContextItem";
+            this.FilterHistory_Clear_ContextItem.Size = new System.Drawing.Size(167, 22);
+            this.FilterHistory_Clear_ContextItem.Text = "Clear History";
+            this.FilterHistory_Clear_ContextItem.Click += new System.EventHandler(this.Filter_ClearHistory_MenuItem_Click);
             // 
             // gbCancel
             // 
@@ -970,194 +1172,6 @@
             this.cbSort.Text = "Sorted";
             this.cbSort.UseVisualStyleBackColor = true;
             this.cbSort.CheckedChanged += new System.EventHandler(this.cbSort_CheckedChanged);
-            // 
-            // lvFilterHistory
-            // 
-            this.lvFilterHistory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lvFilterHistory.CheckBoxes = true;
-            this.lvFilterHistory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colCheck,
-            this.colFilter,
-            this.colAttribs,
-            this.colASQ,
-            this.colSort,
-            this.colBase,
-            this.colDC,
-            this.colScope,
-            this.colPort});
-            this.lvFilterHistory.ContextMenuStrip = this.FilterHistoryContextMenu;
-            this.lvFilterHistory.FullRowSelect = true;
-            this.lvFilterHistory.GridLines = true;
-            this.lvFilterHistory.Location = new System.Drawing.Point(60, 44);
-            this.lvFilterHistory.Name = "lvFilterHistory";
-            this.lvFilterHistory.Size = new System.Drawing.Size(189, 45);
-            this.lvFilterHistory.TabIndex = 16;
-            this.lvFilterHistory.UseCompatibleStateImageBehavior = false;
-            this.lvFilterHistory.View = System.Windows.Forms.View.Details;
-            this.lvFilterHistory.Visible = false;
-            this.lvFilterHistory.DoubleClick += new System.EventHandler(this.lvFilterHistory_DoubleClick);
-            this.lvFilterHistory.Leave += new System.EventHandler(this.lvFilterHistory_Leave);
-            this.lvFilterHistory.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lvFilterHistory_MouseClick);
-            // 
-            // colCheck
-            // 
-            this.colCheck.Text = "Bulk";
-            this.colCheck.Width = 33;
-            // 
-            // colFilter
-            // 
-            this.colFilter.Text = "Filter";
-            this.colFilter.Width = 25;
-            // 
-            // colAttribs
-            // 
-            this.colAttribs.Text = "Attributes";
-            this.colAttribs.Width = 239;
-            // 
-            // colASQ
-            // 
-            this.colASQ.Text = "ASQ";
-            this.colASQ.Width = 1;
-            // 
-            // colSort
-            // 
-            this.colSort.Text = "Sort";
-            this.colSort.Width = 1;
-            // 
-            // colBase
-            // 
-            this.colBase.Text = "Base";
-            this.colBase.Width = 1;
-            // 
-            // colDC
-            // 
-            this.colDC.Text = "DC";
-            this.colDC.Width = 1;
-            // 
-            // colScope
-            // 
-            this.colScope.Text = "Scope";
-            this.colScope.Width = 1;
-            // 
-            // colPort
-            // 
-            this.colPort.Text = "Port";
-            this.colPort.Width = 1;
-            // 
-            // FilterHistoryContextMenu
-            // 
-            this.FilterHistoryContextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.FilterHistoryContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.FilterHistory_Base_ContextItem,
-            this.FilterHistory_Scope_ContextItem,
-            this.FilterHistory_ASQ_ContextItem,
-            this.FilterHistory_Sort_ContextItem,
-            this.FilterHistory_DC_ContextItem,
-            this.FilterHistory_Port_ContextItem,
-            this.FilterHistory_All_ContextItem,
-            this.toolStripSeparator3,
-            this.FilterHistory_Bulk_ContextItem,
-            this.toolStripSeparator33,
-            this.FilterHistory_DeleteCurrent_ContextItem,
-            this.FilterHistory_DeleteSelected_ContextItem,
-            this.FilterHistory_Clear_ContextItem});
-            this.FilterHistoryContextMenu.Name = "ContextMenuFilterHistory";
-            this.FilterHistoryContextMenu.Size = new System.Drawing.Size(168, 258);
-            // 
-            // FilterHistory_Base_ContextItem
-            // 
-            this.FilterHistory_Base_ContextItem.CheckOnClick = true;
-            this.FilterHistory_Base_ContextItem.Name = "FilterHistory_Base_ContextItem";
-            this.FilterHistory_Base_ContextItem.Size = new System.Drawing.Size(167, 22);
-            this.FilterHistory_Base_ContextItem.Text = "Use SearchBase";
-            this.FilterHistory_Base_ContextItem.CheckedChanged += new System.EventHandler(this.FilterHistory_Base_ContextItem_CheckedChanged);
-            // 
-            // FilterHistory_Scope_ContextItem
-            // 
-            this.FilterHistory_Scope_ContextItem.CheckOnClick = true;
-            this.FilterHistory_Scope_ContextItem.Name = "FilterHistory_Scope_ContextItem";
-            this.FilterHistory_Scope_ContextItem.Size = new System.Drawing.Size(167, 22);
-            this.FilterHistory_Scope_ContextItem.Text = "User SearchScope";
-            this.FilterHistory_Scope_ContextItem.CheckedChanged += new System.EventHandler(this.FilterHistory_Scope_ContextItem_CheckedChanged);
-            // 
-            // FilterHistory_ASQ_ContextItem
-            // 
-            this.FilterHistory_ASQ_ContextItem.CheckOnClick = true;
-            this.FilterHistory_ASQ_ContextItem.Name = "FilterHistory_ASQ_ContextItem";
-            this.FilterHistory_ASQ_ContextItem.Size = new System.Drawing.Size(167, 22);
-            this.FilterHistory_ASQ_ContextItem.Text = "Use ASQ";
-            this.FilterHistory_ASQ_ContextItem.CheckedChanged += new System.EventHandler(this.FilterHistory_ASQ_ContextItem_CheckedChanged);
-            // 
-            // FilterHistory_Sort_ContextItem
-            // 
-            this.FilterHistory_Sort_ContextItem.CheckOnClick = true;
-            this.FilterHistory_Sort_ContextItem.Name = "FilterHistory_Sort_ContextItem";
-            this.FilterHistory_Sort_ContextItem.Size = new System.Drawing.Size(167, 22);
-            this.FilterHistory_Sort_ContextItem.Text = "Use Sorting";
-            this.FilterHistory_Sort_ContextItem.CheckedChanged += new System.EventHandler(this.FilterHistory_Sort_ContextItem_CheckedChanged);
-            // 
-            // FilterHistory_DC_ContextItem
-            // 
-            this.FilterHistory_DC_ContextItem.CheckOnClick = true;
-            this.FilterHistory_DC_ContextItem.Name = "FilterHistory_DC_ContextItem";
-            this.FilterHistory_DC_ContextItem.Size = new System.Drawing.Size(167, 22);
-            this.FilterHistory_DC_ContextItem.Text = "Use DC";
-            this.FilterHistory_DC_ContextItem.CheckedChanged += new System.EventHandler(this.FilterHistory_DC_ContextItem_CheckedChanged);
-            // 
-            // FilterHistory_Port_ContextItem
-            // 
-            this.FilterHistory_Port_ContextItem.CheckOnClick = true;
-            this.FilterHistory_Port_ContextItem.Name = "FilterHistory_Port_ContextItem";
-            this.FilterHistory_Port_ContextItem.Size = new System.Drawing.Size(167, 22);
-            this.FilterHistory_Port_ContextItem.Text = "Use Port";
-            this.FilterHistory_Port_ContextItem.CheckedChanged += new System.EventHandler(this.FilterHistory_Port_ContextItem_CheckedChanged);
-            // 
-            // FilterHistory_All_ContextItem
-            // 
-            this.FilterHistory_All_ContextItem.CheckOnClick = true;
-            this.FilterHistory_All_ContextItem.Name = "FilterHistory_All_ContextItem";
-            this.FilterHistory_All_ContextItem.Size = new System.Drawing.Size(167, 22);
-            this.FilterHistory_All_ContextItem.Text = "Use All";
-            this.FilterHistory_All_ContextItem.CheckedChanged += new System.EventHandler(this.FilterHistory_All_ContextItem_CheckedChanged);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(164, 6);
-            // 
-            // FilterHistory_Bulk_ContextItem
-            // 
-            this.FilterHistory_Bulk_ContextItem.Name = "FilterHistory_Bulk_ContextItem";
-            this.FilterHistory_Bulk_ContextItem.Size = new System.Drawing.Size(167, 22);
-            this.FilterHistory_Bulk_ContextItem.Text = "Bulk Query";
-            this.FilterHistory_Bulk_ContextItem.Click += new System.EventHandler(this.FilterHistory_Bulk_ContextItem_Click);
-            // 
-            // toolStripSeparator33
-            // 
-            this.toolStripSeparator33.Name = "toolStripSeparator33";
-            this.toolStripSeparator33.Size = new System.Drawing.Size(164, 6);
-            // 
-            // FilterHistory_DeleteCurrent_ContextItem
-            // 
-            this.FilterHistory_DeleteCurrent_ContextItem.Name = "FilterHistory_DeleteCurrent_ContextItem";
-            this.FilterHistory_DeleteCurrent_ContextItem.Size = new System.Drawing.Size(167, 22);
-            this.FilterHistory_DeleteCurrent_ContextItem.Text = "Delete Current";
-            this.FilterHistory_DeleteCurrent_ContextItem.Click += new System.EventHandler(this.FilterHistory_DeleteCurrent_ContextItem_Click);
-            // 
-            // FilterHistory_DeleteSelected_ContextItem
-            // 
-            this.FilterHistory_DeleteSelected_ContextItem.Name = "FilterHistory_DeleteSelected_ContextItem";
-            this.FilterHistory_DeleteSelected_ContextItem.Size = new System.Drawing.Size(167, 22);
-            this.FilterHistory_DeleteSelected_ContextItem.Text = "Delete Selected";
-            this.FilterHistory_DeleteSelected_ContextItem.Click += new System.EventHandler(this.FilterHistory_DeleteSelected_ContextItem_Click);
-            // 
-            // FilterHistory_Clear_ContextItem
-            // 
-            this.FilterHistory_Clear_ContextItem.Name = "FilterHistory_Clear_ContextItem";
-            this.FilterHistory_Clear_ContextItem.Size = new System.Drawing.Size(167, 22);
-            this.FilterHistory_Clear_ContextItem.Text = "Clear History";
-            this.FilterHistory_Clear_ContextItem.Click += new System.EventHandler(this.Filter_ClearHistory_MenuItem_Click);
             // 
             // gbBasetype
             // 
@@ -3098,6 +3112,7 @@
             this.BaseContextMenu.ResumeLayout(false);
             this.gbQuery.ResumeLayout(false);
             this.gbQuery.PerformLayout();
+            this.FilterHistoryContextMenu.ResumeLayout(false);
             this.gbCancel.ResumeLayout(false);
             this.gbAttributes.ResumeLayout(false);
             this.gbAttributes.PerformLayout();
@@ -3105,7 +3120,6 @@
             this.AttributesSortContextMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.FilterHistoryContextMenu.ResumeLayout(false);
             this.gbBasetype.ResumeLayout(false);
             this.gbBasetype.PerformLayout();
             this.gbReferral.ResumeLayout(false);
@@ -3425,5 +3439,6 @@
         private System.Windows.Forms.ImageList ilDirSync;
         private System.Windows.Forms.TreeView tvSync;
         private System.Windows.Forms.ToolStripMenuItem Decode_DefaultSD_MenuItem;
+        private System.Windows.Forms.Button cmdCloseHistory;
     }
 }

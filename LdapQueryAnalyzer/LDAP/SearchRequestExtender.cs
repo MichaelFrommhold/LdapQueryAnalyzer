@@ -195,6 +195,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
                                         propertiesToLoad);
 
             Request.TimeLimit = TimeSpan.FromSeconds((double)ForestBase.CurrentTimeOut);
+            
 
             if (QueryInfo.PhantomRoot)
             {

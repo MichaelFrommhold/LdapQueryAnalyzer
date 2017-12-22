@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <SchemaCache>
   <CacheVersion>2</CacheVersion>
-  <mfp-labs.labsetup.org modifyTimeStamp="8/18/2017 10:33:03 AM">
+  <mfp-labs.labsetup.org modifyTimeStamp="12/14/2017 8:07:16 AM">
     <Classes>
       <All value="*">
         <Attribute>accountExpires</Attribute>
@@ -1476,6 +1476,7 @@
         <Attribute>addressBookRoots2</Attribute>
         <Attribute>globalAddressList2</Attribute>
         <Attribute>templateRoots2</Attribute>
+        <Attribute>H50ComAppNames</Attribute>
       </All>
       <organization value="organization">
         <Superior>top</Superior>
@@ -5328,6 +5329,7 @@
         <Attribute>defaultLocalPolicyObject</Attribute>
         <Attribute>cn</Attribute>
         <Attribute>catalogs</Attribute>
+        <Attribute>H50ComAppNames</Attribute>
         <Attribute>msSFU30Name</Attribute>
         <Attribute>nisMapName</Attribute>
         <Attribute>msSFU30NisDomain</Attribute>
@@ -16926,6 +16928,7 @@
         <Attribute>defaultLocalPolicyObject</Attribute>
         <Attribute>cn</Attribute>
         <Attribute>catalogs</Attribute>
+        <Attribute>H50ComAppNames</Attribute>
         <Attribute>msSFU30Name</Attribute>
         <Attribute>nisMapName</Attribute>
         <Attribute>msSFU30NisDomain</Attribute>
@@ -36672,6 +36675,7 @@
         <Attribute>defaultLocalPolicyObject</Attribute>
         <Attribute>cn</Attribute>
         <Attribute>catalogs</Attribute>
+        <Attribute>H50ComAppNames</Attribute>
         <Attribute>msSFU30Name</Attribute>
         <Attribute>nisMapName</Attribute>
         <Attribute>msSFU30NisDomain</Attribute>
@@ -39957,6 +39961,7 @@
       <addressBookRoots2 checked="0" constructed="0" linked="2122">DN</addressBookRoots2>
       <globalAddressList2 checked="0" constructed="0" linked="2124">DN</globalAddressList2>
       <templateRoots2 checked="0" constructed="0" linked="2126">DN</templateRoots2>
+      <H50ComAppNames checked="0" constructed="0" linked="0">CaseIgnoreString</H50ComAppNames>
     </Attributes>
     <ExtendedRights>
       <GUIDBF967915-0DE6-11D0-A285-00AA003049E2>accountExpires</GUIDBF967915-0DE6-11D0-A285-00AA003049E2>
@@ -41446,6 +41451,7 @@
       <GUID508CA374-A511-4E4E-9F4F-856F61A6B7E4>addressBookRoots2</GUID508CA374-A511-4E4E-9F4F-856F61A6B7E4>
       <GUID4898F63D-4112-477C-8826-3CA00BD8277D>globalAddressList2</GUID4898F63D-4112-477C-8826-3CA00BD8277D>
       <GUIDB1CBA91A-0682-4362-A659-153E201EF069>templateRoots2</GUIDB1CBA91A-0682-4362-A659-153E201EF069>
+      <GUIDE735DDDE-CAF3-4B21-8959-F3A0B26490F5>H50ComAppNames</GUIDE735DDDE-CAF3-4B21-8959-F3A0B26490F5>
       <GUIDBF967AA3-0DE6-11D0-A285-00AA003049E2>organization</GUIDBF967AA3-0DE6-11D0-A285-00AA003049E2>
       <GUIDF0F8FFAB-1191-11D0-A060-00AA006C33ED>nTDSDSA</GUIDF0F8FFAB-1191-11D0-A060-00AA006C33ED>
       <GUIDBF967A8F-0DE6-11D0-A285-00AA003049E2>dMD</GUIDBF967A8F-0DE6-11D0-A285-00AA003049E2>

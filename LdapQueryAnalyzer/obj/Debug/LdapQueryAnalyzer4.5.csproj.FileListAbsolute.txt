@@ -1,0 +1,19 @@
+E:\LabCode\Samples\LdapQueryAnalyzer\LdapQueryAnalyzer\bin\.Net 4.5\LdapQueryAnalyzer.exe.config
+E:\LabCode\Samples\LdapQueryAnalyzer\LdapQueryAnalyzer\bin\.Net 4.5\LdapQueryAnalyzer.exe
+E:\LabCode\Samples\LdapQueryAnalyzer\LdapQueryAnalyzer\bin\.Net 4.5\LdapQueryAnalyzer.pdb
+E:\LabCode\Samples\LdapQueryAnalyzer\LdapQueryAnalyzer\obj\Debug\LdapQueryAnalyzer4.5.csprojResolveAssemblyReference.cache
+E:\LabCode\Samples\LdapQueryAnalyzer\LdapQueryAnalyzer\obj\Debug\CodingFromTheField.LdapQueryAnalyzer.AuthGUI.resources
+E:\LabCode\Samples\LdapQueryAnalyzer\LdapQueryAnalyzer\obj\Debug\CodingFromTheField.LdapQueryAnalyzer.LDAPBrowser.resources
+E:\LabCode\Samples\LdapQueryAnalyzer\LdapQueryAnalyzer\obj\Debug\CodingFromTheField.LdapQueryAnalyzer.ConnectionGUI.resources
+E:\LabCode\Samples\LdapQueryAnalyzer\LdapQueryAnalyzer\obj\Debug\CodingFromTheField.LdapQueryAnalyzer.AttributeTypeAssociator.resources
+E:\LabCode\Samples\LdapQueryAnalyzer\LdapQueryAnalyzer\obj\Debug\CodingFromTheField.LdapQueryAnalyzer.InfoGui.resources
+E:\LabCode\Samples\LdapQueryAnalyzer\LdapQueryAnalyzer\obj\Debug\CodingFromTheField.LdapQueryAnalyzer.Forms.DirSyncGUI.resources
+E:\LabCode\Samples\LdapQueryAnalyzer\LdapQueryAnalyzer\obj\Debug\CodingFromTheField.LdapQueryAnalyzer.GUI.resources
+E:\LabCode\Samples\LdapQueryAnalyzer\LdapQueryAnalyzer\obj\Debug\CodingFromTheField.LdapQueryAnalyzer.RestoreDialog.resources
+E:\LabCode\Samples\LdapQueryAnalyzer\LdapQueryAnalyzer\obj\Debug\CodingFromTheField.LdapQueryAnalyzer.Properties.Resources.resources
+E:\LabCode\Samples\LdapQueryAnalyzer\LdapQueryAnalyzer\obj\Debug\CodingFromTheField.LdapQueryAnalyzer.QueryBuilder.resources
+E:\LabCode\Samples\LdapQueryAnalyzer\LdapQueryAnalyzer\obj\Debug\CodingFromTheField.LdapQueryAnalyzer.StatsGUI.resources
+E:\LabCode\Samples\LdapQueryAnalyzer\LdapQueryAnalyzer\obj\Debug\LdapQueryAnalyzer4.5.csproj.GenerateResource.Cache
+E:\LabCode\Samples\LdapQueryAnalyzer\LdapQueryAnalyzer\obj\Debug\LdapQueryAnalyzer4.5.csproj.CoreCompileInputs.cache
+E:\LabCode\Samples\LdapQueryAnalyzer\LdapQueryAnalyzer\obj\Debug\LdapQueryAnalyzer.exe
+E:\LabCode\Samples\LdapQueryAnalyzer\LdapQueryAnalyzer\obj\Debug\LdapQueryAnalyzer.pdb

@@ -12,7 +12,7 @@
   <DecodeOctetStrings>true</DecodeOctetStrings>
   <DecodeReplicaLinks>false</DecodeReplicaLinks>
   <DecodePrimaryGroupID>true</DecodePrimaryGroupID>
-  <DecodeDefaultSD>true</DecodeDefaultSD>
+  <DecodeDefaultSD>false</DecodeDefaultSD>
   <UseLocalTime>true</UseLocalTime>
   <ShowPartialResults>false</ShowPartialResults>
   <MaxResultListCount>20</MaxResultListCount>

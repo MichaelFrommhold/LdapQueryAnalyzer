@@ -190,6 +190,19 @@ namespace CodingFromTheField.LdapQueryAnalyzer
                 { ex.ToDummy(); }
             }
 
+            else if (attrib.Name.ToLowerInvariant() == "schemainfo")
+            {
+                try
+                {
+                    ret = DecodeSchemaInfo(attrib);
+
+                    exclusive = true;
+                }
+
+                catch (Exception ex)
+                { ex.ToDummy(); }
+            }
+
             #endregion
 
             #region tokenGroups  tokenGroupsGlobalAndUniversal tokenGroupsNoGCAcceptable
@@ -243,8 +256,6 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             }
             
             #endregion
-
-            
 
             else
             { match = false; }
@@ -997,6 +1008,33 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
             foreach (byte[] value in attrib.GetValues(typeof(byte[])))
             { ret.AddRange(DsaSignature.Decode(value)); }
+
+            return ret;
+        }
+
+        public List<string> DecodeSchemaInfo(DirectoryAttribute attrib)
+        {
+            List<string> ret = new List<string> { };
+
+            foreach (byte[] value in attrib.GetValues(typeof(byte[])))
+            {
+                byte[] tempar = new byte[4];
+
+                Array.Copy(value, 1, tempar, 0, 4);
+
+                Array.Reverse(tempar);
+
+                Int32 schemaver = BitConverter.ToInt32(tempar, 0);
+
+                tempar = new byte[16];
+
+                Array.Copy(value, 5, tempar, 0, 16);
+
+                Guid invocationid = new Guid(tempar);
+
+                ret.AddFormatted("\t\t<Update version = {0}; InvocationID= {1}>",
+                                        schemaver, invocationid.ToString());
+            }
 
             return ret;
         }

@@ -82,6 +82,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
                 tempcon.SessionOptions.ReferralChasing = referralChasing;
 
                 tempcon.Timeout = TimeSpan.FromSeconds((double)ForestBase.CurrentTimeOut); //new TimeSpan(0, 2, 0);
+                tempcon.SessionOptions.SendTimeout = TimeSpan.FromSeconds((double)ForestBase.CurrentTimeOut);
                 
 
                 if (!isAsync)

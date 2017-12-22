@@ -337,6 +337,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             thetips.SetToolTip(this.cmdCancelQuery, "Cancel query call but handle already received results");
             thetips.SetToolTip(this.cmdFind, "Find string in result text");
             thetips.SetToolTip(this.cmdCloseFind, "Close find dialogue");
+            thetips.SetToolTip(this.cmdCloseHistory, "Close FilterHistory");
         }
 
         protected void PostLoad()
@@ -3418,18 +3419,25 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             //FilterHistory_Scope_ContextItem_Click(null, null);
 
             this.lvFilterHistory.Visible = true;
+            this.cmdCloseHistory.Visible = true;
+
             //try { this.lvFilterHistory.Select(); }
             //catch { }
         }
 
-        protected void lvFilterHistory_DoubleClick(object sender, EventArgs e)
+        private void cmdCloseHistory_Click(object sender, EventArgs e)
         {
-            PassFilterFromHistory();
+            this.lvFilterHistory.Visible = false;
+            this.cmdCloseHistory.Visible = false;
         }
+
+        protected void lvFilterHistory_DoubleClick(object sender, EventArgs e)
+        { PassFilterFromHistory(); }
 
         protected void lvFilterHistory_Leave(object sender, EventArgs e)
         {
             this.lvFilterHistory.Visible = false;
+            this.cmdCloseHistory.Visible = false;
         }
         
         protected void lvFilterHistory_MouseClick(object sender, MouseEventArgs e)
@@ -4454,5 +4462,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
         #endregion
 
         #endregion
+
+
     }
 }
