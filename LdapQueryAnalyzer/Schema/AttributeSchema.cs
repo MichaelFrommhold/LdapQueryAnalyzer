@@ -36,6 +36,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
         public bool BitWise = false;
         public bool IsConstructed = false;
         public bool IsLinked = false;
+        public bool IsBool = false;
         public bool SyntaxFromCache;
 
         public List<int> ClassIndices = new List<int> { 0 };
@@ -87,6 +88,9 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
             else if ((Syntax == ActiveDirectorySyntax.DN) && (IsLinked))
             { MatchInChain = true; }
+
+            else if (Syntax == ActiveDirectorySyntax.Bool)
+            { IsBool = true; }
         }
 
         public override string ToString()

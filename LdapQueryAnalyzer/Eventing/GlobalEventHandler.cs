@@ -49,6 +49,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
         public static event GlobalEvent DiscoveredCurrentDomain;
         public static event GlobalEvent DiscoveredCurrentDomainNCs;
         public static event GlobalEvent DiscoveredForest;
+        public static event GlobalEvent LoadingSchema;
         public static event GlobalEvent DiscoveredSchema;
         public static event GlobalEvent DomainsUpdated;
         public static event GlobalEvent FinishedDiscovering;
@@ -207,6 +208,12 @@ namespace CodingFromTheField.LdapQueryAnalyzer
         {
             if (DiscoveredForest != null)
             { DiscoveredForest(ms, new GlobalEventArgs() { LongVal = new long[] { overall } }); }
+        }
+
+        public static void RaiseLoadingSchema()
+        {
+            if (LoadingSchema != null)
+            { LoadingSchema(null, null); }
         }
 
         public static void RaiseDiscoveredSchema(long ms, long overall)

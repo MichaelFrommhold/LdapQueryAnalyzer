@@ -194,7 +194,9 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             {
                 try
                 {
-                    ret = DecodeSchemaInfo(attrib);
+                    Int32 uver = 0;
+
+                    ret = DecodeSchemaInfo(attrib, out uver);
 
                     exclusive = true;
                 }
@@ -747,7 +749,10 @@ namespace CodingFromTheField.LdapQueryAnalyzer
                     CommonSecurityDescriptor oCSD = new CommonSecurityDescriptor(true, true, value, 0);
 
                     if (!MainBase.UserSettings.DecodeSD)
-                    { ret.AddFormatted("\t\t(must not decode) SDDL: <{0}>", oCSD.GetSddlForm(AccessControlSections.All)); }
+                    {
+                        ret.AddFormatted("\t\t(must not decode) SDDL: <{0}>", oCSD.GetSddlForm(AccessControlSections.All));
+                        
+                    }
 
                     else
                     { ret.AddRange(DecodeSD(oCSD)); }
@@ -1012,9 +1017,11 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             return ret;
         }
 
-        public List<string> DecodeSchemaInfo(DirectoryAttribute attrib)
+        public List<string> DecodeSchemaInfo(DirectoryAttribute attrib, out Int32 uVer)
         {
             List<string> ret = new List<string> { };
+
+            uVer = 0;
 
             foreach (byte[] value in attrib.GetValues(typeof(byte[])))
             {
@@ -1024,7 +1031,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
                 Array.Reverse(tempar);
 
-                Int32 schemaver = BitConverter.ToInt32(tempar, 0);
+                uVer = BitConverter.ToInt32(tempar, 0);
 
                 tempar = new byte[16];
 
@@ -1033,7 +1040,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
                 Guid invocationid = new Guid(tempar);
 
                 ret.AddFormatted("\t\t<Update version = {0}; InvocationID= {1}>",
-                                        schemaver, invocationid.ToString());
+                                        uVer, invocationid.ToString());
             }
 
             return ret;

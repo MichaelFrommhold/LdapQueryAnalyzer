@@ -10,7 +10,7 @@
   <ResolveSids>true</ResolveSids>
   <DecodeSD>true</DecodeSD>
   <DecodeOctetStrings>true</DecodeOctetStrings>
-  <DecodeReplicaLinks>false</DecodeReplicaLinks>
+  <DecodeReplicaLinks>true</DecodeReplicaLinks>
   <DecodePrimaryGroupID>true</DecodePrimaryGroupID>
   <DecodeDefaultSD>false</DecodeDefaultSD>
   <UseLocalTime>true</UseLocalTime>

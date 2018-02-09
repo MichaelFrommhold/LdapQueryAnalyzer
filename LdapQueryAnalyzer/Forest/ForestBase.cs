@@ -131,6 +131,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
         public static XElement CurrentClassesNode = null;
         public static XElement CurrentAttributesNode = null;
         public static XElement CurrentExtendedRightsNode = null;
+        public static Int32 CurrentSchemaUpdateVersion = 0;
         public static DateTime CurrentSchemaTimeStamp;
         public static string CurrentForestName = null;
 

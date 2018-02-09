@@ -216,7 +216,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
             LdapDirectoryIdentifier ldapid = new LdapDirectoryIdentifier(ForestBase.DefaultDC.Name, 389, true, false);
 
-            using (LdapConnection ldapcon = new LdapConnection(ldapid))
+            using (LdapConnector ldapcon = new LdapConnector(ldapid))
             {
                 if ((ForestBase.GivenCreds != null) && (ForestBase.GivenCreds.HasCreds))
                 { ldapcon.Credential = ForestBase.GivenCreds.NetCreds; }
@@ -299,7 +299,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
             LdapDirectoryIdentifier ldapid = new LdapDirectoryIdentifier(ForestBase.DefaultDC.Name, 389, true, false);
                         
-            using (LdapConnection ldapcon = new LdapConnection(ldapid))
+            using (LdapConnector ldapcon = new LdapConnector(ldapid))
             {
                 try
                 {
@@ -442,7 +442,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
             LdapDirectoryIdentifier ldapid = new LdapDirectoryIdentifier(ForestBase.DefaultDC.Name, 389, true, false);
 
-            using (LdapConnection ldapcon = new LdapConnection(ldapid))
+            using (LdapConnector ldapcon = new LdapConnector(ldapid))
             {
                 if ((ForestBase.GivenCreds != null) && (ForestBase.GivenCreds.HasCreds))
                 { ldapcon.Credential = ForestBase.GivenCreds.NetCreds; }

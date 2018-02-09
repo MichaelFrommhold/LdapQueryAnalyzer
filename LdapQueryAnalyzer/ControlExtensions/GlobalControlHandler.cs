@@ -1147,34 +1147,31 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
             ListBox lbox = (ListBox)sender;
 
-            if (((Keys.D9 < e.KeyCode) && (e.KeyCode < Keys.LWin)) || (e.KeyCode == Keys.OemMinus))
+            if (((Keys.D9 < e.KeyCode) && (e.KeyCode < Keys.LWin)) || (e.KeyCode == Keys.OemMinus) || (e.KeyCode == Keys.Oemplus))
             {
                 if (listTimer.Enabled)
-                {
-                    if (e.KeyCode == Keys.OemMinus)
-                    { searchString += "-"; }
+                { listTimer.Enabled = false; }
 
-                    else
-                    { searchString += e.KeyCode.ToString(); }
+                if ((e.KeyCode == Keys.OemMinus) && (e.Shift == true))
+                { searchString += "_"; }
 
-                    listTimer.Enabled = false;
-                    GlobalControlHandler.StartTimer(listTimer);
-                }
+                else if ((e.KeyCode == Keys.OemMinus) && (e.Shift == false))
+                { searchString += "-"; }
+
+                else if ((e.KeyCode == Keys.Oemplus) && (e.Shift == true))
+                { searchString += "*"; }
+
+                else if ((e.KeyCode == Keys.Oemplus) && (e.Shift == false))
+                { searchString += "+"; }
 
                 else
-                {
-                    GlobalControlHandler.StartTimer(listTimer);
-
-                    if (e.KeyCode == Keys.OemMinus)
-                    { searchString = "-"; }
-
-                    else
-                    { searchString = e.KeyCode.ToString(); }
-                }
+                { searchString += e.KeyCode.ToString(); }
 
                 int currow = lbox.FindString(searchString, 0);
 
                 lbox.SelectedIndex = currow;
+
+                GlobalControlHandler.StartTimer(listTimer);
             }
 
             else
@@ -1513,6 +1510,15 @@ namespace CodingFromTheField.LdapQueryAnalyzer
         public static void KeySuppress(KeyEventArgs e)
         {
             if ((e.KeyCode == Keys.C) && (e.Modifiers == Keys.Control))
+            { e.SuppressKeyPress = false; }
+
+            else if ((e.KeyCode == Keys.V) && (e.Modifiers == Keys.Control))
+            { e.SuppressKeyPress = false; }
+
+            else if ((e.KeyCode == Keys.Back) || (e.KeyCode == Keys.Delete))
+            { e.SuppressKeyPress = false; }
+
+            else if (e.KeyCode == Keys.ShiftKey)
             { e.SuppressKeyPress = false; }
 
             else

@@ -428,6 +428,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             GlobalEventHandler.DiscoveredForest += ForestEvent;
             GlobalEventHandler.CountOfDCs += DCCountEvent;
             GlobalEventHandler.DCDiscovered += DCDiscoveredEvent;
+            GlobalEventHandler.LoadingSchema += SchemaLoadEvent;
             GlobalEventHandler.DiscoveredSchema += SchemaEvent;
             GlobalEventHandler.FinishedDiscovering += EndRefreshForest;
 
@@ -522,6 +523,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             GlobalEventHandler.DiscoveredForest -= ForestEvent;
             GlobalEventHandler.CountOfDCs -= DCCountEvent;
             GlobalEventHandler.DCDiscovered -= DCDiscoveredEvent;
+            GlobalEventHandler.LoadingSchema -= SchemaLoadEvent;
             GlobalEventHandler.DiscoveredSchema -= SchemaEvent;
             GlobalEventHandler.FinishedDiscovering -= EndRefreshForest;
         }
@@ -1581,6 +1583,36 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             }            
         }
 
+        protected void AttributesChecker(object sender, KeyEventArgs e)
+        {
+            bool handle = true;
+            if ((e.KeyCode == Keys.C) && (e.Modifiers == Keys.Control))
+            { handle = false; }
+
+            else if ((e.KeyCode == Keys.V) && (e.Modifiers == Keys.Control))
+            { handle = false; }
+
+            else if ((e.KeyCode == Keys.Back) || (e.KeyCode == Keys.Delete))
+            { handle = false; }
+
+            else if (e.KeyCode == Keys.ShiftKey)
+            { handle = false; }
+
+            if (handle)
+            {
+                LoadAttribsFromSchema();
+
+                if (lbAttribs.Visible != true)
+                { lbAttribs.Visible = true; }
+
+                if ((e.KeyCode == Keys.Return) || (e.KeyCode == Keys.Enter))
+                { AddAttribute(); }
+
+                else
+                { GlobalControlHandler.ListBoxKeyEventSearch(lbAttribs, e, ref this.ListTimer, ref this.ListQuery); }
+            }
+        }
+
         protected void AddSortingAttribute(string attrib, bool? reverse = null)
         {
             string removeattrib = null;
@@ -2635,6 +2667,13 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             LogDebugString(String.Format("  Attributes count: {0}", ForestBase.AttributeCache.Count()));
         }
 
+        protected void SchemaLoadEvent(object ms, GlobalEventArgs args)
+        {
+            GlobalEventHandler.LoadingSchema -= SchemaEvent;
+
+            LogDebugString("DownloadCurrentSchema");            
+        }
+
         protected void DCCountEvent(object count, GlobalEventArgs args)
         {
             DCCount = (int)count;
@@ -3458,6 +3497,12 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             GlobalControlHandler.ListBoxKeyEventSearch(sender, e, ref this.ListTimer, ref this.ListQuery);
         }
 
+        private void txtAttributes_KeyDown(object sender, KeyEventArgs e)
+        { GlobalControlHandler.KeySuppress(e); }
+
+        private void txtAttributes_KeyUp(object sender, KeyEventArgs e)
+        { AttributesChecker(sender, e); }
+        
         protected void lbAttribs_DoubleClick(object sender, EventArgs e)
         { AddAttribute(); }
 
@@ -4457,6 +4502,8 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
             //ShowInfoLoaded = true;
         }
+
+
 
 
         #endregion

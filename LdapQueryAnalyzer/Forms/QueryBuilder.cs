@@ -152,6 +152,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
             bool bitwise = false;
             bool matchinchain = false;
+            bool isbool = false;
 
             this.cbGuid.Checked = false;
 
@@ -161,6 +162,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             {
                 bitwise = ForestBase.AttributeCache[attrib].BitWise;
                 matchinchain = ForestBase.AttributeCache[attrib].MatchInChain;
+                isbool = ForestBase.AttributeCache[attrib].IsBool;
 
                 if (attrib.ToLowerInvariant().Contains("guid"))
                 { this.cbGuid.Checked = (ForestBase.AttributeCache[attrib].Syntax == ActiveDirectorySyntax.OctetString); }
@@ -185,6 +187,15 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             this.cmdChain.Enabled = matchinchain;
 
             this.Attributes_Chain_MenuItem.Enabled = matchinchain;
+
+            this.txtVal.Visible = !isbool;
+            this.cmdLEQ.Enabled = !isbool;
+            this.cmdGEQ.Enabled = !isbool;
+            this.cbGuid.Enabled = !isbool;
+            this.txtBoolFrame.Visible = isbool;
+            this.rbBoolFalse.Visible = isbool;
+            this.rbBoolSet.Visible = isbool;
+            this.rbBoolTrue.Visible = isbool;            
         }
 
         private void Apply()
@@ -302,7 +313,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             {
                 valuename = source.SelectedItem.ToString();
                 
-                queryvalue = CheckHex(valuename);
+                queryvalue = CheckValueHandling(valuename);
 
                 if (queryvalue.Length == 0) queryvalue = "*";
             }
@@ -405,6 +416,29 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             string ret = this.txtVal.Text;
 
             ret = HexConverter.ToHex(ret, valueName);
+
+            return ret;
+        }
+
+        private string CheckValueHandling(string valueName)
+        {
+            string ret = this.txtVal.Text;
+
+            if (this.txtVal.Visible == false)
+            {
+                ret = "*";
+
+                if (this.rbBoolFalse.Checked == true)
+                { ret = "FALSE"; }
+
+                else if (this.rbBoolTrue.Checked == true)
+                { ret = "TRUE"; }
+            }
+
+            else
+            {
+                ret = HexConverter.ToHex(ret, valueName);
+            }
 
             return ret;
         }

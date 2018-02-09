@@ -120,6 +120,10 @@
             this.Value_Paste_ContextItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.Value_Claer_ContextItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rbBoolTrue = new System.Windows.Forms.RadioButton();
+            this.rbBoolFalse = new System.Windows.Forms.RadioButton();
+            this.rbBoolSet = new System.Windows.Forms.RadioButton();
+            this.txtBoolFrame = new System.Windows.Forms.TextBox();
             this.gbGroups.SuspendLayout();
             this.FilterContextMenu.SuspendLayout();
             this.gbClasses.SuspendLayout();
@@ -242,6 +246,7 @@
             // 
             // FilterContextMenu
             // 
+            this.FilterContextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.FilterContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FQBilter_NewAnd_MenuItem,
             this.FQBilter_NewOr_MenuItem,
@@ -251,50 +256,50 @@
             this.toolStripSeparator9,
             this.FQBilter_Clear_MenuItem});
             this.FilterContextMenu.Name = "FilterContextMenu";
-            this.FilterContextMenu.Size = new System.Drawing.Size(180, 126);
+            this.FilterContextMenu.Size = new System.Drawing.Size(210, 136);
             // 
             // FQBilter_NewAnd_MenuItem
             // 
             this.FQBilter_NewAnd_MenuItem.Name = "FQBilter_NewAnd_MenuItem";
-            this.FQBilter_NewAnd_MenuItem.Size = new System.Drawing.Size(179, 22);
+            this.FQBilter_NewAnd_MenuItem.Size = new System.Drawing.Size(209, 24);
             this.FQBilter_NewAnd_MenuItem.Text = "New AND group (&&";
             this.FQBilter_NewAnd_MenuItem.Click += new System.EventHandler(this.Filter_And_MenuItem_Click);
             // 
             // FQBilter_NewOr_MenuItem
             // 
             this.FQBilter_NewOr_MenuItem.Name = "FQBilter_NewOr_MenuItem";
-            this.FQBilter_NewOr_MenuItem.Size = new System.Drawing.Size(179, 22);
+            this.FQBilter_NewOr_MenuItem.Size = new System.Drawing.Size(209, 24);
             this.FQBilter_NewOr_MenuItem.Text = "New OR group (|";
             this.FQBilter_NewOr_MenuItem.Click += new System.EventHandler(this.Filter_Or_MenuItem_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(176, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(206, 6);
             // 
             // FQBilter_Close_MenuItem
             // 
             this.FQBilter_Close_MenuItem.Name = "FQBilter_Close_MenuItem";
-            this.FQBilter_Close_MenuItem.Size = new System.Drawing.Size(179, 22);
+            this.FQBilter_Close_MenuItem.Size = new System.Drawing.Size(209, 24);
             this.FQBilter_Close_MenuItem.Text = "Close current group";
             this.FQBilter_Close_MenuItem.Click += new System.EventHandler(this.Filter_CloseCurrent_MenuItem_Click);
             // 
             // FQBilter_CloseAll_MenuItem
             // 
             this.FQBilter_CloseAll_MenuItem.Name = "FQBilter_CloseAll_MenuItem";
-            this.FQBilter_CloseAll_MenuItem.Size = new System.Drawing.Size(179, 22);
+            this.FQBilter_CloseAll_MenuItem.Size = new System.Drawing.Size(209, 24);
             this.FQBilter_CloseAll_MenuItem.Text = "Close all groups";
             this.FQBilter_CloseAll_MenuItem.Click += new System.EventHandler(this.Filter_CloseAll_MenuItem_Click);
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(176, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(206, 6);
             // 
             // FQBilter_Clear_MenuItem
             // 
             this.FQBilter_Clear_MenuItem.Name = "FQBilter_Clear_MenuItem";
-            this.FQBilter_Clear_MenuItem.Size = new System.Drawing.Size(179, 22);
+            this.FQBilter_Clear_MenuItem.Size = new System.Drawing.Size(209, 24);
             this.FQBilter_Clear_MenuItem.Text = "Clear Filter";
             this.FQBilter_Clear_MenuItem.Click += new System.EventHandler(this.Filter_Clear_MenuItem_Click);
             // 
@@ -351,6 +356,7 @@
             // 
             // ClassesContextMenu
             // 
+            this.ClassesContextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ClassesContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Classes_Copy_ContextItem,
             this.Classes_CopyAll_ContextItem,
@@ -358,38 +364,38 @@
             this.Classes_Equals__ContextItem,
             this.Classes_NotEquals_ContextItem});
             this.ClassesContextMenu.Name = "ContextMenuClasses";
-            this.ClassesContextMenu.Size = new System.Drawing.Size(150, 98);
+            this.ClassesContextMenu.Size = new System.Drawing.Size(174, 106);
             // 
             // Classes_Copy_ContextItem
             // 
             this.Classes_Copy_ContextItem.Name = "Classes_Copy_ContextItem";
-            this.Classes_Copy_ContextItem.Size = new System.Drawing.Size(149, 22);
+            this.Classes_Copy_ContextItem.Size = new System.Drawing.Size(173, 24);
             this.Classes_Copy_ContextItem.Text = "Copy Selected";
             this.Classes_Copy_ContextItem.Click += new System.EventHandler(this.Classes_Copy_ContextItem_Click);
             // 
             // Classes_CopyAll_ContextItem
             // 
             this.Classes_CopyAll_ContextItem.Name = "Classes_CopyAll_ContextItem";
-            this.Classes_CopyAll_ContextItem.Size = new System.Drawing.Size(149, 22);
+            this.Classes_CopyAll_ContextItem.Size = new System.Drawing.Size(173, 24);
             this.Classes_CopyAll_ContextItem.Text = "Copy All";
             this.Classes_CopyAll_ContextItem.Click += new System.EventHandler(this.Classes_CopyAll_ContextItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(146, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(170, 6);
             // 
             // Classes_Equals__ContextItem
             // 
             this.Classes_Equals__ContextItem.Name = "Classes_Equals__ContextItem";
-            this.Classes_Equals__ContextItem.Size = new System.Drawing.Size(149, 22);
+            this.Classes_Equals__ContextItem.Size = new System.Drawing.Size(173, 24);
             this.Classes_Equals__ContextItem.Text = "Equals";
             this.Classes_Equals__ContextItem.Click += new System.EventHandler(this.Classes_Equals_MenuItem_Click);
             // 
             // Classes_NotEquals_ContextItem
             // 
             this.Classes_NotEquals_ContextItem.Name = "Classes_NotEquals_ContextItem";
-            this.Classes_NotEquals_ContextItem.Size = new System.Drawing.Size(149, 22);
+            this.Classes_NotEquals_ContextItem.Size = new System.Drawing.Size(173, 24);
             this.Classes_NotEquals_ContextItem.Text = "Not Equals";
             this.Classes_NotEquals_ContextItem.Click += new System.EventHandler(this.Classes_NotEquals_MenuItem_Click);
             // 
@@ -398,6 +404,9 @@
             this.gbAttributes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbAttributes.Controls.Add(this.rbBoolSet);
+            this.gbAttributes.Controls.Add(this.rbBoolFalse);
+            this.gbAttributes.Controls.Add(this.rbBoolTrue);
             this.gbAttributes.Controls.Add(this.cmdChain);
             this.gbAttributes.Controls.Add(this.cmdNEQ);
             this.gbAttributes.Controls.Add(this.cmdEQ);
@@ -410,10 +419,11 @@
             this.gbAttributes.Controls.Add(this.cmdSetLogicalFilter);
             this.gbAttributes.Controls.Add(this.cmdHideEnum);
             this.gbAttributes.Controls.Add(this.lbAttribs);
-            this.gbAttributes.Controls.Add(this.txtVal);
             this.gbAttributes.Controls.Add(this.cmdOR);
             this.gbAttributes.Controls.Add(this.cmdAND);
             this.gbAttributes.Controls.Add(this.lvEnum);
+            this.gbAttributes.Controls.Add(this.txtBoolFrame);
+            this.gbAttributes.Controls.Add(this.txtVal);
             this.gbAttributes.Location = new System.Drawing.Point(269, 8);
             this.gbAttributes.Name = "gbAttributes";
             this.gbAttributes.Size = new System.Drawing.Size(314, 200);
@@ -513,7 +523,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 132);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.Size = new System.Drawing.Size(38, 15);
             this.label1.TabIndex = 15;
             this.label1.Text = "Value";
             // 
@@ -522,9 +532,9 @@
             this.cbGuid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbGuid.AutoSize = true;
             this.cbGuid.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cbGuid.Location = new System.Drawing.Point(254, 131);
+            this.cbGuid.Location = new System.Drawing.Point(245, 131);
             this.cbGuid.Name = "cbGuid";
-            this.cbGuid.Size = new System.Drawing.Size(55, 17);
+            this.cbGuid.Size = new System.Drawing.Size(64, 19);
             this.cbGuid.TabIndex = 5;
             this.cbGuid.Text = "isGuid";
             this.cbGuid.UseVisualStyleBackColor = true;
@@ -570,6 +580,7 @@
             // 
             // AttributesContextMenu
             // 
+            this.AttributesContextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.AttributesContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Attributes_Copy_ContextItem,
             this.Attributes_CopyAll_ContextItem,
@@ -581,64 +592,64 @@
             this.Attributes_Or_ContextItem,
             this.Attributes_Chain_ContextItem});
             this.AttributesContextMenu.Name = "ContextMenuAttribs";
-            this.AttributesContextMenu.Size = new System.Drawing.Size(156, 170);
+            this.AttributesContextMenu.Size = new System.Drawing.Size(177, 184);
             // 
             // Attributes_Copy_ContextItem
             // 
             this.Attributes_Copy_ContextItem.Name = "Attributes_Copy_ContextItem";
-            this.Attributes_Copy_ContextItem.Size = new System.Drawing.Size(155, 22);
+            this.Attributes_Copy_ContextItem.Size = new System.Drawing.Size(176, 24);
             this.Attributes_Copy_ContextItem.Text = "Copy Selected";
             this.Attributes_Copy_ContextItem.Click += new System.EventHandler(this.Attributes_Copy_ContextItem_Click);
             // 
             // Attributes_CopyAll_ContextItem
             // 
             this.Attributes_CopyAll_ContextItem.Name = "Attributes_CopyAll_ContextItem";
-            this.Attributes_CopyAll_ContextItem.Size = new System.Drawing.Size(155, 22);
+            this.Attributes_CopyAll_ContextItem.Size = new System.Drawing.Size(176, 24);
             this.Attributes_CopyAll_ContextItem.Text = "Copy All";
             this.Attributes_CopyAll_ContextItem.Click += new System.EventHandler(this.Attributes_CopyAll_ContextItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(152, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(173, 6);
             // 
             // Attributes_Equals_ContextItem
             // 
             this.Attributes_Equals_ContextItem.Name = "Attributes_Equals_ContextItem";
-            this.Attributes_Equals_ContextItem.Size = new System.Drawing.Size(155, 22);
+            this.Attributes_Equals_ContextItem.Size = new System.Drawing.Size(176, 24);
             this.Attributes_Equals_ContextItem.Text = "Equals";
             this.Attributes_Equals_ContextItem.Click += new System.EventHandler(this.Attributes_Equal_MenuItem_Click);
             // 
             // Attributes_NotEquals_ContextItem
             // 
             this.Attributes_NotEquals_ContextItem.Name = "Attributes_NotEquals_ContextItem";
-            this.Attributes_NotEquals_ContextItem.Size = new System.Drawing.Size(155, 22);
+            this.Attributes_NotEquals_ContextItem.Size = new System.Drawing.Size(176, 24);
             this.Attributes_NotEquals_ContextItem.Text = "Not Equals";
             this.Attributes_NotEquals_ContextItem.Click += new System.EventHandler(this.Attributes_NotEqual_MenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(152, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(173, 6);
             // 
             // Attributes_And_ContextItem
             // 
             this.Attributes_And_ContextItem.Name = "Attributes_And_ContextItem";
-            this.Attributes_And_ContextItem.Size = new System.Drawing.Size(155, 22);
+            this.Attributes_And_ContextItem.Size = new System.Drawing.Size(176, 24);
             this.Attributes_And_ContextItem.Text = "Bitwise AND";
             this.Attributes_And_ContextItem.Click += new System.EventHandler(this.Attributes_And_MenuItem_Click);
             // 
             // Attributes_Or_ContextItem
             // 
             this.Attributes_Or_ContextItem.Name = "Attributes_Or_ContextItem";
-            this.Attributes_Or_ContextItem.Size = new System.Drawing.Size(155, 22);
+            this.Attributes_Or_ContextItem.Size = new System.Drawing.Size(176, 24);
             this.Attributes_Or_ContextItem.Text = "Bitwise OR";
             this.Attributes_Or_ContextItem.Click += new System.EventHandler(this.Attributes_Or_MenuItem_Click);
             // 
             // Attributes_Chain_ContextItem
             // 
             this.Attributes_Chain_ContextItem.Name = "Attributes_Chain_ContextItem";
-            this.Attributes_Chain_ContextItem.Size = new System.Drawing.Size(155, 22);
+            this.Attributes_Chain_ContextItem.Size = new System.Drawing.Size(176, 24);
             this.Attributes_Chain_ContextItem.Text = "Match In Chain";
             this.Attributes_Chain_ContextItem.Click += new System.EventHandler(this.Attributes_Chain_MenuItem_Click);
             // 
@@ -710,6 +721,7 @@
             // 
             // MainMenu
             // 
+            this.MainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileMenu,
             this.FilterMenu,
@@ -717,7 +729,7 @@
             this.AttributesMenu});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(591, 24);
+            this.MainMenu.Size = new System.Drawing.Size(591, 28);
             this.MainMenu.TabIndex = 8;
             this.MainMenu.Text = "menuStrip1";
             // 
@@ -728,25 +740,25 @@
             this.toolStripSeparator7,
             this.File_Close_MenuItem});
             this.FileMenu.Name = "FileMenu";
-            this.FileMenu.Size = new System.Drawing.Size(37, 20);
+            this.FileMenu.Size = new System.Drawing.Size(44, 24);
             this.FileMenu.Text = "File";
             // 
             // File_Apply_MenuItem
             // 
             this.File_Apply_MenuItem.Name = "File_Apply_MenuItem";
-            this.File_Apply_MenuItem.Size = new System.Drawing.Size(152, 22);
+            this.File_Apply_MenuItem.Size = new System.Drawing.Size(160, 26);
             this.File_Apply_MenuItem.Text = "Apply Filter";
             this.File_Apply_MenuItem.Click += new System.EventHandler(this.File_Apply_MenuItem_Click);
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(157, 6);
             // 
             // File_Close_MenuItem
             // 
             this.File_Close_MenuItem.Name = "File_Close_MenuItem";
-            this.File_Close_MenuItem.Size = new System.Drawing.Size(152, 22);
+            this.File_Close_MenuItem.Size = new System.Drawing.Size(160, 26);
             this.File_Close_MenuItem.Text = "Close";
             this.File_Close_MenuItem.Click += new System.EventHandler(this.File_Close_MenuItem_Click);
             // 
@@ -761,51 +773,51 @@
             this.toolStripSeparator5,
             this.Filter_Clear_MenuItem});
             this.FilterMenu.Name = "FilterMenu";
-            this.FilterMenu.Size = new System.Drawing.Size(83, 20);
+            this.FilterMenu.Size = new System.Drawing.Size(101, 24);
             this.FilterMenu.Text = "FilterGroups";
             // 
             // Filter_And_MenuItem
             // 
             this.Filter_And_MenuItem.Name = "Filter_And_MenuItem";
-            this.Filter_And_MenuItem.Size = new System.Drawing.Size(179, 22);
+            this.Filter_And_MenuItem.Size = new System.Drawing.Size(215, 26);
             this.Filter_And_MenuItem.Text = "New AND group (&&";
             this.Filter_And_MenuItem.Click += new System.EventHandler(this.Filter_And_MenuItem_Click);
             // 
             // Filter_Or_MenuItem
             // 
             this.Filter_Or_MenuItem.Name = "Filter_Or_MenuItem";
-            this.Filter_Or_MenuItem.Size = new System.Drawing.Size(179, 22);
+            this.Filter_Or_MenuItem.Size = new System.Drawing.Size(215, 26);
             this.Filter_Or_MenuItem.Text = "New OR group (|";
             this.Filter_Or_MenuItem.Click += new System.EventHandler(this.Filter_Or_MenuItem_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(176, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(212, 6);
             // 
             // Filter_CloseCurrent_MenuItem
             // 
             this.Filter_CloseCurrent_MenuItem.Name = "Filter_CloseCurrent_MenuItem";
-            this.Filter_CloseCurrent_MenuItem.Size = new System.Drawing.Size(179, 22);
+            this.Filter_CloseCurrent_MenuItem.Size = new System.Drawing.Size(215, 26);
             this.Filter_CloseCurrent_MenuItem.Text = "Close current group";
             this.Filter_CloseCurrent_MenuItem.Click += new System.EventHandler(this.Filter_CloseCurrent_MenuItem_Click);
             // 
             // Filter_CloseAll_MenuItem
             // 
             this.Filter_CloseAll_MenuItem.Name = "Filter_CloseAll_MenuItem";
-            this.Filter_CloseAll_MenuItem.Size = new System.Drawing.Size(179, 22);
+            this.Filter_CloseAll_MenuItem.Size = new System.Drawing.Size(215, 26);
             this.Filter_CloseAll_MenuItem.Text = "Close all groups";
             this.Filter_CloseAll_MenuItem.Click += new System.EventHandler(this.Filter_CloseAll_MenuItem_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(176, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(212, 6);
             // 
             // Filter_Clear_MenuItem
             // 
             this.Filter_Clear_MenuItem.Name = "Filter_Clear_MenuItem";
-            this.Filter_Clear_MenuItem.Size = new System.Drawing.Size(179, 22);
+            this.Filter_Clear_MenuItem.Size = new System.Drawing.Size(215, 26);
             this.Filter_Clear_MenuItem.Text = "Clear Filter";
             this.Filter_Clear_MenuItem.Click += new System.EventHandler(this.Filter_Clear_MenuItem_Click);
             // 
@@ -815,20 +827,20 @@
             this.Classes_Equals_MenuItem,
             this.Classes_NotEquals_MenuItem});
             this.ClassesMenu.Name = "ClassesMenu";
-            this.ClassesMenu.Size = new System.Drawing.Size(57, 20);
+            this.ClassesMenu.Size = new System.Drawing.Size(68, 24);
             this.ClassesMenu.Text = "Classes";
             // 
             // Classes_Equals_MenuItem
             // 
             this.Classes_Equals_MenuItem.Name = "Classes_Equals_MenuItem";
-            this.Classes_Equals_MenuItem.Size = new System.Drawing.Size(152, 22);
+            this.Classes_Equals_MenuItem.Size = new System.Drawing.Size(156, 26);
             this.Classes_Equals_MenuItem.Text = "Equals";
             this.Classes_Equals_MenuItem.Click += new System.EventHandler(this.Classes_Equals_MenuItem_Click);
             // 
             // Classes_NotEquals_MenuItem
             // 
             this.Classes_NotEquals_MenuItem.Name = "Classes_NotEquals_MenuItem";
-            this.Classes_NotEquals_MenuItem.Size = new System.Drawing.Size(152, 22);
+            this.Classes_NotEquals_MenuItem.Size = new System.Drawing.Size(156, 26);
             this.Classes_NotEquals_MenuItem.Text = "Not Equals";
             this.Classes_NotEquals_MenuItem.Click += new System.EventHandler(this.Classes_NotEquals_MenuItem_Click);
             // 
@@ -847,47 +859,47 @@
             this.toolStripSeparator11,
             this.Attributes_Chain_MenuItem});
             this.AttributesMenu.Name = "AttributesMenu";
-            this.AttributesMenu.Size = new System.Drawing.Size(71, 20);
+            this.AttributesMenu.Size = new System.Drawing.Size(86, 24);
             this.AttributesMenu.Text = "Attributes";
             // 
             // Attributes_Equal_MenuItem
             // 
             this.Attributes_Equal_MenuItem.Name = "Attributes_Equal_MenuItem";
-            this.Attributes_Equal_MenuItem.Size = new System.Drawing.Size(164, 22);
+            this.Attributes_Equal_MenuItem.Size = new System.Drawing.Size(199, 26);
             this.Attributes_Equal_MenuItem.Text = "Equals";
             this.Attributes_Equal_MenuItem.Click += new System.EventHandler(this.Attributes_Equal_MenuItem_Click);
             // 
             // Attributes_NotEqual_MenuItem
             // 
             this.Attributes_NotEqual_MenuItem.Name = "Attributes_NotEqual_MenuItem";
-            this.Attributes_NotEqual_MenuItem.Size = new System.Drawing.Size(164, 22);
+            this.Attributes_NotEqual_MenuItem.Size = new System.Drawing.Size(199, 26);
             this.Attributes_NotEqual_MenuItem.Text = "Not Equals";
             this.Attributes_NotEqual_MenuItem.Click += new System.EventHandler(this.Attributes_NotEqual_MenuItem_Click);
             // 
             // Attributes_LessOrEqual_MenuItem
             // 
             this.Attributes_LessOrEqual_MenuItem.Name = "Attributes_LessOrEqual_MenuItem";
-            this.Attributes_LessOrEqual_MenuItem.Size = new System.Drawing.Size(164, 22);
+            this.Attributes_LessOrEqual_MenuItem.Size = new System.Drawing.Size(199, 26);
             this.Attributes_LessOrEqual_MenuItem.Text = "Less Or Equals";
             this.Attributes_LessOrEqual_MenuItem.Click += new System.EventHandler(this.Attributes_LessOrEqual_MenuItem_Click);
             // 
             // Attributes_GreaterOrEqual_MenuItem
             // 
             this.Attributes_GreaterOrEqual_MenuItem.Name = "Attributes_GreaterOrEqual_MenuItem";
-            this.Attributes_GreaterOrEqual_MenuItem.Size = new System.Drawing.Size(164, 22);
+            this.Attributes_GreaterOrEqual_MenuItem.Size = new System.Drawing.Size(199, 26);
             this.Attributes_GreaterOrEqual_MenuItem.Text = "Greater or Equals";
             this.Attributes_GreaterOrEqual_MenuItem.Click += new System.EventHandler(this.Attributes_GreaterOrEqual_MenuItem_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(161, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(196, 6);
             // 
             // Attributes_And_MenuItem
             // 
             this.Attributes_And_MenuItem.Enabled = false;
             this.Attributes_And_MenuItem.Name = "Attributes_And_MenuItem";
-            this.Attributes_And_MenuItem.Size = new System.Drawing.Size(164, 22);
+            this.Attributes_And_MenuItem.Size = new System.Drawing.Size(199, 26);
             this.Attributes_And_MenuItem.Text = "BitWise AND";
             this.Attributes_And_MenuItem.Click += new System.EventHandler(this.Attributes_And_MenuItem_Click);
             // 
@@ -895,7 +907,7 @@
             // 
             this.Attributes_Nand_MenuItem.Enabled = false;
             this.Attributes_Nand_MenuItem.Name = "Attributes_Nand_MenuItem";
-            this.Attributes_Nand_MenuItem.Size = new System.Drawing.Size(164, 22);
+            this.Attributes_Nand_MenuItem.Size = new System.Drawing.Size(199, 26);
             this.Attributes_Nand_MenuItem.Text = "Not BitWise AND";
             this.Attributes_Nand_MenuItem.Click += new System.EventHandler(this.Attributes_Nand_MenuItem_Click);
             // 
@@ -903,7 +915,7 @@
             // 
             this.Attributes_Or_MenuItem.Enabled = false;
             this.Attributes_Or_MenuItem.Name = "Attributes_Or_MenuItem";
-            this.Attributes_Or_MenuItem.Size = new System.Drawing.Size(164, 22);
+            this.Attributes_Or_MenuItem.Size = new System.Drawing.Size(199, 26);
             this.Attributes_Or_MenuItem.Text = "BitWise OR";
             this.Attributes_Or_MenuItem.Click += new System.EventHandler(this.Attributes_Or_MenuItem_Click);
             // 
@@ -911,20 +923,20 @@
             // 
             this.Attributes_Nor_MenuItem.Enabled = false;
             this.Attributes_Nor_MenuItem.Name = "Attributes_Nor_MenuItem";
-            this.Attributes_Nor_MenuItem.Size = new System.Drawing.Size(164, 22);
+            this.Attributes_Nor_MenuItem.Size = new System.Drawing.Size(199, 26);
             this.Attributes_Nor_MenuItem.Text = "Not BitWise OR";
             this.Attributes_Nor_MenuItem.Click += new System.EventHandler(this.Attributes_Nor_MenuItem_Click);
             // 
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(161, 6);
+            this.toolStripSeparator11.Size = new System.Drawing.Size(196, 6);
             // 
             // Attributes_Chain_MenuItem
             // 
             this.Attributes_Chain_MenuItem.Enabled = false;
             this.Attributes_Chain_MenuItem.Name = "Attributes_Chain_MenuItem";
-            this.Attributes_Chain_MenuItem.Size = new System.Drawing.Size(164, 22);
+            this.Attributes_Chain_MenuItem.Size = new System.Drawing.Size(199, 26);
             this.Attributes_Chain_MenuItem.Text = "Match in Chain";
             this.Attributes_Chain_MenuItem.Click += new System.EventHandler(this.Attributes_Chain_MenuItem_Click);
             // 
@@ -943,40 +955,89 @@
             // 
             // ValueContextMenu
             // 
+            this.ValueContextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ValueContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Value_Copy_ContextItem,
             this.Value_Paste_ContextItem,
             this.toolStripSeparator10,
             this.Value_Claer_ContextItem});
             this.ValueContextMenu.Name = "ValueContextMenu";
-            this.ValueContextMenu.Size = new System.Drawing.Size(103, 76);
+            this.ValueContextMenu.Size = new System.Drawing.Size(114, 82);
             this.ValueContextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.ValueContextMenu_Opening);
             // 
             // Value_Copy_ContextItem
             // 
             this.Value_Copy_ContextItem.Name = "Value_Copy_ContextItem";
-            this.Value_Copy_ContextItem.Size = new System.Drawing.Size(102, 22);
+            this.Value_Copy_ContextItem.Size = new System.Drawing.Size(113, 24);
             this.Value_Copy_ContextItem.Text = "Copy";
             this.Value_Copy_ContextItem.Click += new System.EventHandler(this.Value_Copy_ContextItem_Click);
             // 
             // Value_Paste_ContextItem
             // 
             this.Value_Paste_ContextItem.Name = "Value_Paste_ContextItem";
-            this.Value_Paste_ContextItem.Size = new System.Drawing.Size(102, 22);
+            this.Value_Paste_ContextItem.Size = new System.Drawing.Size(113, 24);
             this.Value_Paste_ContextItem.Text = "Paste";
             this.Value_Paste_ContextItem.Click += new System.EventHandler(this.Value_Paste_ContextItem_Click);
             // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(99, 6);
+            this.toolStripSeparator10.Size = new System.Drawing.Size(110, 6);
             // 
             // Value_Claer_ContextItem
             // 
             this.Value_Claer_ContextItem.Name = "Value_Claer_ContextItem";
-            this.Value_Claer_ContextItem.Size = new System.Drawing.Size(102, 22);
+            this.Value_Claer_ContextItem.Size = new System.Drawing.Size(113, 24);
             this.Value_Claer_ContextItem.Text = "Clear";
             this.Value_Claer_ContextItem.Click += new System.EventHandler(this.Value_Claer_ContextItem_Click);
+            // 
+            // rbBoolTrue
+            // 
+            this.rbBoolTrue.AutoSize = true;
+            this.rbBoolTrue.Location = new System.Drawing.Point(12, 155);
+            this.rbBoolTrue.Name = "rbBoolTrue";
+            this.rbBoolTrue.Size = new System.Drawing.Size(53, 19);
+            this.rbBoolTrue.TabIndex = 31;
+            this.rbBoolTrue.TabStop = true;
+            this.rbBoolTrue.Text = "True";
+            this.rbBoolTrue.UseVisualStyleBackColor = true;
+            this.rbBoolTrue.Visible = false;
+            // 
+            // rbBoolFalse
+            // 
+            this.rbBoolFalse.AutoSize = true;
+            this.rbBoolFalse.Location = new System.Drawing.Point(87, 155);
+            this.rbBoolFalse.Name = "rbBoolFalse";
+            this.rbBoolFalse.Size = new System.Drawing.Size(58, 19);
+            this.rbBoolFalse.TabIndex = 32;
+            this.rbBoolFalse.TabStop = true;
+            this.rbBoolFalse.Text = "False";
+            this.rbBoolFalse.UseVisualStyleBackColor = true;
+            this.rbBoolFalse.Visible = false;
+            // 
+            // rbBoolSet
+            // 
+            this.rbBoolSet.AutoSize = true;
+            this.rbBoolSet.Location = new System.Drawing.Point(164, 155);
+            this.rbBoolSet.Name = "rbBoolSet";
+            this.rbBoolSet.Size = new System.Drawing.Size(82, 19);
+            this.rbBoolSet.TabIndex = 33;
+            this.rbBoolSet.TabStop = true;
+            this.rbBoolSet.Text = "Has value";
+            this.rbBoolSet.UseVisualStyleBackColor = true;
+            this.rbBoolSet.Visible = false;
+            // 
+            // txtBoolFrame
+            // 
+            this.txtBoolFrame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoolFrame.Enabled = false;
+            this.txtBoolFrame.Location = new System.Drawing.Point(6, 148);
+            this.txtBoolFrame.Multiline = true;
+            this.txtBoolFrame.Name = "txtBoolFrame";
+            this.txtBoolFrame.Size = new System.Drawing.Size(302, 46);
+            this.txtBoolFrame.TabIndex = 34;
+            this.txtBoolFrame.Visible = false;
             // 
             // QueryBuilder
             // 
@@ -1101,5 +1162,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
         private System.Windows.Forms.ToolStripMenuItem Attributes_Nand_MenuItem;
         private System.Windows.Forms.ToolStripMenuItem Attributes_Nor_MenuItem;
+        private System.Windows.Forms.RadioButton rbBoolSet;
+        private System.Windows.Forms.RadioButton rbBoolFalse;
+        private System.Windows.Forms.RadioButton rbBoolTrue;
+        private System.Windows.Forms.TextBox txtBoolFrame;
     }
 }

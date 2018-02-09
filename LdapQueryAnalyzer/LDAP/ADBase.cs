@@ -37,8 +37,8 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
         #region ADHelper
 
-        internal LdapConnection Connection;
-        internal LdapConnection AsyncConnection;
+        internal LdapConnector Connection;
+        internal LdapConnector AsyncConnection;
         internal bool IsConnected = false;
 
         internal bool AsyncComplete;

@@ -45,7 +45,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
         {
             DateTime modified = DateTime.MinValue;
 
-            string[] attribs = new string[] { "modifyTimeStamp" };
+            string[] attribs = new string[] { "modifyTimeStamp", "schemaInfo" };
 
             List<SearchResultEntry> schemainfo = Query(dcName, ForestBase.SchemaNamingContext,
                                                     "(objectClass=*)", attribs, SearchScope.Base,
@@ -53,26 +53,37 @@ namespace CodingFromTheField.LdapQueryAnalyzer
                                                     new QueryControl() { CurrentResultEventType = QUERY_RESULT_EVENT_TYPE.FROM_SCHEMA },
                                                     returnResults: true);
 
+            Int32 updatever = 0;
+
             if (base.HasError)
             { base.SetError("Get Schema: " + base.ErrorMSG); }
 
             else
             {
-                DirectoryAttribute dastamp = schemainfo[0].Attributes["modifyTimeStamp"];
+                if (schemainfo[0].Attributes.Contains("schemaInfo"))
+                {
+                    DirectoryAttribute dainfo = schemainfo[0].Attributes["schemaInfo"];
 
-                bool temp = false;
+                    DecodeSchemaInfo(dainfo, out updatever);
+                }                
 
-                string plaind = null;
+                //DirectoryAttribute dastamp = schemainfo[0].Attributes["modifyTimeStamp"];
 
-                DecodeInt64Data(dastamp, ActiveDirectorySyntax.GeneralizedTime, out temp, out plaind);
+                //bool temp = false;
 
-                DateTime.TryParse(plaind, out modified);
+                //string plaind = null;
+
+                //DecodeInt64Data(dastamp, ActiveDirectorySyntax.GeneralizedTime, out temp, out plaind);
+
+                //DateTime.TryParse(plaind, out modified);
             }
 
-            LoadCacheFromXML(ForestBase.ForestName, modified);
+            LoadCacheFromXML(ForestBase.ForestName, updatever);
 
             if (base.MustLoadSchemaFromAD)
             {
+                GlobalEventHandler.RaiseLoadingSchema();
+
                 string[] attributes = new string[] { "attributeSecurityGUID", "schemaIDGUID", "lDAPDisplayName", 
                                                      "attributeSyntax", "oMSyntax", "isDefunct", "systemFlags", "linkID" };
 
@@ -100,7 +111,8 @@ namespace CodingFromTheField.LdapQueryAnalyzer
                                                     new QueryControl() { AutoPage = true, CurrentResultEventType = QUERY_RESULT_EVENT_TYPE.FROM_SCHEMA },
                                                     returnResults: true);
 
-                DownloadSchemaCache(attributeSchema, classschema, extendedrights, modified);
+                DownloadSchemaCache(attributeSchema, classschema, extendedrights, updatever);
+                //DownloadSchemaCache(attributeSchema, classschema, extendedrights, modified);
             }
 
             LoadSchemaFomCache();

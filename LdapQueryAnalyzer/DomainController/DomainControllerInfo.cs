@@ -176,7 +176,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             {
                 LdapDirectoryIdentifier ldapid = new LdapDirectoryIdentifier(Name, 389, true, true);
 
-                LdapConnection ldapcon = new LdapConnection(ldapid);
+                LdapConnector ldapcon = new LdapConnector(ldapid);
                 ldapcon.Timeout = new TimeSpan(0, 2, 30);
 
                 SearchRequest request = new SearchRequest("",

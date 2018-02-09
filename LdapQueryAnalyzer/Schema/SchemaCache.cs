@@ -32,7 +32,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
     {
         #region fields
 
-        private const string CacheVersion = "2";
+        private const string CacheVersion = "3";
 
         //see ADFields
         #endregion
@@ -59,11 +59,66 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
         }
 
-        public void LoadCacheFromXML(string forestName, DateTime modifyTimeStamp)
+        public void LoadCacheFromXML(string forestName, Int32 updateVer)
         {
             base.MustLoadSchemaFromAD = false;
 
-            if (GetCache(forestName, modifyTimeStamp))
+            if (GetCache(forestName, updateVer))
+            {
+                XElement version = ForestBase.XMLCache.Root.Elements().Where(e => e.Name == "CacheVersion").FirstOrDefault();
+
+                if (version != null)
+                {
+                    if (version.Value != CacheVersion)
+                    {
+                        // clearcache file and forestbase cache
+                        base.MustLoadSchemaFromAD = true;
+                    }
+                }
+
+                else
+                { base.MustLoadSchemaFromAD = true; }
+
+                if (base.MustLoadSchemaFromAD == false)
+                {
+                    XAttribute xuver = ForestBase.CurrentForestNode.Attributes().Where(a => a.Name == "UpdateVersion").FirstOrDefault();
+
+                    if (xuver != null)
+                    {
+                        Int32 uver = 0;
+
+                        Int32.TryParse(xuver.Value, out uver);
+
+                        ForestBase.CurrentSchemaUpdateVersion = uver;
+
+                        if (ForestBase.CurrentSchemaUpdateVersion < updateVer)
+                        {
+                            base.MustLoadSchemaFromAD = true;
+
+                            ForestBase.CurrentClassesNode.Descendants().Remove();
+                            ForestBase.CurrentClassesNode.Add(new XElement("All", new XAttribute("value", "*")));
+                            ForestBase.CurrentAttributesNode.Descendants().Remove();
+                            ForestBase.CurrentExtendedRightsNode.Elements().Remove();
+                        }
+                    }
+
+                    else
+                    { base.MustLoadSchemaFromAD = true; }
+                }
+            }
+
+            else
+            { base.MustLoadSchemaFromAD = true; }
+
+            ForestBase.SchemaCacheIsDirty = base.MustLoadSchemaFromAD;
+        }
+
+
+        public void LoadCacheFromXMLOld(string forestName, DateTime modifyTimeStamp)
+        {
+            base.MustLoadSchemaFromAD = false;
+
+            if (GetCacheOld(forestName, modifyTimeStamp))
             {
                 if (DateTime.TryParse(ForestBase.CurrentForestNode.Attribute("modifyTimeStamp").Value, out ForestBase.CurrentSchemaTimeStamp))
                 {
@@ -107,7 +162,27 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
         #region load from ad
 
-        public void DownloadSchemaCache(List<SearchResultEntry> attributeSchema, List<SearchResultEntry> classSchema, List<SearchResultEntry> extendedRights, DateTime modifyTimeStamp)
+        public void DownloadSchemaCache(List<SearchResultEntry> attributeSchema, 
+                                        List<SearchResultEntry> classSchema, 
+                                        List<SearchResultEntry> extendedRights, 
+                                        Int32 updateVer)
+        {
+            Reset();
+
+            ForestBase.CurrentForestNode.Attributes().Remove();
+
+            ForestBase.CurrentForestNode.Add(new XAttribute("UpdateVersion", updateVer.ToString()));
+
+            StoreAttributes(attributeSchema);
+
+            StoreClasses(classSchema);
+
+            StoreExtendedRights(extendedRights);
+
+            SaveCache();
+        }
+
+        public void DownloadSchemaCacheOld(List<SearchResultEntry> attributeSchema, List<SearchResultEntry> classSchema, List<SearchResultEntry> extendedRights, DateTime modifyTimeStamp)
         {
             Reset();
 
@@ -479,25 +554,50 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
         #region load from cache
 
-        private bool GetCache(string forestName, DateTime modifyTimeStamp)
+        private bool GetCache(string forestName, Int32 updateVer)
         {
             bool ret = false;
 
             if (ForestBase.XMLCache != null)
-            { ret = ReadCache(forestName, modifyTimeStamp); }
+            { ret = ReadCache(forestName, updateVer); }
 
             else
             {
                 if (!File.Exists(ForestBase.XMLName))
-                { CreateCache(forestName, true, modifyTimeStamp); }
+                { CreateCache(forestName, true, updateVer); }
 
                 else
                 {
                     if (LoadCache(forestName))
-                    { ret = ReadCache(forestName, modifyTimeStamp); }
+                    { ret = ReadCache(forestName, updateVer); }
 
                     else
-                    { CreateCache(forestName, (ForestBase.XMLCache == null), modifyTimeStamp); }
+                    { CreateCache(forestName, (ForestBase.XMLCache == null), updateVer); }
+                }
+            }
+
+            return ret;
+        }
+
+        private bool GetCacheOld(string forestName, DateTime modifyTimeStamp)
+        {
+            bool ret = false;
+
+            if (ForestBase.XMLCache != null)
+            { ret = ReadCacheOld(forestName, modifyTimeStamp); }
+
+            else
+            {
+                if (!File.Exists(ForestBase.XMLName))
+                { CreateCacheOld(forestName, true, modifyTimeStamp); }
+
+                else
+                {
+                    if (LoadCache(forestName))
+                    { ret = ReadCacheOld(forestName, modifyTimeStamp); }
+
+                    else
+                    { CreateCacheOld(forestName, (ForestBase.XMLCache == null), modifyTimeStamp); }
                 }
             }
 
@@ -546,7 +646,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             return ret;
         }
 
-        private bool ReadCache(string forestName, DateTime modifyTimeStamp)
+        private bool ReadCache(string forestName, Int32 updateVer)
         {
             bool ret = false;
 
@@ -574,14 +674,80 @@ namespace CodingFromTheField.LdapQueryAnalyzer
                 }
             }
 
-            CreateCache(forestName, false, modifyTimeStamp);
+            CreateCache(forestName, false, updateVer);
+
+            NewForest(forestName);
+
+            return ret;
+        }
+        
+        private bool ReadCacheOld(string forestName, DateTime modifyTimeStamp)
+        {
+            bool ret = false;
+
+            if (ForestBase.CurrentForestName == forestName.ToLowerInvariant())
+            { return true; }
+
+            if (ForestBase.LoadedForests.ContainsKey(forestName))
+            {
+                ForestBase.CurrentForestNode = ForestBase.LoadedForests[forestName];
+
+                NewForest(forestName);
+
+                return true;
+            }
+
+            else
+            {
+                ForestBase.CurrentForestNode = ForestBase.XMLCache.Root.Descendants(forestName.ToLowerInvariant()).FirstOrDefault();
+
+                if (ForestBase.CurrentForestNode != null)
+                {
+                    NewForest(forestName);
+
+                    return true;
+                }
+            }
+
+            CreateCacheOld(forestName, false, modifyTimeStamp);
 
             NewForest(forestName);
 
             return ret;
         }
 
-        private void CreateCache(string forestName, bool createFile, DateTime modifyTimeStamp)
+        private void CreateCache(string forestName, bool createFile, Int32 updateVer)
+        {
+            if (createFile)
+            { ForestBase.XMLCache = XDocument.Parse(String.Format(@"<{0}></{0}>", ForestBase.RootName)); }
+
+            ForestBase.XMLCache.Root.Add(new XElement("CacheVersion", CacheVersion));
+
+            ForestBase.CurrentForestNode = new XElement(forestName.ToLowerInvariant(), new XAttribute("UpdateVersion", updateVer.ToString()));
+
+            ForestBase.CurrentClassesNode = new XElement("Classes", new XElement("All", new XAttribute("value", "*")));
+
+            ForestBase.CurrentForestNode.Add(ForestBase.CurrentClassesNode);
+
+            ForestBase.CurrentAttributesNode = new XElement("Attributes");
+
+            ForestBase.CurrentForestNode.Add(ForestBase.CurrentAttributesNode);
+
+            ForestBase.CurrentExtendedRightsNode = new XElement("ExtendedRights");
+
+            ForestBase.CurrentForestNode.Add(ForestBase.CurrentExtendedRightsNode);
+
+            ForestBase.XMLCache.Root.Add(ForestBase.CurrentForestNode);
+
+            ForestBase.LoadedForests.Add(forestName, ForestBase.CurrentForestNode);
+
+            NewForest(forestName);
+
+            ForestBase.SchemaCacheIsDirty = true;
+        }
+
+
+        private void CreateCacheOld(string forestName, bool createFile, DateTime modifyTimeStamp)
         {
             if (createFile)
             { ForestBase.XMLCache = XDocument.Parse(String.Format(@"<{0}></{0}>", ForestBase.RootName)); }
@@ -762,7 +928,39 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             adSyntax = ActiveDirectorySyntax.CaseIgnoreString;
             isBad = false;
 
-            if (GetCache(forestName, new DateTime(DateTime.MinValue.Ticks)))
+            if (GetCache(forestName, 0))
+            {
+                if (ForestBase.LoadedAttributes.ContainsKey(attributeName))
+                {
+                    string syntax = ForestBase.LoadedAttributes[attributeName];
+
+                    if (syntax == "UnKnown")
+                    {
+                        isBad = true;
+
+                        return true;
+                    }
+
+                    adSyntax = StringSyntaxToADSynatx(attributeName);
+
+                    return true;
+                }
+
+                else
+                { ret = ReadSyntaxFromCache(attributeName, out adSyntax, out isBad); }
+            }
+
+            return ret;
+        }
+
+        public bool AttributeIsInCacheOld(string forestName, string attributeName, out ActiveDirectorySyntax adSyntax, out bool isBad)
+        {
+            bool ret = false;
+
+            adSyntax = ActiveDirectorySyntax.CaseIgnoreString;
+            isBad = false;
+
+            if (GetCacheOld(forestName, new DateTime(DateTime.MinValue.Ticks)))
             {
                 if (ForestBase.LoadedAttributes.ContainsKey(attributeName))
                 {

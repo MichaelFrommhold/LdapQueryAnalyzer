@@ -133,9 +133,11 @@
     <Compile Include="Enumerations\EventValueTypes.cs" />
     <Compile Include="Enumerations\EXTENDED_NAME_FORMAT.cs" />
     <Compile Include="Enumerations\HISTORY_COLUMNS.cs" />
+    <Compile Include="Enumerations\LdapOption.cs" />
     <Compile Include="Enumerations\TRIM_CONTROL.cs" />
     <Compile Include="Eventing\GlobalEventArgs.cs" />
     <Compile Include="Extensions\CustomDictionary.cs" />
+    <Compile Include="Extensions\LdapConnector.cs" />
     <Compile Include="LDAP\FilterBlock.cs" />
     <Compile Include="ControlExtensions\TagInfo.cs" />
     <Compile Include="Eventing\EventValue.cs" />

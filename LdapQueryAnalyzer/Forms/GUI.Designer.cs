@@ -1150,6 +1150,8 @@
             this.txtAttributes.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtAttributes.Size = new System.Drawing.Size(182, 153);
             this.txtAttributes.TabIndex = 3;
+            this.txtAttributes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAttributes_KeyDown);
+            this.txtAttributes.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtAttributes_KeyUp);
             this.txtAttributes.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtAttributes_MouseDown);
             // 
             // panel1
@@ -1687,7 +1689,7 @@
             this.lbDebugLog.Location = new System.Drawing.Point(3, 14);
             this.lbDebugLog.Margin = new System.Windows.Forms.Padding(2);
             this.lbDebugLog.Name = "lbDebugLog";
-            this.lbDebugLog.Size = new System.Drawing.Size(321, 65);
+            this.lbDebugLog.Size = new System.Drawing.Size(321, 91);
             this.lbDebugLog.TabIndex = 13;
             this.lbDebugLog.TabStop = false;
             // 

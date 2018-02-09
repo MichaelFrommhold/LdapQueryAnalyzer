@@ -71,7 +71,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             base.IsConnected = false;
 
             string inex = null;
-            LdapConnection tempcon = null;
+            LdapConnector tempcon = null;
 
             try
             {
@@ -83,7 +83,8 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
                 tempcon.Timeout = TimeSpan.FromSeconds((double)ForestBase.CurrentTimeOut); //new TimeSpan(0, 2, 0);
                 tempcon.SessionOptions.SendTimeout = TimeSpan.FromSeconds((double)ForestBase.CurrentTimeOut);
-                
+                tempcon.ServerTimeOut = TimeSpan.FromSeconds((double)ForestBase.CurrentTimeOut);
+
 
                 if (!isAsync)
                 { base.Connection = tempcon; }
@@ -858,9 +859,9 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             return ret;
         }
 
-        private LdapConnection GetLdapConnection(LdapDirectoryIdentifier ldapId, Credentials credInfo)
+        private LdapConnector GetLdapConnection(LdapDirectoryIdentifier ldapId, Credentials credInfo)
         {
-            LdapConnection ret = null;
+            LdapConnector ret = null;
 
             try
             {
@@ -868,7 +869,7 @@ namespace CodingFromTheField.LdapQueryAnalyzer
                 { ret = GetLdapCon(ldapId, credInfo); }
 
                 else
-                { ret = new LdapConnection(ldapId); }
+                { ret = new LdapConnector(ldapId); }
             }
 
             catch (Exception ex)
@@ -877,17 +878,17 @@ namespace CodingFromTheField.LdapQueryAnalyzer
             return ret;
         }
 
-        private LdapConnection GetLdapCon(LdapDirectoryIdentifier ldapId, Credentials credInfo)
+        private LdapConnector GetLdapCon(LdapDirectoryIdentifier ldapId, Credentials credInfo)
         {
-            LdapConnection ret = null;
+            LdapConnector ret = null;
 
             try
             {
                 if (credInfo.HasCreds)
-                { ret = new LdapConnection(ldapId, credInfo.NetCreds); }
+                { ret = new LdapConnector(ldapId, credInfo.NetCreds); }
 
                 else
-                { ret = new LdapConnection(ldapId); }
+                { ret = new LdapConnector(ldapId); }
             }
 
             catch (Exception ex)

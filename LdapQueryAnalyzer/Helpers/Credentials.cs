@@ -104,13 +104,13 @@ namespace CodingFromTheField.LdapQueryAnalyzer
 
             LdapDirectoryIdentifier ldapid = null;
 
-            LdapConnection ldapcheck = null;
+            LdapConnector ldapcheck = null;
 
             try
             {
                 ldapid = new LdapDirectoryIdentifier(ForestName, false, false);
 
-                ldapcheck = new LdapConnection(ldapid);
+                ldapcheck = new LdapConnector(ldapid);
 
                 ldapcheck.AutoBind = false;
                 ldapcheck.AuthType = AuthType.Basic;
